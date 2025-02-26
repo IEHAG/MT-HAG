@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reproductor de Video Escolar</title>
+  <title>Reproductor de Video de Programación</title>
   <style>
     * {
       box-sizing: border-box;
@@ -27,33 +27,14 @@
       width: 80%;
       max-width: 800px;
       margin-bottom: 20px;
-    }
-    video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .controls {
-      background-color: #eee;
-      padding: 10px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
     }
-    .controls button {
-      background-color: #007bff;
-      color: #fff;
+    iframe {
+      width: 100%;
+      height: 450px;
       border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .controls button:hover {
-      background-color: #0056b3;
-    }
-    .controls input[type=range] {
-      width: 60%;
     }
     /* Botón para volver */
     .back-button {
@@ -73,39 +54,14 @@
   </style>
 </head>
 <body>
+
   <div class="video-container">
-    <!-- Si lo deseas, agrega un poster para mostrar imagen previa -->
-    <video id="myVideo" controls poster="poster.jpg" playsinline>
-      <source src="./2PROGRAMACION.mp4" type="video/mp4">
-      Tu navegador no soporta la reproducción de video.
-    </video>
-    <div class="controls">
-      <button id="playPauseBtn">Play</button>
-      <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1">
-    </div>
+    <!-- Iframe de Google Drive -->
+    <iframe src="https://drive.google.com/file/d/1-fi5Vd7NkmEwTK7iYBT6AkAl7Eou8lKb/preview" allow="autoplay" allowfullscreen></iframe>
   </div>
   
   <!-- Botón para volver a la página anterior -->
   <button onclick="window.history.back()" class="back-button">Volver a la Página Anterior</button>
-  
-  <script>
-    const video = document.getElementById('myVideo');
-    const playPauseBtn = document.getElementById('playPauseBtn');
-    const volumeSlider = document.getElementById('volumeSlider');
-  
-    playPauseBtn.addEventListener('click', function() {
-      if (video.paused) {
-        video.play();
-        playPauseBtn.textContent = 'Pause';
-      } else {
-        video.pause();
-        playPauseBtn.textContent = 'Play';
-      }
-    });
-  
-    volumeSlider.addEventListener('input', function() {
-      video.volume = volumeSlider.value;
-    });
-  </script>
+
 </body>
 </html>
