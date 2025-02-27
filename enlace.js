@@ -1,5 +1,10 @@
 const links = [
     {
+        name: "AIFINDY",
+        url: "https://aifindy.com/",
+        description: "Directorio actualizado de herramientas de inteligencia artificial organizadas por categorías."
+    },
+    {
         name: "Flexbox Labs",
         url: "https://flexboxlabs.netlify.app/",
         description: "Herramienta interactiva que te ayuda a visualizar y practicar el uso de CSS Flexbox, facilitando el diseño de interfaces responsivas."
