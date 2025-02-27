@@ -1,5 +1,10 @@
 const links = [
     {
+        name: "V0.dev",
+        url: "https://v0.dev/",
+        description: "Es una plataforma para generar interfaces de usuario con React y Tailwind CSS mediante inteligencia artificial."
+    },
+    {
         name: "AIFINDY",
         url: "https://aifindy.com/",
         description: "Directorio actualizado de herramientas de inteligencia artificial organizadas por categorías."
