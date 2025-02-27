@@ -1,5 +1,15 @@
 const links = [
     {
+        name: "Flexbox Labs",
+        url: "https://flexboxlabs.netlify.app/",
+        description: "Herramienta interactiva que te ayuda a visualizar y practicar el uso de CSS Flexbox, facilitando el diseño de interfaces responsivas."
+    },
+    {
+        name: "Bootstrap",
+        url: "https://getbootstrap.com/",
+        description: "Es un framework de CSS que facilita el diseño de sitios web responsivos y modernos."
+    },
+    {
         name: "PlantUML",
         url: "https://plantuml.com/en-dark/",
         description: "Herramienta para crear diagramas UML a partir de texto, utilizando un lenguaje de marcado simple. Es ideal para documentar sistemas visualmente de manera rápida y eficiente."
