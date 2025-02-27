@@ -3,42 +3,42 @@ const links = [
         name: "Video Downloader Professional ",
         url: "https://chromewebstore.google.com/detail/video-downloader-professi/elicpjhcidhpjomhibiffojpinpmmpil?hl=es-419",
         description: "Extensión para navegadores que permite descargar videos de múltiples sitios web de forma sencilla. ."
-    }
+    },
     {
         name: "FiftySounds",
         url: "https://www.fiftysounds.com/es/",
         description: "Música libre de derechos en diversas categorías, ideal para proyectos audiovisuales, videos y presentaciones."
-    }
+    },
     {
         name: "Liveweave ",
         url: "https://liveweave.com/#",
         description: "Es un editor en línea para escribir y probar HTML, CSS y JavaScript en tiempo real. Permite colaboración y facilita el diseño web interactivo. "
-    }
+    },
     {
         name: "30 Web Projects with HTML, CSS, and JavaScript",
         url: "https://gitcode.com/gh_mirrors/30/30-Web-Projects-with-HTML-CSS-and-JavaScript",
         description: "Es un repositorio con 30 proyectos prácticos para mejorar habilidades en desarrollo web. Ideal para aprender interactuando con código real. "
-    }
+    },
     {
         name: "Logomaster AI ",
         url: "https://logomaster.ai/es/",
         description: "Herramienta en línea que utiliza inteligencia artificial para crear logos profesionales en minutos. Permite personalizar colores, tipografías e íconos fácilmente. "
-    }
+    },
     {
         name: "FreePlantillas",
         url: "https://www.freeplantillas.com/plantillas-css-gratis.html",
         description: "Ofrece plantillas CSS gratuitas para diseñar sitios web modernos y responsivos. Incluye estilos predefinidos que facilitan el desarrollo web sin necesidad de empezar desde cero. "
-    }
+    },
     {
         name: "Adobe Firefly",
         url: "https://firefly.adobe.com/",
         description: "Herramienta de inteligencia artificial para generar y editar imágenes, videos y texto de forma creativa. "
-    }
+    },
     {
         name: "Renderforest",
         url: "https://www.renderforest.com/es/intro-videos",
         description: "Plataforma en línea para crear intros y videos animados de forma sencilla. "
-    }
+    },
     {
         name: "CapCut",
         url: "https://www.capcut.com/my-edit",
