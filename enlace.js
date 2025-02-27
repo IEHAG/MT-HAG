@@ -1,5 +1,20 @@
 const links = [
     {
+        name: "Renderforest",
+        url: "https://www.renderforest.com/es/intro-videos",
+        description: "Plataforma en línea para crear intros y videos animados de forma sencilla. "
+    }
+    {
+        name: "CapCut",
+        url: "https://www.capcut.com/my-edit",
+        description: "Editor de video en línea que permite crear y editar videos con herramientas avanzadas como efectos, transiciones y AI. Es ideal para ediciones rápidas y profesionales."
+    },
+    {
+        name: "SQL Easy",
+        url: "https://www.sql-easy.com/es/tutorial/",
+        description: "Es una plataforma interactiva para aprender SQL de forma práctica y sencilla. Ofrece ejercicios y explicaciones para mejorar la comprensión de consultas SQL."
+    },
+    {
         name: "V0.dev",
         url: "https://v0.dev/",
         description: "Es una plataforma para generar interfaces de usuario con React y Tailwind CSS mediante inteligencia artificial."
