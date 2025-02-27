@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlaces de Apoyo</title>
+    <link rel="stylesheet" href="enlace.css">
+    <style>
+        header {
+            text-align: center; /* Center the title */
+            padding: 20px; /* Add some padding around the header */
+        }
+
+        h1 {
+            margin-bottom: 20px; /* Add space below the title */
+            color: #333; /* Change the color to your preference */
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .links-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .links-table th,
+        .links-table td {
+            border: 1px solid #a3ff00; /* Florence color */
+            padding: 8px;
+            text-align: left;
+        }
+
+        .links-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Enlaces de Apoyo</h1>
+            <button onclick="location.href='index.html'" class="back-button">
+                <i class="icon">⬅️</i> Volver
+            </button>
+        </header>
+
+        <div class="table-container">
+            <table class="links-table">
+                <thead>
+                    <tr style="text-align: center;"></tr>
+                        <th data-sort="Nombre">Nombre ▲</th>
+                        <th data-sort="URL">URL ▲</th>
+                        <th data-sort="Descripción">Descripción ▲</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="linksTableBody">
+                    <!-- Los enlaces se insertarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="enlace.js"></script>
+</body>
+</html>

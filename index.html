@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Técnica - I.E. Héctor Abad Gómez</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(173, 216, 230, 0.5); /* Azulito clarito transparente */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center;
+            z-index: 100;
+            transition: background-color 0.8s ease;
+        }
+
+        header:hover {
+            background-color: rgba(173, 216, 230, 0.8); /* Azulito clarito un poco menos transparente al pasar el mouse */
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            max-height: 150px;
+            margin-right: 10px;
+        }
+
+        .header-text {
+            text-align: center; /* Centra el texto dentro de .header-text */
+        }
+
+        body {
+            padding-top: 150px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="img/escudo.png" alt="Logo" class="logo">
+                <div class="header-text">
+                    <h1>Media Técnica</h1>
+                    <p class="subtitle">I.E. Héctor Abad Gómez</p>
+                    <p class="teacher">Docente: Victor Cañola</p>
+                </div>
+            </div>
+        </header>
+        <nav class="navigation">
+            <button onclick="location.href='programacion.html'" class="nav-button">
+                <i class="icon">💻</i>
+                Programación de Software
+            </button>
+            <button onclick="location.href='preprensa.html'" class="nav-button">
+                <i class="icon">🎨</i>
+                Preprensa Digital
+            </button>
+            <button onclick="location.href='horario.html'" class="nav-button">
+                <i class="icon">📅</i>
+                Horario
+            </button>
+            <button onclick="location.href='planes.html'" class="nav-button">
+                <i class="icon">📝</i>
+                Planes de Mejoramiento
+            </button>
+            <button onclick="location.href='proyecto.html'" class="nav-button">
+                <i class="icon">🚀</i>
+                Proyecto Propio
+            </button>
+            <button onclick="location.href='https://modulo.master2000.net/recursos/uploads/98/INDICADORES_DE_DESEMPENO_MT.pdf'" class="nav-button">
+                <i class="icon">📊</i>
+                Indicadores
+            </button>
+            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=108866&idmenutipo=7334'" class="nav-button">
+                <i class="icon">📚</i>
+                Módulos
+            </button>
+            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=93701&idmenutipo=7334'" class="nav-button">
+                <i class="icon">✍️</i>
+                Pruebas de Periodo
+            </button>
+            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=93697&idmenutipo=7334'" class="nav-button">
+                <i class="icon">📋</i>
+                Plan de Estudio
+            </button>
+            <button onclick="location.href='material.html'" class="nav-button">
+                <i class="icon">📥</i>
+                Material
+            </button>
+
+            <button onclick="location.href='enlace.html'" class="nav-button">
+                <i class="icon">🔗</i>
+                Enlaces Apoyo
+            </button>
+
+            <button onclick="location.href='catalogo.html'" class="nav-button">
+                <i class="icon">📖</i>
+                Revista Intectiva
+            </button>
+            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=62127&idmenutipo=2098'" class="nav-button">
+                <i class="icon">📢</i>
+                Circulares
+            </button>
+            <button onclick="location.href='https://media.master2000.net/uploads/98/Ajustes_al_PEI_HAG_26_05_19.pdf'" class="nav-button">
+                <i class="icon">📑</i>
+                Proyecto Educativo Institucional
+            </button>
+            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=92307'" class="nav-button">
+                <i class="icon">📜</i>
+                Manual para la convivencia escolar
+            </button>
+            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=63500&idmenutipo=2098'" class="nav-button">
+                <i class="icon">✓</i>
+                Sistema de Evaluación
+            </button>
+            <button onclick="location.href='https://login.master2000.net/ingreso/?A=105001000256&&'" class="nav-button">
+                <i class="icon">🏫</i>
+                Máster 2000
+            </button>
+            <button onclick="location.href='contacto.html'" class="nav-button">
+                <i class="icon">🏫</i>
+                Contactanos
+            </button>
+            <!-- Botón para abrir el chatbot -->
+<button id="chatbot-toggle">💬</button>
+
+<!-- Contenedor del chatbot -->
+<div id="chatbot-container">
+    <div id="chatbot-header">HAG</div>
+    <div id="chatbot-messages"></div>
+    <div id="chatbot-input">
+        <input type="text" id="chatbot-text" placeholder="Escribe un mensaje...">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+</div>
+
+<!-- Enlace a los archivos CSS y JS del chatbot -->
+<link rel="stylesheet" href="chatbot.css">
+<script src="chatbot.js"></script>
+
+        </nav>
+        
+</div>
+        <section class="featured">
+           
+            <div class="featured-books" id="featured-books">
+                <!-- Programs will be added here by JavaScript -->
+            </div>
+        </section>
+    </div>
+    <script src="main.js"></script>
+<!-- Agrega esto en el <head> si no tienes Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <footer>
+        <p>Síguenos en nuestras redes sociales</p>
+        <ul class="social-icons">
+            <li><a href="https://www.facebook.com/AbadistaHAG/?locale=es_LA" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="https://iehag.github.io/HAGONOTICIAS/" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-newspaper"></i> Periódico</a></li>
+            <li><a href="https://www.instagram.com/i.e.hectorabadgomez/?hl=en" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://www.youtube.com/channel/UC1k1n-IAG9auH6aJr6Lm_kw" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-youtube"></i> YouTube</a></li>
+        </ul>
+        <p>&copy; 2025 - Todos los derechos reservados</p>
+    </footer>    
+    
+</body>
+</html>

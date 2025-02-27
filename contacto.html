@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Biblioteca Moderna</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Contacto</h1>
+            <button onclick="location.href='index.html'" class="back-button">
+                <i class="icon">⬅️</i> Volver
+            </button>
+        </header>
+
+        <div class="contact-section">
+            <form id="contact-form" class="contact-form">
+                <h2>Envíanos un mensaje</h2>
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <textarea placeholder="Tu mensaje" required></textarea>
+                <button type="button" onclick="window.location.href='mailto:victorcanola@iehectorabadgomez.edu.co'">Enviar Mensaje</button>
+            </form>
+
+            <div class="contact-info">
+                <h3>Información de Contacto</h3>
+                <p>📍 Calle 50 No 39 - 65 Barrio Boston</p>
+                <p>Medellín - Colombia - Suramérica</p>
+                <p>📞 216 12 58</p>
+                <p><a href="https://www.google.com/maps/place/Instituci%C3%B3n+Educativa+H%C3%A9ctor+Abad+G%C3%B3mez/@6.245557,-75.56033,15z/data=!4m5!3m4!1s0x0:0x82ced4a19d499882!8m2!3d6.245557!4d-75.5603298?hl=es&shorturl=1" target="_blank">Cómo llegar</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="contacto.js"></script>
+</body>
+</html>

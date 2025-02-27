@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revista Web Interactiva</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .page-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .page-input {
+            width: 60px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        button {
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        button:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+        
+        .upload-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        .custom-file-upload {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #2ecc71;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .custom-file-upload:hover {
+            background-color: #27ae60;
+        }
+        
+        #pdf-container {
+            display: flex;
+            justify-content: center;
+            height: 70vh;
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.5s;
+            position: relative;
+        }
+        
+        #page-view {
+            max-width: 100%;
+            max-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        canvas {
+            max-width: 100%;
+            max-height: 100%;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+        }
+        
+        .page-turn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(44, 62, 80, 0.7);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+        
+        .page-turn:hover {
+            background-color: rgba(44, 62, 80, 1);
+        }
+        
+        .prev-page {
+            left: 20px;
+        }
+        
+        .next-page {
+            right: 20px;
+        }
+        
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background-color: rgba(255,255,255,0.8);
+            z-index: 20;
+        }
+        
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 15px 0;
+            margin-top: 20px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .thumbnail {
+            min-width: 80px;
+            height: 120px;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        
+        .thumbnail:hover {
+            transform: scale(1.05);
+        }
+        
+        .thumbnail.active {
+            border-color: #3498db;
+        }
+        
+        .zoom-controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .info-bar {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .pdf-info {
+            font-size: 14px;
+        }
+        
+        /* Animación para cambio de página */
+        .page-flip {
+            animation: flipPage 0.5s ease-in-out;
+        }
+        
+        @keyframes flipPage {
+            0% { opacity: 0; transform: rotateY(-30deg); }
+            100% { opacity: 1; transform: rotateY(0); }
+        }
+        
+        /* Media queries para responsividad */
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            #pdf-container {
+                height: 50vh;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            
+            <h1>Revista Web Interactiva</h1>
+            <p>Visualiza y navega tus PDF como una revista digital</p>
+        </header>
+        <button onclick="location.href='index.html'" class="back-button">
+            <i class="icon">⬅️</i> Volver
+        </button>
+        <div class="upload-section">
+            <h2>Selecciona tu archivo PDF</h2>
+            <p>Sube un PDF para convertirlo en una revista interactiva</p>
+            <label for="file-input" class="custom-file-upload">
+                <i class="fa fa-cloud-upload"></i> Seleccionar archivo
+            <input type="file" id="file-input" class="file-input" accept="application/pdf">
+        </div>
+        
+        
+        <div class="controls">
+            <div class="page-controls">
+                <button id="prev" disabled>Anterior</button>
+                <span>Página <input type="number" id="current-page" class="page-input" value="1" min="1"> de <span id="page-count">0</span></span>
+                <button id="next" disabled>Siguiente</button>
+            </div>
+            <div class="zoom-controls">
+                <button id="zoom-out">-</button>
+                <button id="zoom-in">+</button>
+                <button id="fullscreen">Pantalla completa</button>
+            </div>
+        </div>
+        
+        <div id="pdf-container">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+            </div>
+            <div class="page-turn prev-page" id="prev-btn">&#10094;</div>
+            <div id="page-view"></div>
+            <div class="page-turn next-page" id="next-btn">&#10095;</div>
+        </div>
+        
+        <div class="thumbnails" id="thumbnails-container"></div>
+        
+        <div class="info-bar">
+            <div class="pdf-info" id="pdf-info">
+                No hay ningún PDF cargado
+            </div>
+            <button id="download-btn" disabled>Descargar PDF</button>
+        </div>
+    </div>
+
+    <script>
+        // Configurar worker de PDF.js
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+        
+        let pdfDoc = null;
+        let pageNum = 1;
+        let pageRendering = false;
+        let pageNumPending = null;
+        let scale = 1.0;
+        let canvas = null;
+        let ctx = null;
+        let currentPDF = null;
+        
+        // Referencias a elementos del DOM
+        const container = document.getElementById('page-view');
+        const fileInput = document.getElementById('file-input');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        const pageInput = document.getElementById('current-page');
+        const pageCount = document.getElementById('page-count');
+        const prevPageBtn = document.getElementById('prev-btn');
+        const nextPageBtn = document.getElementById('next-btn');
+        const thumbnailsContainer = document.getElementById('thumbnails-container');
+        const zoomIn = document.getElementById('zoom-in');
+        const zoomOut = document.getElementById('zoom-out');
+        const fullscreenBtn = document.getElementById('fullscreen');
+        const pdfInfo = document.getElementById('pdf-info');
+        const downloadBtn = document.getElementById('download-btn');
+        const loadingIndicator = document.getElementById('loading');
+        
+        // Ocultar indicador de carga al inicio
+        loadingIndicator.style.display = 'none';
+        
+        // Escuchar cambios en el input de archivo
+        fileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file && file.type === 'application/pdf') {
+                loadingIndicator.style.display = 'flex';
+                
+                const fileReader = new FileReader();
+                fileReader.onload = function(event) {
+                    const typedarray = new Uint8Array(event.target.result);
+                    currentPDF = typedarray;
+                    loadPDF(typedarray);
+                };
+                fileReader.readAsArrayBuffer(file);
+                
+                // Actualizar info del PDF
+                pdfInfo.textContent = `Archivo: ${file.name} (${formatFileSize(file.size)})`;
+                downloadBtn.disabled = false;
+            }
+        });
+        
+        // Función para cargar el PDF
+        function loadPDF(pdfData) {
+            pdfjsLib.getDocument({ data: pdfData }).promise.then(function(pdf) {
+                pdfDoc = pdf;
+                pageCount.textContent = pdf.numPages;
+                pageInput.max = pdf.numPages;
+                
+                // Habilitar controles
+                prevButton.disabled = false;
+                nextButton.disabled = false;
+                prevPageBtn.style.display = 'flex';
+                nextPageBtn.style.display = 'flex';
+                
+                // Renderizar primera página
+                pageNum = 1;
+                renderPage(pageNum);
+                
+                // Generar miniaturas
+                generateThumbnails(pdf);
+                
+                loadingIndicator.style.display = 'none';
+            }).catch(function(error) {
+                console.error('Error al cargar el PDF:', error);
+                loadingIndicator.style.display = 'none';
+                alert('Error al cargar el PDF. Por favor, intenta con otro archivo.');
+            });
+        }
+        
+        // Renderizar una página específica
+        function renderPage(num) {
+            pageRendering = true;
+            
+            // Mostrar indicador de carga
+            loadingIndicator.style.display = 'flex';
+            
+            pdfDoc.getPage(num).then(function(page) {
+                // Crear canvas si no existe
+                if (!canvas) {
+                    canvas = document.createElement('canvas');
+                    ctx = canvas.getContext('2d');
+                    container.appendChild(canvas);
+                }
+                
+                // Calcular escala para ajustar al contenedor
+                const viewport = page.getViewport({ scale });
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                
+                // Añadir clase para animación
+                canvas.classList.add('page-flip');
+                setTimeout(() => {
+                    canvas.classList.remove('page-flip');
+                }, 500);
+                
+                // Renderizar PDF
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                
+                page.render(renderContext).promise.then(function() {
+                    pageRendering = false;
+                    loadingIndicator.style.display = 'none';
+                    
+                    // Actualizar miniaturas seleccionadas
+                    updateActiveThumbnail(num);
+                    
+                    if (pageNumPending !== null) {
+                        renderPage(pageNumPending);
+                        pageNumPending = null;
+                    }
+                });
+            });
+            
+            // Actualizar número de página actual
+            pageInput.value = num;
+            
+            // Habilitar/deshabilitar botones según la página actual
+            prevButton.disabled = num <= 1;
+            nextButton.disabled = num >= pdfDoc.numPages;
+            prevPageBtn.style.opacity = num <= 1 ? '0.5' : '1';
+            nextPageBtn.style.opacity = num >= pdfDoc.numPages ? '0.5' : '1';
+        }
+        
+        // Cambiar a la página anterior
+        function previousPage() {
+            if (pageNum <= 1) return;
+            pageNum--;
+            queueRenderPage(pageNum);
+        }
+        
+        // Cambiar a la página siguiente
+        function nextPage() {
+            if (pageNum >= pdfDoc.numPages) return;
+            pageNum++;
+            queueRenderPage(pageNum);
+        }
+        
+        // Poner en cola renderizado de página
+        function queueRenderPage(num) {
+            if (pageRendering) {
+                pageNumPending = num;
+            } else {
+                renderPage(num);
+            }
+        }
+        
+        // Generar miniaturas de páginas
+        function generateThumbnails(pdf) {
+            thumbnailsContainer.innerHTML = '';
+            
+            for (let i = 1; i <= pdf.numPages; i++) {
+                const thumbnailCanvas = document.createElement('canvas');
+                const thumbnailCtx = thumbnailCanvas.getContext('2d');
+                thumbnailCanvas.classList.add('thumbnail');
+                thumbnailCanvas.dataset.pageNum = i;
+                
+                if (i === pageNum) {
+                    thumbnailCanvas.classList.add('active');
+                }
+                
+                pdf.getPage(i).then(function(page) {
+                    const viewport = page.getViewport({ scale: 0.15 });
+                    thumbnailCanvas.height = viewport.height;
+                    thumbnailCanvas.width = viewport.width;
+                    
+                    page.render({
+                        canvasContext: thumbnailCtx,
+                        viewport: viewport
+                    });
+                });
+                
+                thumbnailCanvas.addEventListener('click', function() {
+                    pageNum = parseInt(this.dataset.pageNum);
+                    renderPage(pageNum);
+                });
+                
+                thumbnailsContainer.appendChild(thumbnailCanvas);
+            }
+        }
+        
+        // Actualizar miniatura activa
+        function updateActiveThumbnail(num) {
+            const thumbnails = thumbnailsContainer.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumbnail => {
+                thumbnail.classList.remove('active');
+                if (parseInt(thumbnail.dataset.pageNum) === num) {
+                    thumbnail.classList.add('active');
+                    thumbnail.scrollIntoView({ behavior: 'smooth', inline: 'nearest' });
+                }
+            });
+        }
+        
+        // Formatear tamaño de archivo
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+        
+        // Event listeners
+        prevButton.addEventListener('click', previousPage);
+        nextButton.addEventListener('click', nextPage);
+        prevPageBtn.addEventListener('click', previousPage);
+        nextPageBtn.addEventListener('click', nextPage);
+        
+        // Manejar entrada de número de página
+        pageInput.addEventListener('change', function() {
+            let num = parseInt(pageInput.value);
+            if (num < 1) {
+                num = 1;
+            } else if (num > pdfDoc.numPages) {
+                num = pdfDoc.numPages;
+            }
+            pageNum = num;
+            renderPage(num);
+        });
+        
+        // Controles de zoom
+        zoomIn.addEventListener('click', function() {
+            scale += 0.50;
+            renderPage(pageNum);
+        });
+        
+        zoomOut.addEventListener('click', function() {
+            if (scale > 0.50) {
+                scale -= 0.50;
+                renderPage(pageNum);
+            }
+        });
+        
+        // Pantalla completa
+        fullscreenBtn.addEventListener('click', function() {
+            const pdfContainer = document.getElementById('pdf-container');
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            } else {
+                pdfContainer.requestFullscreen();
+            }
+        });
+        
+        // Descargar PDF
+        downloadBtn.addEventListener('click', function() {
+            if (currentPDF) {
+                const blob = new Blob([currentPDF], { type: 'application/pdf' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'revista_interactiva.pdf';
+                link.click();
+                URL.revokeObjectURL(link.href);
+            }
+        });
+        
+        // Controles de teclado
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                previousPage();
+            } else if (event.key === 'ArrowRight') {
+                nextPage();
+            }
+        });
+    </script>
+</body>
+
+</html>

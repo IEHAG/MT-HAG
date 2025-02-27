@@ -1,0 +1,97 @@
+const materialsData = [
+    {
+        title: "Programación de Software - Grado 10-1",
+        items: [
+            {
+                name: "Actividades",
+                downloadUrl: "/materials/guia-algoritmos.pdf",
+                driveUrl: "https://drive.google.com/drive/folders/17VH6V6G1LufK0cq-bRDZlJ8Uu3Meyfgf02WR3iyii3XdPC1l4NvM78SMrV-U_UayP2?usp=sharing"
+            },
+            {
+                name: "Actividades",
+                downloadUrl: "/materials/manual-javascript.pdf",
+                driveUrl: "https://drive.google.com/drive/folders/your-folder-id-2"
+            }
+        ]
+    },
+    {
+        title: "Programación de Software - Grado 11-1",
+        items: [
+            {
+                name: "Actividades",
+                downloadUrl: "/materials/desarrollo-web.pdf",
+                driveUrl: "https://drive.google.com/drive/folders/17VH6V6G1LufK0cq-bRDHRGSEkZlJ8Uu3Meyfgf02WR3iyii3XdPC1l4NvM78SMrV-U_UayP2?usp=sharing"
+            },
+            {
+                name: "Actividades",
+                downloadUrl: "/materials/bases-datos.pdf",
+                driveUrl: "https://drive.google.com/drive/folders/your-folder-id-4"
+            }
+        ]
+    },
+    {
+        title: "Preprensa Digital para Medios Impresos - Grado 10-2",
+        items: [
+            {
+                name: "Actividades",
+                downloadUrl: "/materials/fundamentos-diseno.pdf",
+                driveUrl: "https://drive.google.com/drive/folders/your-folder-id-5"
+            },
+            {
+                name: "Actividades",
+                downloadUrl: "/materials/software-diseno.pdf",
+                driveUrl: "https://drive.google.com/drive/folders/your-folder-id-6"
+            }
+        ]
+    },
+    {
+        title: "Preprensa Digital para Medios Impresos - Grado 11-2",
+        items: [
+            {
+                name: "Actividades",
+                downloadUrl: "/materials/control-calidad.pdf",
+                driveUrl: "https://drive.google.com/drive/folders/1IYscZPyYwfkNuxJcTOV0lyHiJjozBSiz?usp=sharing"
+            },
+            {
+                name: "Periódico HAGONOTICIAS",
+                downloadUrl: "/materials/gestion-color.pdf",
+                driveUrl: "https://drive.google.com/drive/folders/1eBzQH-HwUCvByhubGgYyCrJu-ASgS3HR?usp=sharing"
+            }
+        ]
+    }
+];
+
+function displayMaterials() {
+    const materialsSection = document.getElementById('materials');
+    
+    materialsData.forEach(category => {
+        const categoryElement = document.createElement('div');
+        categoryElement.className = 'content-card';
+        
+        const materialsList = category.items
+            .map(item => `
+                <div class="material-item">
+                    <h4>${item.name}</h4>
+                    <div class="material-buttons">
+                        <a href="${item.downloadUrl}" class="material-button download" download>
+                            <i class="icon">📥</i> Descargar
+                        </a>
+                        <a href="${item.driveUrl}" class="material-button drive" target="_blank">
+                            <i class="icon">📁</i> Drive
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+
+        categoryElement.innerHTML = `
+            <h3>${category.title}</h3>
+            <div class="materials-list">
+                ${materialsList}
+            </div>
+        `;
+        
+        materialsSection.appendChild(categoryElement);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', displayMaterials);

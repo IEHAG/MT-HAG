@@ -1,0 +1,15 @@
+.back-button {
+    padding: 15px 30px; /* Increase padding for a larger button */
+    font-size: 1.2em; /* Increase font size for better readability */
+    background-color: #4CAF50; /* A green background color */
+    color: white; /* White text color */
+    border: none; /* Remove the border */
+    border-radius: 8px; /* Round the corners */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.back-button:hover {
+    background-color: #367c39; /* Darker green on hover */
+}
