@@ -17,13 +17,13 @@ body {
     line-height: 1.6;
     
     background-image: var(--background-image);
-    background-size: 42%; /* Reduce el tamaño de la imagen */
+    background-size: 48%; /* Reduce el tamaño de la imagen */
    /* background-repeat: no-repeat; /* Evita que se repita */
     background-position: center top; /* Centra y mueve la imagen hacia arriba */
     background-attachment: fixed;
     background-blend-mode: overlay;
    
-    padding: 110px; /* Agrega espacio alrededor del contenido */
+    padding: 150px; /* Agrega espacio alrededor del contenido */
 }
 
 
@@ -41,14 +41,14 @@ body {
 }
 
 .container {
-    max-width: 2000px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0rem;
+    padding: 2rem;
 }
 
 header {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 h1 {
@@ -70,16 +70,16 @@ h1 {
 
 .navigation {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 .nav-button {
     background-color: rgb(98, 138, 212);
     border: none;
     padding: 1.5rem;
-    border-radius: 200px;
+    border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 9px 6px rgba(0, 0, 0, 0.1);
@@ -120,20 +120,20 @@ h1 {
 .content-card {
     background-color: white;
     padding: 1.5rem;
-    border-radius: 50px;
+    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .content-card:hover {
-    transform: translateY(-1px);
+    transform: translateY(-5px);
 }
 
 .content-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
-    border-bottom: 1px solid var(--secondary-color);
-    padding-bottom: 1.0;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5;
 }
 
 .content-card h4 {
@@ -159,10 +159,10 @@ h1 {
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    border-radius: 1px;
+    border-radius: 5px;
     text-decoration: none;
     color: white;
-    font-weight: 400;
+    font-weight: 500;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
