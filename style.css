@@ -113,27 +113,27 @@ h1 {
 
 .content-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
     gap: 9rem;
 }
 
 .content-card {
     background-color: white;
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 50px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .content-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-1px);
 }
 
 .content-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--secondary-color);
+    padding-bottom: 1.0;
 }
 
 .content-card h4 {
@@ -159,10 +159,10 @@ h1 {
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    border-radius: 8px;
+    border-radius: 1px;
     text-decoration: none;
     color: white;
-    font-weight: 500;
+    font-weight: 400;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
