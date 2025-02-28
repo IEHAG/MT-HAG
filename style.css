@@ -79,10 +79,10 @@ h1 {
     background-color: rgb(98, 138, 212);
     border: none;
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 200px;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 9px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
