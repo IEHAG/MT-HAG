@@ -2,7 +2,7 @@
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
     --accent-color: #e74c3c;
-    --background-color: #c8dbe0;
+    --background-color: #b2c6cb;
     --text-color: #2c3e50;
     --success-color: #2ecc71;
     --drive-color: #4285f4;
@@ -17,7 +17,7 @@ body {
     line-height: 1.6;
     
     background-image: var(--background-image);
-    background-size: 48%; /* Reduce el tamaño de la imagen */
+    background-size: 42%; /* Reduce el tamaño de la imagen */
    /* background-repeat: no-repeat; /* Evita que se repita */
     background-position: center top; /* Centra y mueve la imagen hacia arriba */
     background-attachment: fixed;
@@ -53,19 +53,19 @@ header {
 
 h1 {
     font-size: 3rem;
-    color: var(--primary-color);
+    color: #2c3e50;
     margin-bottom: 0.5rem;
 }
 
 .subtitle {
     font-size: 1.2rem;
-    color: var(--secondary-color);
+    color: #1a237e;
     margin-bottom: 0.5rem;
 }
 
 .teacher {
     font-size: 1.1rem;
-    color: var(--accent-color);
+    color: #11500d;
 }
 
 .navigation {
@@ -180,7 +180,7 @@ h1 {
 }
 
 .material-button .icon {
-    font-size: 1.2rem;
+    font-size: 3.2rem;
 }
 
 @media (max-width: 768px) {
