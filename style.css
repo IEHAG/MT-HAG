@@ -7,6 +7,7 @@
     --success-color: #2ecc71;
     --drive-color: #4285f4;
     --background-image: url('img/vico.jpeg');
+    
 }
 
 body {
@@ -21,7 +22,7 @@ body {
     background-position: center top; /* Centra y mueve la imagen hacia arriba */
     background-attachment: fixed;
     background-blend-mode: overlay;
-
+   
     padding: 150px; /* Agrega espacio alrededor del contenido */
 }
 
@@ -71,7 +72,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .nav-button {
@@ -158,7 +159,7 @@ h1 {
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
+    border-radius: 8px;
     text-decoration: none;
     color: white;
     font-weight: 500;
@@ -244,4 +245,117 @@ footer {
 .social-icons a:hover {
     background: #b8860b; /* Dorado más oscuro */
     transform: scale(1.1);
+}
+
+/* Tablets grandes */
+@media (max-width: 1024px) {
+    body {
+        padding: 100px 50px;
+        background-size: 60%;
+    }
+
+    .navigation {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+/* Móviles medianos */
+@media (max-width: 480px) {
+    body {
+        padding: 160px 30px;
+        background-size: 100%;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .teacher {
+        font-size: 0.9rem;
+    }
+
+    .social-icons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* --background-color: #1a1a1a; */
+        --text-color: #ffffff;
+        --primary-color: #4a9eff;
+        --secondary-color: #62b6ff;
+    }
+
+    .content-card {
+        background-color: #2d2d2d;
+        color: #ffffff;
+    }
+
+    .material-item {
+        background-color: #333333;
+        color: #ffffff;
+    }
+}
+
+/* Animaciones reducidas */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* .nav-button:hover, */
+    .content-card:hover,
+    .material-button:hover {
+        transform: none;
+    }
+}
+
+
+
+/* Mejoras para orientación horizontal en móviles */
+@media (orientation: landscape) and (max-height: 10px) {
+    body {
+        padding: 20px;
+    }
+
+    .navigation {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .content-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+
+/* Dispositivos con pantalla táctil */
+@media (hover: none) {
+    .nav-button,
+    .content-card,
+    .material-button {
+        transition: none;
+    }
+
+    .nav-button:active,
+    .content-card:active,
+    .material-button:active {
+        transform: scale(0.98);
+    }
 }
