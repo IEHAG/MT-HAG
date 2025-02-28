@@ -331,10 +331,9 @@ footer {
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* background: rgba(0, 0, 0, 0.15);*/
-    border: 2px solid #dee2e6;
+    border: 2px solid #243d57;
 
-
+}
 /* Mejoras para orientación horizontal en móviles */
 @media (orientation: landscape) and (max-height: 10px) {
     body {
