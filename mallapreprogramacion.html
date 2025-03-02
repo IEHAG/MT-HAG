@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Estudios - Preprensa Digital Para Medios Impresos</title>
+    <link rel="stylesheet" href="mallapreprensa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="img/escudo.png" alt="Logo" width="90" height="90">
+                <h1 class="titulo">Malla Curricular - Preprensa Digital Para Medios Impresos</h1>
+            </div>
+            <nav>
+                <button onclick="location.href='index.html'" class="btn">Volver al Inicio</button>
+                <button id="exportarPDF"class="btn">Exportar Malla Curricular</button>
+                <button id="toggleView" class="btn">Cambiar Vista</button>
+                <button id="toggleFilters" class="btn">Filtros</button>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Buscar tema o competencia...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                    
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="filter-panel" id="filterPanel">
+        <h3>Filtros</h3>
+        <div class="filter-options">
+            <div class="filter-group">
+                <label for="gradeFilter">Grado:</label>
+                <select id="gradeFilter">
+                    <option value="all">Todos</option>
+                    <option value="10">Grado 10°</option>
+                    <option value="11">Grado 11°</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="periodFilter">Período:</label>
+                <select id="periodFilter">
+                    <option value="all">Todos</option>
+                    <option value="1">Primer Período</option>
+                    <option value="2">Segundo Período</option>
+                    <option value="3">Tercer Período</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="roleFilter">Rol:</label>
+                <select id="roleFilter">
+                    <option value="all">Todos</option>
+                    <option value="docente">Docente PAR</option>
+                    <option value="instructor">Instructor SENA</option>
+                </select>
+            </div>
+            <button id="resetFilters" class="btn">Restablecer Filtros</button>
+        </div>
+    </div>
+
+    <main>
+        <div class="curriculum-container">
+            <div class="grid-container" id="curriculumGrid">
+                <!-- Grid will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="list-container" id="curriculumList" style="display: none;">
+            <!-- List will be populated by JavaScript -->
+        </div>
+    </main>
+
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div class="modal-info">
+                <p><strong>Semana:</strong> <span id="modalWeek"></span></p>
+                <p><strong>Grado:</strong> <span id="modalGrade"></span></p>
+                <p><strong>Período:</strong> <span id="modalPeriod"></span></p>
+                <p><strong>Competencia:</strong> <span id="modalCompetence"></span></p>
+                <p><strong>Resultado de Aprendizaje:</strong> <span id="modalLearningResult"></span></p>
+                <p><strong>Rol:</strong> <span id="modalRole"></span></p>
+            </div>
+            <div class="modal-description">
+                <h3>Subtemas:</h3>
+                <p id="modalSubtopics"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2025 Malla Curricular- Preprensa Digital para Medios Impresos</p>
+                <p>Elaborado y diseñado por el: <i class="fas fa-heart"></i> Docente- Victor Cañola</p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="mallapreprensa.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>
