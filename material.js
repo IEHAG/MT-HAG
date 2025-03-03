@@ -48,9 +48,14 @@ const materialsData = [
         title: "Preprensa Digital para Medios Impresos - Grado 11-2",
         items: [
             {
-                name: "Actividades",
+                name: "Docente HAG",
                 downloadUrl: "/materials/control-calidad.pdf",
                 driveUrl: "https://drive.google.com/drive/folders/1IYscZPyYwfkNuxJcTOV0lyHiJjozBSiz?usp=sharing"
+            },
+            {
+                name: "Instructor SENA",
+                downloadUrl: "#",
+                driveUrl: "https://drive.google.com/drive/folders/1wIFfqyUn6VQtzeU9MiW-a6IduVGQYr1A?usp=sharing"
             },
             {
                 name: "Periódico HAGONOTICIAS",
