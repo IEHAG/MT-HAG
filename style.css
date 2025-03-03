@@ -491,14 +491,14 @@ iframe {
     position: absolute;
     /*background: #f7f7f9;*/
     border: 0px solid #0a2696;
-    padding: 10px;
+    padding: 30px;
     border-radius: 5px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    top: 220px; /* Ajusta la posición */
+    top: 290px; /* Ajusta la posición */
     right: 0;
     left: auto; /* Esto evita que el valor de 'left' interfiera */
     z-index: 1000;
-    transform: translateX(-330px); /* Mueve 100px a la izquierda */
+    transform: translateX(-10px); /* Mueve 100px a la izquierda */
     
     
 }
