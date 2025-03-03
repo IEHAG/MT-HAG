@@ -1,7 +1,8 @@
 const schedule = {
     "11.2": [
         { day: "Lunes", time: "1:00 PM - 6:00 PM", subject: "Preprensa Digital para Medios Impresos-Instructor SENA" },
-        { day: "Jueves", time: "1:00 PM - 6:00 PM", subject: "Preprensa Digital para Medios Impresos-Docente HAG" }
+        { day: "Jueves", time: "1:00 PM - 6:00 PM", subject: "Preprensa Digital para Medios Impresos-Docente HAG" },
+        { day: "Descansos", time: "3:14 PM - 3:45 PM", subject: "Días  Miércoles y Viernes" }
     ],
     "10.1": [
         { day: "Martes", time: "1:00 PM - 6:00 PM", subject: "Programación de Software-Instructor SENA" },
