@@ -483,3 +483,48 @@ iframe {
     transform: translateY(100px) scale(1.8); /* Baja y crece */
     box-shadow: 20px 10px 15px rgba(0, 0, 0, 0.6); /* Sombra más intensa */
 }
+
+
+/* Estilos para el menú desplegable */
+.submenu {
+    display: none;
+    position: absolute;
+    /*background: #f7f7f9;*/
+    border: 0px solid #0a2696;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    top: 220px; /* Ajusta la posición */
+    right: 0;
+    left: auto; /* Esto evita que el valor de 'left' interfiera */
+    z-index: 1000;
+    transform: translateX(-330px); /* Mueve 100px a la izquierda */
+    
+    
+}
+
+/* Mostrar el menú cuando se quite la clase 'hidden' */
+.submenu:not(.hidden) {
+    display: block;
+}
+
+.submenu button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+    background-color: #227ee1;
+    color: rgb(27, 24, 24);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.submenu button:hover {
+    background-color: #0056b3;
+}
+
+/* Clase para ocultar */
+.hidden {
+    display: none;
+}

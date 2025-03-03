@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-
     <!-- Modal (Debe ir dentro del <body>, no en el <head>) -->
     <div id="modal" class="modal">
         <div class="modal-content">
@@ -54,6 +53,18 @@
                 <i class="icon">🎨</i>
                 Preprensa Digital
             </button>
+            <button id="planEstudioBtn" class="nav-button">
+                <i class="icon">📋</i> Plan de Estudio
+            </button>
+            <!-- Menú desplegable oculto -->
+<div id="submenu" class="submenu hidden">
+    <button onclick="location.href='mallapreprensa.html'" class="submenu-btn">📖 Preprensa Digital</button>
+    <button onclick="location.href='mallaprogramacion.html'" class="submenu-btn">💻 Programación</button>
+</div>
+            <button onclick="location.href='material.html'" class="nav-button">
+                <i class="icon">📥</i>
+                Material
+            </button>
             <button onclick="location.href='horario.html'" class="nav-button">
                 <i class="icon">📅</i>
                 Horario
@@ -78,15 +89,6 @@
                 <i class="icon">✍️</i>
                 Pruebas de Periodo
             </button>
-            <button onclick="location.href='mallapreprensa.html'" class="nav-button">
-                <i class="icon">📋</i>
-                Plan de Estudio
-            </button>
-            <button onclick="location.href='material.html'" class="nav-button">
-                <i class="icon">📥</i>
-                Material
-            </button>
-
             <button onclick="location.href='enlace.html'" class="nav-button">
                 <i class="icon">🔗</i>
                 Enlaces Apoyo
