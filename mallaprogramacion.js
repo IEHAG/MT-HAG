@@ -7,140 +7,140 @@ const curriculumData = [
         grade: "10",
         period: 1,
         role: "docente",
-        topic: "Introducción al Diseño",
-        subtopics: "Conceptos básicos, línea, punto, plano, formas básicas",
-        competence: "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        learningResult: "484989 - 01 PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
+        topic: "Estructura de un equipo de computo",
+        subtopics: "*Partes del computador (Dispositivos de entrada y salida)\n*Partes del computador (Dispositivos de almacenamiento)\n*Partes del computador (Dispositivos de computación)\n*Partes del computador (Dispositivos de comunicación)",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "Conceptos básicos"
     },
     {
         week: 2,
         grade: "10",
         period: 1,
         role: "docente",
-        topic: "Positivo y Negativo",
-        subtopics: "Aplicaciones en diseño gráfico",
-        competence: "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        learningResult: "484990 - 05 VERIFICAR CALIDAD DE LA PRUEBA DE COLOR SEGÚN ESTÁNDARES INTERNACIONALES"
+        topic: "Estructura de un equipo de computo",
+        subtopics: "*Tipos de ordenadores (Super ordenador)\n*Tipos de ordenadores (Mainframe)\n*Tipos de ordenadores (Servidor)\n*Tipos de ordenadores (Ordenador personal)",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "Estructura de los computadores y Fundamentos de programación"
     },
     {
         week: 3,
         grade: "10",
         period: 1,
         role: "docente",
-        topic: "Introducción a la Teoría del Color",
-        subtopics: "Círculo cromático, colores primarios",
-        competence: "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        learningResult: "484991 - 02 IDENTIFICAR CARACTERÍSTICAS DEL ARCHIVO DIGITAL DE ACUERDO A LA NORMATIVIDAD VIGENTE Y MEDIO DE SALIDA"
+        topic: "Sistemas operativos",
+        subtopics: "*Diferencia entre hardware y software\n*Sistemas operativos: Windows, Linux, Android",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "Estructura de los computadores y Fundamentos de programación"
     },
     {
         week: 4,
         grade: "10",
         period: 1,
         role: "docente",
-        topic: "Introducción a la Teoría del Color",
-        subtopics: "Colores análogos, tríadas y complementarios",
-        competence: "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        learningResult: "484991 - 02 IDENTIFICAR CARACTERÍSTICAS DEL ARCHIVO DIGITAL DE ACUERDO A LA NORMATIVIDAD VIGENTE Y MEDIO DE SALIDA"
+        topic: "Sistemas operativos",
+        subtopics: "Gestionar (Tipos de ficheros o carpetas: Creación de carpetas, comprimir y descomprimir archivos)",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "Estructura de los computadores y Fundamentos de programación"
     },
     {
         week: 5,
         grade: "10",
         period: 1,
         role: "docente",
-        topic: "Psicología del Color",
-        subtopics: "Significados y aplicaciones del color",
-        competence: "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        learningResult: "484992 - 03 CALIBRAR DISPOSITIVOS DE PRUEBAS DE COLOR DE ACUERDO CON EL MEDIO DE SALIDA"
+        topic: "Sistemas operativos",
+        subtopics: "Gestionar (Funciones básicas de editor de texto)",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "Estructura de los computadores y Fundamentos de programación"
     },
     {
         week: 6,
         grade: "10",
         period: 1,
         role: "docente",
-        topic: "Psicología del Color",
-        subtopics: "Saturación y luminosidad",
-        competence: "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        learningResult: "484992 - 03 CALIBRAR DISPOSITIVOS DE PRUEBAS DE COLOR DE ACUERDO CON EL MEDIO DE SALIDA"
+        topic: "Sistemas operativos",
+        subtopics: "Gestionar (Funciones básicas de hojas de cálculo)",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "Estructura de los computadores y Fundamentos de programación"
     },
     {
         week: 7,
         grade: "10",
         period: 1,
         role: "docente",
-        topic: "Teoría de la Imagen",
-        subtopics: "Semiótica, Gestalt y retórica de la imagen",
-        competence: "291301051 - PREPARAR IMÁGENES DIGITALES PARA LA DIAGRAMACIÓN DE ACUERDO CON LAS ESPECIFICACIONES SOLICITDAS.",
-        learningResult: "484978 - 06 VERIFICAR QUE LAS CARACTERÍSTICAS DE LAS IMÁGENES DIGITALES CUMPLAN CON LOS REQUERIMIENTOS DEL MEDIO DE SALIDA"
+        topic: "Sistemas operativos",
+        subtopics: "Gestionar correo electrónico y datos de la nube (Drive)",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "Estructura de los computadores y Fundamentos de programación"
     },
     {
         week: 8,
         grade: "10",
         period: 1,
         role: "docente",
-        topic: "Tipografía",
-        subtopics: "Partes de las letras y psicología de la tipografía",
-        competence: "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        learningResult: "484993 - 04 ELABORAR PRUEBA DE COLOR PARA APROBACIÓN DEL CLIENTE SEGÚN ORDEN DE PRODUCCIÓN"
+        topic: "Lenguaje máquina",
+        subtopics: "*Lenguajes de bajo nivel y alto nivel\n*Método de comunicación con las máquinas / lenguaje máquina",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "Estructura de los computadores y Fundamentos de programación"
     },
     {
         week: 9,
         grade: "10",
         period: 1,
         role: "docente",
-        topic: "Formatos de Imagen",
-        subtopics: "Resolución, tamaño y formatos digitales",
-        competence: "291301051 - PREPARAR IMÁGENES DIGITALES PARA LA DIAGRAMACIÓN DE ACUERDO CON LAS ESPECIFICACIONES SOLICITDAS.",
-        learningResult: "484978 - 06 VERIFICAR QUE LAS CARACTERÍSTICAS DE LAS IMÁGENES DIGITALES CUMPLAN CON LOS REQUERIMIENTOS DEL MEDIO DE SALIDA"
+        topic: "Lenguaje máquina",
+        subtopics: "Código Binario",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "Estructura de los computadores y Fundamentos de programación"
     },
     {
         week: 10,
         grade: "10",
         period: 1,
         role: "docente",
-        topic: "Edición de Imágenes",
-        subtopics: "Herramientas básicas de software de edición",
-        competence: "291301051 - PREPARAR IMÁGENES DIGITALES PARA LA DIAGRAMACIÓN DE ACUERDO CON LAS ESPECIFICACIONES SOLICITDAS.",
-        learningResult: "484979 - 03 EDITAR MODELOS DE COLOR, RESOLUCIÓN, TAMAÑOS, FORMATOS DE IMÁGENES DIGITALES DE ACUERDO AL MEDIO DE SALIDA"
+        topic: "Análisis y Diagramación UML",
+        subtopics: "*Definición de requisitos del sistema\n*Métodos de recolección de requerimientos\n*Características de los requerimientos",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. INTERPRETAR EL INFORME DE REQUISITOS DE LA SOLUCIÓN CONFORME A LA IDENTIFICACIÓN DE LAS NECESIDADES DEL NEGOCIO."
     },
     {
         week: 11,
         grade: "10",
         period: 1,
         role: "docente",
-        topic: "Edición de Imágenes",
-        subtopics: "Modelos de color RGB y CMYK",
-        competence: "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        learningResult: "484979 - 03 EDITAR MODELOS DE COLOR, RESOLUCIÓN, TAMAÑOS, FORMATOS DE IMÁGENES DIGITALES DE ACUERDO AL MEDIO DE SALIDA"
+        topic: "Análisis y Diagramación UML",
+        subtopics: "Requerimientos Funcionales",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. INTERPRETAR EL INFORME DE REQUISITOS DE LA SOLUCIÓN CONFORME A LA IDENTIFICACIÓN DE LAS NECESIDADES DEL NEGOCIO."
     },
     {
         week: 12,
         grade: "10",
         period: 1,
         role: "docente",
-        topic: "Composición Fotográfica",
-        subtopics: "Planos, angulaciones y composición",
-        competence: "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        learningResult: "484980 - 04 APLICAR HERRAMIENTAS DEL SOFTWARE DE EDICIÓN DE IMÁGENES DE ACUERDO A LOS REQUERIMIENTOS DEL PRODUCTO"
+        topic: "Análisis y Diagramación UML",
+        subtopics: "Requerimientos Funcionales",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. INTERPRETAR EL INFORME DE REQUISITOS DE LA SOLUCIÓN CONFORME A LA IDENTIFICACIÓN DE LAS NECESIDADES DEL NEGOCIO."
     },
     {
         week: 13,
         grade: "10",
         period: 1,
         role: "docente",
-        topic: "Prácticas de Illustrator y Photoshop",
-        subtopics: "Aplicaciones básicas y avanzadas",
-        competence: "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        learningResult: "484980 - 04 APLICAR HERRAMIENTAS DEL SOFTWARE DE EDICIÓN DE IMÁGENES DE ACUERDO A LOS REQUERIMIENTOS DEL PRODUCTO"
+        topic: "Análisis y Diagramación UML",
+        subtopics: "Requerimientos No funcionales",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. INTERPRETAR EL INFORME DE REQUISITOS DE LA SOLUCIÓN CONFORME A LA IDENTIFICACIÓN DE LAS NECESIDADES DEL NEGOCIO."
     },
     {
         week: 14,
         grade: "10",
         period: 1,
         role: "docente",
-        topic: "Evaluación y Repaso",
-        subtopics: "Integración de conceptos del primer período",
-        competence: "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        learningResult: "484980 - 04 APLICAR HERRAMIENTAS DEL SOFTWARE DE EDICIÓN DE IMÁGENES DE ACUERDO A LOS REQUERIMIENTOS DEL PRODUCTO"
+        topic: "Análisis y Diagramación UML",
+        subtopics: "Proceso para definición de requisitos del sistema (INFORME)",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. INTERPRETAR EL INFORME DE REQUISITOS DE LA SOLUCIÓN CONFORME A LA IDENTIFICACIÓN DE LAS NECESIDADES DEL NEGOCIO."
     },
     // Segundo Período
     {
@@ -148,1486 +148,1425 @@ const curriculumData = [
         grade: "10",
         period: 2,
         role: "docente",
-        topic: "Diseño Básico",
-        subtopics: "Aplicaciones en proyectos reales",
-        competence: "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        learningResult: "Elaborar pruebas de color según requerimiento del cliente"
+        topic: "Diagramas UML",
+        subtopics: "*Definición\n*Diagramas de casos de uso",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. INTERPRETAR EL INFORME DE REQUISITOS DE LA SOLUCIÓN CONFORME A LA IDENTIFICACIÓN DE LAS NECESIDADES DEL NEGOCIO."
     },
     {
         week: 16,
         grade: "10",
         period: 2,
         role: "docente",
-        topic: "Producción Digital",
-        subtopics: "Diseño editorial y diagramación",
-        competence: "291301051",
-        learningResult: "Preparar imágenes digitales para la diagramación de acuerdo con las especificaciones solicitadas"
+        topic: "Diagramas UML",
+        subtopics: "*Diagrama de secuencia\n*Diagrama de flujo Nivel 0\n*Diagrama de flujo nivel 1\n*Generalidades Metodología SCRUM",
+        competence: "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. INTERPRETAR EL INFORME DE REQUISITOS DE LA SOLUCIÓN CONFORME A LA IDENTIFICACIÓN DE LAS NECESIDADES DEL NEGOCIO."
     },
     {
         week: 17,
         grade: "10",
         period: 2,
         role: "docente",
-        topic: "Herramientas de Diseño",
-        subtopics: "Uso de software especializado",
-        competence: "484989 - 01",
-        learningResult: "PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
+        topic: "Metodologías de Desarrollo",
+        subtopics: "*Diseño HTML 5\n*Definición\n*Estructura Html\n*Editores de texto (Visual Studio, Sublime Text, Brackets)",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         week: 18,
         grade: "10",
         period: 2,
         role: "docente",
-        topic: "Color en Diseño Gráfico",
-        subtopics: "Aplicaciones en medios digitales e impresos",
-        competence: "484991 - 02",
-        learningResult: "IDENTIFICAR CARACTERÍSTICAS DEL ARCHIVO DIGITAL DE ACUERDO A LA NORMATIVIDAD VIGENTE Y MEDIO DE SALIDA"
+        topic: "HTML",
+        subtopics: "*Mi primera página (estructura Básica html)\n*Formato de letras (Colores, Alinear, Tipo, Tamaño)\n*Párrafos\n*Saltos de Línea",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         week: 19,
         grade: "10",
         period: 2,
         role: "docente",
-        topic: "Tipografía Avanzada",
-        subtopics: "Familias tipográficas y su uso",
-        competence: "484993 - 04",
-        learningResult: "ELABORAR PRUEBA DE COLOR PARA APROBACIÓN DEL CLIENTE SEGÚN ORDEN DE PRODUCCIÓN"
+        topic: "Estructura Html",
+        subtopics: "*Creación de Tablas\n*Enlaces\n*Insertar imágenes\n*Insertar videos\n*Enlazar una imagen",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         week: 20,
         grade: "10",
         period: 2,
         role: "docente",
-        topic: "Composición y Diseño Digital",
-        subtopics: "Principios de maquetación",
-        competence: "484980 - 04",
-        learningResult: "Aplicar herramientas del software de edición de imágenes de acuerdo a los requerimientos del producto"
+        topic: "Formularios",
+        subtopics: "*Creación de formularios\n*Creación de botones",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         week: 21,
         grade: "10",
         period: 2,
         role: "docente",
-        topic: "Gestión del Color",
-        subtopics: "Perfilado de color y calibración de dispositivos",
-        competence: "484992 - 03",
-        learningResult: "Calibrar dispositivos de pruebas de color de acuerdo con el medio de salida"
+        topic: "Formularios",
+        subtopics: "*Creación de inputs (tipos de inputs)\n*Envíos desde formularios",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         week: 22,
         grade: "10",
         period: 2,
         role: "docente",
-        topic: "Pruebas de Impresión",
-        subtopics: "Calidad y ajustes finales",
-        competence: "291301053",
-        learningResult: "Elaborar pruebas de color según requerimiento del cliente"
+        topic: "Formularios",
+        subtopics: "Atributos HTML 5",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         week: 23,
         grade: "10",
         period: 2,
         role: "docente",
-        topic: "Producción Digital",
-        subtopics: "Optimización para medios impresos y digitales",
-        competence: "484991 - 02",
-        learningResult: "Identificar características del archivo digital de acuerdo a la normatividad vigente y medio de salida"
+        topic: "CSS",
+        subtopics: "Definición",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         week: 24,
         grade: "10",
         period: 2,
         role: "docente",
-        topic: "Evaluación de Calidad",
-        subtopics: "Estándares internacionales",
-        competence: "484993 - 04",
-        learningResult: "Elaborar prueba de color para aprobación del cliente según orden de producción"
+        topic: "Estructura CSS",
+        subtopics: "*Mi primer Estilo (HTML y CSS - atributos html)\n*Estructura Css",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         week: 25,
         grade: "10",
         period: 2,
         role: "docente",
-        topic: "Producción Audiovisual",
-        subtopics: "Edición y animación básica",
-        competence: "484980 - 04",
-        learningResult: "Aplicar herramientas del software de edición de imágenes de acuerdo a los requerimientos del producto"
+        topic: "Estructura CSS",
+        subtopics: "*Creación de Reglas\n*Trabajando con Id",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         week: 26,
         grade: "10",
         period: 2,
         role: "docente",
-        topic: "Postproducción",
-        subtopics: "Retoque y corrección de imágenes",
-        competence: "484992 - 03",
-        learningResult: "Calibrar dispositivos de pruebas de color de acuerdo con el medio de salida"
+        topic: "Estructura CSS",
+        subtopics: "*Trabajando con Clases\n*Relación Con html y sus etiquetas",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         week: 27,
         grade: "10",
         period: 2,
         role: "docente",
-        topic: "Proyecto Intermedio",
-        subtopics: "Aplicación de conceptos en un proyecto práctico",
-        competence: "-",
-        learningResult: "-"
+        topic: "Estructura CSS",
+        subtopics: "*Incrustación de código css en html\n*Enlazando Css con HTML\n*Comentarios en css",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         week: 28,
         grade: "10",
         period: 2,
         role: "docente",
-        topic: "Evaluación y Repaso",
-        subtopics: "Integración de conceptos del segundo período",
-        competence: "-",
-        learningResult: "-"
+        topic: "Trabajando con CSS",
+        subtopics: "*Colores\n*Creación de reglas propias ID\n*Creación de Reglas comunes CLASS",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     // GRADO 10 - DOCENTE PAR
-// Tercer Período
+    // Tercer Período
     {
         "week": 29,
         "grade": "10",
         "period": 3,
         "role": "docente",
-        "topic": "Proyecto Final",
-        "subtopics": "Definición y planificación del proyecto",
-        "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        "learningResult": "Elaborar pruebas de color según requerimiento del cliente"
+        "topic": "Trabajando con CSS",
+        "subtopics": "*Medidas en css\n*Bordes y tablas con css y html\n*Creación de menú",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         "week": 30,
         "grade": "10",
         "period": 3,
         "role": "docente",
-        "topic": "Producción Digital",
-        "subtopics": "Desarrollo de identidad visual",
-        "competence": "484991 - 02",
-        "learningResult": "Identificar características del archivo digital de acuerdo a la normatividad vigente y medio de salida"
+        "topic": "Trabajando con CSS",
+        "subtopics": "Trabajando con imágenes",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         "week": 31,
         "grade": "10",
         "period": 3,
         "role": "docente",
-        "topic": "Evaluación de Calidad",
-        "subtopics": "Normas ISO en impresión",
-        "competence": "484993 - 04",
-        "learningResult": "Elaborar prueba de color para aprobación del cliente según orden de producción"
+        "topic": "Trabajando con CSS",
+        "subtopics": "Cursor",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         "week": 32,
         "grade": "10",
         "period": 3,
         "role": "docente",
-        "topic": "Desarrollo de Portafolio",
-        "subtopics": "Presentación profesional",
-        "competence": "484980 - 04",
-        "learningResult": "Aplicar herramientas del software de edición de imágenes de acuerdo a los requerimientos del producto"
+        "topic": "Trabajando con CSS",
+        "subtopics": "Posicionamiento Absoluto y relativo",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         "week": 33,
         "grade": "10",
         "period": 3,
         "role": "docente",
-        "topic": "Exposición de Proyectos",
-        "subtopics": "Pruebas y ajustes finales",
-        "competence": "484992 - 03",
-        "learningResult": "Calibrar dispositivos de pruebas de color de acuerdo con el medio de salida"
+        "topic": "Creación de página WEB",
+        "subtopics": "Introducción",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         "week": 34,
         "grade": "10",
         "period": 3,
         "role": "docente",
-        "topic": "Aplicación de conceptos de diseño en proyectos prácticos",
-        "subtopics": "Desarrollo y mejora de trabajos finales",
-        "competence": "-",
-        "learningResult": "-"
+        "topic": "Creación de página WEB",
+        "subtopics": "Framework Bootstrap (Container, Row, Columnas, herramientas para uso)",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         "week": 35,
         "grade": "10",
         "period": 3,
         "role": "docente",
-        "topic": "Aplicación de conceptos de diseño en proyectos prácticos",
-        "subtopics": "Desarrollo y mejora de trabajos finales",
-        "competence": "-",
-        "learningResult": "-"
+        "topic": "Creación de página WEB",
+        "subtopics": "Framework Bootstrap (Container, Row, Columnas, herramientas para uso)",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         "week": 36,
         "grade": "10",
         "period": 3,
         "role": "docente",
-        "topic": "Aplicación de conceptos de diseño en proyectos prácticos",
-        "subtopics": "Desarrollo y mejora de trabajos finales",
-        "competence": "-",
-        "learningResult": "-"
+        "topic": "Creación de página WEB",
+        "subtopics": "Creación de página Web",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         "week": 37,
         "grade": "10",
         "period": 3,
         "role": "docente",
-        "topic": "Revisión y culminación de proyectos",
-        "subtopics": "Optimización y presentación final",
-        "competence": "-",
-        "learningResult": "-"
+        "topic": "Creación de página WEB",
+        "subtopics": "Examen final",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         "week": 38,
         "grade": "10",
         "period": 3,
         "role": "docente",
-        "topic": "Revisión y culminación de proyectos",
-        "subtopics": "Optimización y presentación final",
-        "competence": "-",
-        "learningResult": "-"
+        "topic": "Creación de página WEB",
+        "subtopics": "Introducción JavaScript",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         "week": 39,
         "grade": "10",
         "period": 3,
         "role": "docente",
-        "topic": "Evaluación y Retroalimentación",
-        "subtopics": "Revisión de aprendizajes, mejoras y cierre del curso",
-        "competence": "-",
-        "learningResult": "-"
+        "topic": "Creación de página WEB",
+        "subtopics": "Estructura JavaScript",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
         "week": 40,
         "grade": "10",
         "period": 3,
         "role": "docente",
-        "topic": "Evaluación y Retroalimentación",
-        "subtopics": "Revisión de aprendizajes, mejoras y cierre del curso",
-        "competence": "-",
-        "learningResult": "-"
+        "topic": "Empieza Proyecto Productivo",
+        "subtopics": "Asesoría Instructor y Docente",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     // GRADO 11 - Docente Par 
-// Primer Período 
+    // Primer Período 
     {
-        "week": 1, 
+        "week": 1,
         "grade": "11",
         "period": 1,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Inducción inicial",
-        "competence": "291301061 - PLANEAR Y EJECUTAR PROYECTOS DE DISEÑO SEGÚN REQUERIMIENTOS DEL CLIENTE.",
-        "learningResult": "29130106101 - INDUCCIÓN INICIAL."
+        "topic": "Diseño- HTML 5 Refuerzo",
+        "subtopics": "*Definición\n*Estructura Html\n*Editores de texto (Visual Studio, Sublime Text, Brackets)\n*Mi primera página (estructura Básica html)\n*Formato de letras (Colores, Alinear, Tipo, Tamaño)\n*Párrafos\n*Saltos de Línea",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE"
     },
     {
-        "week": 2, 
+        "week": 2,
         "grade": "11",
         "period": 1,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Revisión equipos de trabajo",
-        "competence": "291301061 - PLANEAR Y EJECUTAR PROYECTOS DE DISEÑO SEGÚN REQUERIMIENTOS DEL CLIENTE.",
-        "learningResult": "29130106102 - REVISIÓN EQUIPOS DE TRABAJO."
+        "topic": "Diseño- HTML 5 Refuerzo",
+        "subtopics": "*Creación de Tablas\n*Enlaces\n*Insertar imágenes\n*Insertar videos\n*Enlazar una imagen",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE"
     },
     {
-        "week": 3, 
+        "week": 3,
         "grade": "11",
         "period": 1,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Revisión Ideas de proyecto",
-        "competence": "291301061 - PLANEAR Y EJECUTAR PROYECTOS DE DISEÑO SEGÚN REQUERIMIENTOS DEL CLIENTE.",
-        "learningResult": "29130106103 - REVISIÓN IDEAS DE PROYECTO."
+        "topic": "Formularios",
+        "subtopics": "*Creación de formularios\n*Creación de botones\n*Creación de inputs (tipos de inputs)",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE"
     },
     {
-        "week": 4, 
+        "week": 4,
         "grade": "11",
         "period": 1,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Lluvia de ideas - MoodBoard",
-        "competence": "291301061 - PLANEAR Y EJECUTAR PROYECTOS DE DISEÑO SEGÚN REQUERIMIENTOS DEL CLIENTE.",
-        "learningResult": "29130106104 - LLUVIA DE IDEAS - MOODBOARD."
+        "topic": "Formularios",
+        "subtopics": "*Envíos desde formularios\n*Atributos HTML 5",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE"
     },
     {
-        "week": 5, 
+        "week": 5,
         "grade": "11",
         "period": 1,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Creación del nombre",
-        "competence": "291301061 - PLANEAR Y EJECUTAR PROYECTOS DE DISEÑO SEGÚN REQUERIMIENTOS DEL CLIENTE.",
-        "learningResult": "29130106105 - CREACIÓN DEL NOMBRE."
+        "topic": "CSS",
+        "subtopics": "*Definición\n*Estructura CSS\n*Mi primer Estilo (HTML y CSS - atributos html)\n*Estructura Css\n*Creación de Reglas",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE"
     },
     {
-        "week": 6, 
+        "week": 6,
         "grade": "11",
         "period": 1,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Creación del Logo",
-        "competence": "291301061 - PLANEAR Y EJECUTAR PROYECTOS DE DISEÑO SEGÚN REQUERIMIENTOS DEL CLIENTE.",
-        "learningResult": "29130106106 - CREACIÓN DEL LOGO."
+        "topic": "CSS",
+        "subtopics": "*Trabajando con Id\n*Trabajando con Clases\n*Relación Con html y sus etiquetas\n*Incrustación de código css en html\n*Enlazando Css con HTML\n*Comentarios en css",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE"
     },
     {
-        "week": 7, 
+        "week": 7,
         "grade": "11",
         "period": 1,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Creación de Manual de marca",
-        "competence": "291301061 - PLANEAR Y EJECUTAR PROYECTOS DE DISEÑO SEGÚN REQUERIMIENTOS DEL CLIENTE.",
-        "learningResult": "29130106107 - CREACIÓN DE MANUAL DE MARCA."
+        "topic": "Trabajando con CSS",
+        "subtopics": "*Colores\n*Creación de reglas propias ID\n*Creación de Reglas comunes CLASS\n*Medidas en css\n*Bordes y tablas con css y html",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE"
     },
     {
-        "week": 8, 
+        "week": 8,
         "grade": "11",
         "period": 1,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Brief",
-        "competence": "291301061 - PLANEAR Y EJECUTAR PROYECTOS DE DISEÑO SEGÚN REQUERIMIENTOS DEL CLIENTE.",
-        "learningResult": "29130106108 - BRIEF."
+        "topic": "Trabajando con CSS",
+        "subtopics": "*Creación de menú\n*Trabajando con imágenes\n*Cursor\n*Posicionamiento Absoluto y relativo",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE"
     },
     {
-        "week": 9, 
+        "week": 9,
         "grade": "11",
         "period": 1,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Introducción a brief",
-        "competence": "291301061 - PLANEAR Y EJECUTAR PROYECTOS DE DISEÑO SEGÚN REQUERIMIENTOS DEL CLIENTE.",
-        "learningResult": "29130106109 - INTRODUCCIÓN A BRIEF."
+        "topic": "Creación de página WEB",
+        "subtopics": "Introducción",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE"
     },
     {
-        "week": 10, 
+        "week": 10,
         "grade": "11",
         "period": 1,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Qué es un brief y su importancia en el diseño",
-        "competence": "291301061 - PLANEAR Y EJECUTAR PROYECTOS DE DISEÑO SEGÚN REQUERIMIENTOS DEL CLIENTE.",
-        "learningResult": "29130106110 - QUÉ ES UN BRIEF Y SU IMPORTANCIA EN EL DISEÑO."
+        "topic": "Creación de página WEB",
+        "subtopics": "Framework Bootstrap (Container, Row, Columnas, herramientas para uso)",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE"
     },
     {
-        "week": 11, 
+        "week": 11,
         "grade": "11",
         "period": 1,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Investigación de Mercado",
-        "competence": "291301062 - ANALIZAR LAS NECESIDADES DEL MERCADO PARA PROPONER SOLUCIONES DE DISEÑO.",
-        "learningResult": "29130106201 - INVESTIGACIÓN DE MERCADO."
+        "topic": "Creación de página WEB",
+        "subtopics": "Creación de página Web",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE"
     },
     {
-        "week": 12, 
+        "week": 12,
         "grade": "11",
         "period": 1,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Definición de Objetivos",
-        "competence": "291301062 - ANALIZAR LAS NECESIDADES DEL MERCADO PARA PROPONER SOLUCIONES DE DISEÑO.",
-        "learningResult": "29130106202 - DEFINICIÓN DE OBJETIVOS."
+        "topic": "Creación de página WEB",
+        "subtopics": "Examen final",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE"
     },
     {
-        "week": 13, 
+        "week": 13,
         "grade": "11",
         "period": 1,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Análisis de la Competencia",
-        "competence": "291301062 - ANALIZAR LAS NECESIDADES DEL MERCADO PARA PROPONER SOLUCIONES DE DISEÑO.",
-        "learningResult": "29130106203 - ANÁLISIS DE LA COMPETENCIA."
+        "topic": "Creación de página WEB",
+        "subtopics": "Introducción JavaScript",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE"
     },
     {
-        "week": 14, 
+        "week": 14,
         "grade": "11",
         "period": 1,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Perfil del cliente",
-        "competence": "291301062 - ANALIZAR LAS NECESIDADES DEL MERCADO PARA PROPONER SOLUCIONES DE DISEÑO.",
-        "learningResult": "29130106204 - PERFIL DEL CLIENTE."
+        "topic": "Creación de página WEB",
+        "subtopics": "Estructura JavaScript",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE"
     },
     // GRADO 11 - Docente Par 
-// Segundo Período 
+    // Segundo Período 
     {
-        "week": 15, 
+        "week": 15,
         "grade": "11",
         "period": 2,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Técnicas de generación de ideas",
-        "competence": "291301062 - ANALIZAR LAS NECESIDADES DEL MERCADO PARA PROPONER SOLUCIONES DE DISEÑO.",
-        "learningResult": "29130106205 - TÉCNICAS DE GENERACIÓN DE IDEAS."
+        "topic": "Calidad Desarrollo de software",
+        "subtopics": "Normas",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. INTERPRETAR EL INFORME DE REQUISITOS DE LA SOLUCIÓN CONFORME A LA IDENTIFICACIÓN DE LAS NECESIDADES DEL NEGOCIO"
     },
     {
-        "week": 16, 
+        "week": 16,
         "grade": "11",
         "period": 2,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Aplicar el diseño gráfico en el brief",
-        "competence": "291301062 - ANALIZAR LAS NECESIDADES DEL MERCADO PARA PROPONER SOLUCIONES DE DISEÑO.",
-        "learningResult": "29130106206 - APLICAR EL DISEÑO GRÁFICO EN EL BRIEF."
+        "topic": "Calidad Desarrollo de software",
+        "subtopics": "Importancia de las necesidades del cliente (Requerimientos)",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. INTERPRETAR EL INFORME DE REQUISITOS DE LA SOLUCIÓN CONFORME A LA IDENTIFICACIÓN DE LAS NECESIDADES DEL NEGOCIO"
     },
     {
-        "week": 17, 
+        "week": 17,
         "grade": "11",
         "period": 2,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Redes Sociales: Introducción a las Redes",
-        "competence": "291301062 - ANALIZAR LAS NECESIDADES DEL MERCADO PARA PROPONER SOLUCIONES DE DISEÑO.",
-        "learningResult": "29130106207 - REDES SOCIALES: INTRODUCCIÓN A LAS REDES."
+        "topic": "Calidad Desarrollo de software",
+        "subtopics": "Importancia de la gestión de TI",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. INTERPRETAR EL INFORME DE REQUISITOS DE LA SOLUCIÓN CONFORME A LA IDENTIFICACIÓN DE LAS NECESIDADES DEL NEGOCIO"
     },
     {
-        "week": 18, 
+        "week": 18,
         "grade": "11",
         "period": 2,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Analizar las plataformas",
-        "competence": "291301062 - ANALIZAR LAS NECESIDADES DEL MERCADO PARA PROPONER SOLUCIONES DE DISEÑO.",
-        "learningResult": "29130106208 - ANALIZAR LAS PLATAFORMAS."
+        "topic": "Calidad Desarrollo de software",
+        "subtopics": "Testeo o pruebas de software",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. INTERPRETAR EL INFORME DE REQUISITOS DE LA SOLUCIÓN CONFORME A LA IDENTIFICACIÓN DE LAS NECESIDADES DEL NEGOCIO"
     },
     {
-        "week": 19, 
+        "week": 19,
         "grade": "11",
         "period": 2,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Planilla de publicación",
-        "competence": "291301062 - ANALIZAR LAS NECESIDADES DEL MERCADO PARA PROPONER SOLUCIONES DE DISEÑO.",
-        "learningResult": "29130106209 - PLANILLA DE PUBLICACIÓN."
+        "topic": "Calidad Desarrollo de software",
+        "subtopics": "Manual de usuario",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. INTERPRETAR EL INFORME DE REQUISITOS DE LA SOLUCIÓN CONFORME A LA IDENTIFICACIÓN DE LAS NECESIDADES DEL NEGOCIO"
     },
     {
-        "week": 20, 
+        "week": 20,
         "grade": "11",
         "period": 2,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Diseño web",
-        "competence": "291301062 - ANALIZAR LAS NECESIDADES DEL MERCADO PARA PROPONER SOLUCIONES DE DISEÑO.",
-        "learningResult": "29130106210 - DISEÑO WEB."
+        "topic": "Calidad Desarrollo de software",
+        "subtopics": "Manual Técnico",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. INTERPRETAR EL INFORME DE REQUISITOS DE LA SOLUCIÓN CONFORME A LA IDENTIFICACIÓN DE LAS NECESIDADES DEL NEGOCIO"
     },
     {
-        "week": 21, 
+        "week": 21,
         "grade": "11",
         "period": 2,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Introducción a HTML, etiquetas, atributos",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106301 - INTRODUCCIÓN A HTML, ETIQUETAS, ATRIBUTOS."
+        "topic": "Metodologías de desarrollo de software",
+        "subtopics": "Definición",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. INTERPRETAR EL INFORME DE REQUISITOS DE LA SOLUCIÓN CONFORME A LA IDENTIFICACIÓN DE LAS NECESIDADES DEL NEGOCIO"
     },
     {
-        "week": 22, 
+        "week": 22,
         "grade": "11",
         "period": 2,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Introducción al CSS, cómo dar estilo a tu web",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106302 - INTRODUCCIÓN AL CSS, CÓMO DAR ESTILO A TU WEB."
+        "topic": "Metodologías Tradicionales",
+        "subtopics": "Definición",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 2. INTERPRETAR EL INFORME DE REQUISITOS DE LA SOLUCIÓN CONFORME A LA IDENTIFICACIÓN DE LAS NECESIDADES DEL NEGOCIO"
     },
     {
-        "week": 23, 
+        "week": 23,
         "grade": "11",
         "period": 2,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Diseño web adaptable y responsivo",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106303 - DISEÑO WEB ADAPTABLE Y RESPONSIVO."
+        "topic": "Metodologías Tradicionales",
+        "subtopics": "Metodología Waterfall",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*CONOCIMIENTOS DE PROCESO:\nSELECCIONAR EL ESTÁNDAR DE ESPECIFICACIÓN DE REQUISITOS.\nUSAR TÉCNICAS DE ANÁLISIS, PRIORIZACIÓN Y DEFINICIÓN DE REQUISITOS.\nELABORAR EL INFORME DE LOS REQUERIMIENTOS ASIGNADOS."
     },
     {
-        "week": 24, 
+        "week": 24,
         "grade": "11",
         "period": 2,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Diseño UI: jerarquía, color, tipografía, botones, iconos, navegación",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106304 - DISEÑO UI: JERARQUÍA, COLOR, TIPOGRAFÍA, BOTONES, ICONOS, NAVEGACIÓN."
+        "topic": "Metodologías Tradicionales",
+        "subtopics": "Metodología Prototipado",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*CONOCIMIENTOS DE PROCESO:\nSELECCIONAR EL ESTÁNDAR DE ESPECIFICACIÓN DE REQUISITOS.\nUSAR TÉCNICAS DE ANÁLISIS, PRIORIZACIÓN Y DEFINICIÓN DE REQUISITOS.\nELABORAR EL INFORME DE LOS REQUERIMIENTOS ASIGNADOS."
     },
     {
-        "week": 25, 
+        "week": 25,
         "grade": "11",
         "period": 2,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Optimización de imágenes para la web",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106305 - OPTIMIZACIÓN DE IMÁGENES PARA LA WEB."
+        "topic": "Metodologías Tradicionales",
+        "subtopics": "Metodología Espiral",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*CONOCIMIENTOS DE PROCESO:\nSELECCIONAR EL ESTÁNDAR DE ESPECIFICACIÓN DE REQUISITOS.\nUSAR TÉCNICAS DE ANÁLISIS, PRIORIZACIÓN Y DEFINICIÓN DE REQUISITOS.\nELABORAR EL INFORME DE LOS REQUERIMIENTOS ASIGNADOS."
     },
     {
-        "week": 26, 
+        "week": 26,
         "grade": "11",
         "period": 2,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Despliegue y gestión de un sitio web",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106306 - DESPLIEGUE Y GESTIÓN DE UN SITIO WEB."
+        "topic": "Metodologías Tradicionales",
+        "subtopics": "Metodología incremental",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*CONOCIMIENTOS DE PROCESO:\nSELECCIONAR EL ESTÁNDAR DE ESPECIFICACIÓN DE REQUISITOS.\nUSAR TÉCNICAS DE ANÁLISIS, PRIORIZACIÓN Y DEFINICIÓN DE REQUISITOS.\nELABORAR EL INFORME DE LOS REQUERIMIENTOS ASIGNADOS."
     },
     {
-        "week": 27, 
+        "week": 27,
         "grade": "11",
         "period": 2,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Hosting",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106307 - HOSTING."
+        "topic": "Metodologías Tradicionales",
+        "subtopics": "Metodología RAD - Diseño rápido de aplicaciones",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*CONOCIMIENTOS DE PROCESO:\nSELECCIONAR EL ESTÁNDAR DE ESPECIFICACIÓN DE REQUISITOS.\nUSAR TÉCNICAS DE ANÁLISIS, PRIORIZACIÓN Y DEFINICIÓN DE REQUISITOS.\nELABORAR EL INFORME DE LOS REQUERIMIENTOS ASIGNADOS."
     },
     {
-        "week": 28, 
+        "week": 28,
         "grade": "11",
         "period": 2,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Dominio",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106308 - DOMINIO."
+        "topic": "Metodologías Ágiles",
+        "subtopics": "Definición",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*CONOCIMIENTOS DE PROCESO:\nSELECCIONAR EL ESTÁNDAR DE ESPECIFICACIÓN DE REQUISITOS.\nUSAR TÉCNICAS DE ANÁLISIS, PRIORIZACIÓN Y DEFINICIÓN DE REQUISITOS.\nELABORAR EL INFORME DE LOS REQUERIMIENTOS ASIGNADOS."
     },
     // GRADO 11 - Docente Par 
-// Tercer Período 
+    // Tercer Período 
     {
-        "week": 29, 
+        "week": 29,
         "grade": "11",
         "period": 3,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Machote",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106309 - MACHOTE."
+        "topic": "Metodologías Ágiles",
+        "subtopics": "Kaban",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*CONOCIMIENTOS DE PROCESO:\nSELECCIONAR EL ESTÁNDAR DE ESPECIFICACIÓN DE REQUISITOS.\nUSAR TÉCNICAS DE ANÁLISIS, PRIORIZACIÓN Y DEFINICIÓN DE REQUISITOS.\nELABORAR EL INFORME DE LOS REQUERIMIENTOS ASIGNADOS."
     },
     {
-        "week": 30, 
+        "week": 30,
         "grade": "11",
         "period": 3,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Periódico o Libro",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106310 - PERIÓDICO O LIBRO."
+        "topic": "Metodologías Ágiles",
+        "subtopics": "SCRUM",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*CONOCIMIENTOS DE PROCESO:\nSELECCIONAR EL ESTÁNDAR DE ESPECIFICACIÓN DE REQUISITOS.\nUSAR TÉCNICAS DE ANÁLISIS, PRIORIZACIÓN Y DEFINICIÓN DE REQUISITOS.\nELABORAR EL INFORME DE LOS REQUERIMIENTOS ASIGNADOS."
     },
     {
-        "week": 31, 
+        "week": 31,
         "grade": "11",
         "period": 3,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Afiche",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106311 - AFICHE."
+        "topic": "Metodologías Ágiles",
+        "subtopics": "*LEAN\n*XP - Programación EXTREMA",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*CONOCIMIENTOS DE PROCESO:\nSELECCIONAR EL ESTÁNDAR DE ESPECIFICACIÓN DE REQUISITOS.\nUSAR TÉCNICAS DE ANÁLISIS, PRIORIZACIÓN Y DEFINICIÓN DE REQUISITOS.\nELABORAR EL INFORME DE LOS REQUERIMIENTOS ASIGNADOS."
     },
     {
-        "week": 32, 
+        "week": 32,
         "grade": "11",
         "period": 3,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Papelería Comercial",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106312 - PAPELERÍA COMERCIAL."
+        "topic": "Proyecto de formación (Entregables)",
+        "subtopics": "1. Descripción del proyecto (Diapositivas, PowerPoint, Video) (Planteamiento del problema.\n2. Justificación.\n3. Objetivo General.\n4. Objetivos específicos, Impactos (Ambiental, Social, económico, Tecnológico).\n5. Usuarios directos e indirectos.\n6. Valor del proyecto.\n7. Metodología.",
+        "competence": "ETAPA PRÁCTICA",
+        "learningResult": "*APLICAR EN LA RESOLUCIÓN DE PROBLEMAS REALES DEL SECTOR PRODUCTIVO, LOS CONOCIMIENTOS, HABILIDADES Y DESTREZAS PERTINENTES A LAS COMPETENCIAS DEL PROGRAMA DE FORMACIÓN ASUMIENDO ESTRATEGIAS Y METODOLOGÍAS DE AUTOGESTIÓN"
     },
     {
-        "week": 33, 
+        "week": 33,
         "grade": "11",
         "period": 3,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Planificación del proyecto final",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106313 - PLANIFICACIÓN DEL PROYECTO FINAL."
+        "topic": "Proyecto de formación (Entregables)",
+        "subtopics": "2. Definición de requisitos para el sistema (funcionales, no funcionales) Se puede utilizar un formato para definición de requerimientos.",
+        "competence": "ETAPA PRÁCTICA",
+        "learningResult": "*APLICAR EN LA RESOLUCIÓN DE PROBLEMAS REALES DEL SECTOR PRODUCTIVO, LOS CONOCIMIENTOS, HABILIDADES Y DESTREZAS PERTINENTES A LAS COMPETENCIAS DEL PROGRAMA DE FORMACIÓN ASUMIENDO ESTRATEGIAS Y METODOLOGÍAS DE AUTOGESTIÓN"
     },
     {
-        "week": 34, 
+        "week": 40,
         "grade": "11",
         "period": 3,
         "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Desarrollo del proyecto",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106314 - DESARROLLO DEL PROYECTO."
-    },
-    {
-        "week": 35, 
-        "grade": "11",
-        "period": 3,
-        "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Revisión y ajustes",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106315 - REVISIÓN Y AJUSTES."
-    },
-    {
-        "week": 36, 
-        "grade": "11",
-        "period": 3,
-        "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Presentación del proyecto final",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106316 - PRESENTACIÓN DEL PROYECTO FINAL."
-    },
-    {
-        "week": 37, 
-        "grade": "11",
-        "period": 3,
-        "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Evaluación del proyecto final",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106317 - EVALUACIÓN DEL PROYECTO FINAL."
-    },
-    {
-        "week": 38, 
-        "grade": "11",
-        "period": 3,
-        "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Autoevaluación",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106318 - AUTOEVALUACIÓN."
-    },
-    {
-        "week": 39, 
-        "grade": "11",
-        "period": 3,
-        "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Cierre de curso",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106319 - CIERRE DE CURSO."
-    },
-    {
-        "week": 40, 
-        "grade": "11",
-        "period": 3,
-        "role": "docente",
-        "topic": "Proyecto",
-        "subtopics": "Reflexión final",
-        "competence": "291301063 - IMPLEMENTAR ESTRATEGIAS DE DISEÑO WEB.",
-        "learningResult": "29130106320 - REFLEXIÓN FINAL."
+        "topic": "Proyecto de formación (Entregables)",
+        "subtopics": "10. Manual del Usuario",
+        "competence": "ETAPA PRÁCTICA",
+        "learningResult": "*APLICAR EN LA RESOLUCIÓN DE PROBLEMAS REALES DEL SECTOR PRODUCTIVO, LOS CONOCIMIENTOS, HABILIDADES Y DESTREZAS PERTINENTES A LAS COMPETENCIAS DEL PROGRAMA DE FORMACIÓN ASUMIENDO ESTRATEGIAS Y METODOLOGÍAS DE AUTOGESTIÓN"
     },
     // ... otros datos del docente SENA ....................................... ...
+    // GRADO 10 - Instructor Sena
+    // Primer Período
+    {
+        week: 1,
+        grade: "10",
+        period: 1,
+        role: "instructor",
+        topic: "Fundamentos de programación",
+        subtopics: "*Instalación de herramientas (Pseint, Flujo)\n*Definición de lógica\n*Instrucción y programación (Conocer qué es la programación)\n*Tipos de algoritmo (vida cotidiana y computacional)",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        week: 2,
+        grade: "10",
+        period: 1,
+        role: "instructor",
+        topic: "Fundamentos de programación",
+        subtopics: "*Definición de algoritmos\n*Flujogramas\n*Simbología Flujograma",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        week: 3,
+        grade: "10",
+        period: 1,
+        role: "instructor",
+        topic: "Seudocódigo",
+        subtopics: "*Definición\n*Código Fuente y código ejecutable\n*Lenguajes Compilados e interpretados",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        week: 4,
+        grade: "10",
+        period: 1,
+        role: "instructor",
+        topic: "Seudocódigo",
+        subtopics: "PseInt (Definición, Palabras reservadas, comentarios)",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        week: 5,
+        grade: "10",
+        period: 1,
+        role: "instructor",
+        topic: "Seudocódigo",
+        subtopics: "Variables y datos",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        week: 6,
+        grade: "10",
+        period: 1,
+        role: "instructor",
+        topic: "Seudocódigo",
+        subtopics: "Instrucciones Básicas (operadores)",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        week: 7,
+        grade: "10",
+        period: 1,
+        role: "instructor",
+        topic: "Cálculos Comunes",
+        subtopics: "Operadores Aritméticos",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        week: 8,
+        grade: "10",
+        period: 1,
+        role: "instructor",
+        topic: "Cálculos Comunes",
+        subtopics: "Operación de promedio (acumuladores y contadores)",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        week: 9,
+        grade: "10",
+        period: 1,
+        role: "instructor",
+        topic: "Cálculos Comunes",
+        subtopics: "Operaciones de Adiciones y descuentos",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        week: 10,
+        grade: "10",
+        period: 1,
+        role: "instructor",
+        topic: "Cálculos Comunes",
+        subtopics: "Operación de Módulos (mod)",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        week: 11,
+        grade: "10",
+        period: 1,
+        role: "instructor",
+        topic: "Instrucciones de control algorítmicas",
+        subtopics: "Algoritmos",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        week: 12,
+        grade: "10",
+        period: 1,
+        role: "instructor",
+        topic: "Instrucciones de control algorítmicas",
+        subtopics: "Instrucción estructural (Pseint)",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        week: 13,
+        grade: "10",
+        period: 1,
+        role: "instructor",
+        topic: "Instrucciones de control algorítmicas",
+        subtopics: "Instrucción estructural (Php)",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        week: 14,
+        grade: "10",
+        period: 1,
+        role: "instructor",
+        topic: "Instrucciones de control algorítmicas",
+        subtopics: "Instrucción estructural (JavaScript)",
+        competence: "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        learningResult: "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
 
-     
-        // GRADO 10 - Instructor Sena
-        // Primer Período
-        {
-            week: 1,
-            grade: "10",
-            period: 1,
-            role: "instructor",
-            topic: "Illustrator",
-            subtopics: "Introducción a Software de vectorización, Mover, acercar, crear mesa de trabajo, uso de guías, selección y selección directa, copiar, pegar, duplicar.",
-            competence: "291301051 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            learningResult: "29130105101 - PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
-        },
-        {
-            week: 2,
-            grade: "10",
-            period: 1,
-            role: "instructor",
-            topic: "Illustrator",
-            subtopics: "Creación y edición de formas: Círculo, cuadrado, estrella, líneas y pinceles.",
-            competence: "291301051 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            learningResult: "29130105102 - PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
-        },
-        {
-            week: 3,
-            grade: "10",
-            period: 1,
-            role: "instructor",
-            topic: "Illustrator",
-            subtopics: "Composición de las Formas, Buscatrazos - Creador de formas.",
-            competence: "291301051 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            learningResult: "29130105103 - PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
-        },
-        {
-            week: 4,
-            grade: "10",
-            period: 1,
-            role: "instructor",
-            topic: "Illustrator",
-            subtopics: "Creación y edición de vectores: Herramienta Pluma, pluma de curvatura y nodos.",
-            competence: "291301051 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            learningResult: "29130105104 - PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
-        },
-        {
-            week: 5,
-            grade: "10",
-            period: 1,
-            role: "instructor",
-            topic: "Illustrator",
-            subtopics: "Creación y edición de vectores: Herramienta Pluma, pluma de curvatura y nodos.",
-            competence: "291301051 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            learningResult: "29130105104 - PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
-        },
-        {
-            week: 6,
-            grade: "10",
-            period: 1,
-            role: "instructor",
-            topic: "Illustrator",
-            subtopics: "Uso de Capas y organización de proyecto: Enviar adelante y atrás, reflejar, girar.",
-            competence: "291301051 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            learningResult: "29130105105 - PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
-        },
-        {
-            week: 7,
-            grade: "10",
-            period: 1,
-            role: "instructor",
-            topic: "Illustrator",
-            subtopics: "Uso de Capas y organización de proyecto: Enviar adelante y atrás, reflejar, girar.",
-            competence: "291301051 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            learningResult: "29130105105 - PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
-        },
-        {
-            week: 8,
-            grade: "10",
-            period: 1,
-            role: "instructor",
-            topic: "Illustrator",
-            subtopics: "Aplicación de colores y degradados: Prueba de Color, Semitono de color.",
-            competence: "291301051 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            learningResult: "29130105106 - PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
-        },
-        {
-            week: 9,
-            grade: "10",
-            period: 1,
-            role: "instructor",
-            topic: "Illustrator",
-            subtopics: "Aplicación de colores y degradados: Prueba de Color, Semitono de color.",
-            competence: "291301051 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            learningResult: "29130105106 - PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
-        },
-        {
-            week: 10,
-            grade: "10",
-            period: 1,
-            role: "instructor",
-            topic: "Illustrator",
-            subtopics: "Aplicación de colores y degradados: Prueba de Color, Semitono de color.",
-            competence: "291301051 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            learningResult: "29130105106 - PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
-        },
-        {
-            week: 11,
-            grade: "10",
-            period: 1,
-            role: "instructor",
-            topic: "Illustrator",
-            subtopics: "Herramienta de textos y tipografías: Tracking, interlineado, caja de texto y texto libre y texto en curvas.",
-            competence: "291301051 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            learningResult: "29130105107 - PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
-        },
-        {
-            week: 12,
-            grade: "10",
-            period: 1,
-            role: "instructor",
-            topic: "Illustrator",
-            subtopics: "Herramienta de textos y tipografías: Tracking, interlineado, caja de texto y texto libre y texto en curvas.",
-            competence: "291301051 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            learningResult: "29130105107 - PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
-        },
-        {
-            week: 13,
-            grade: "10",
-            period: 1,
-            role: "instructor",
-            topic: "Illustrator",
-            subtopics: "Herramienta de textos y tipografías: Tracking, interlineado, caja de texto y texto libre y texto en curvas.",
-            competence: "291301051 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            learningResult: "29130105107 - PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
-        },
-        {
-            week: 14,
-            grade: "10",
-            period: 1,
-            role: "instructor",
-            topic: "Illustrator",
-            subtopics: "Herramienta de textos y tipografías: Tracking, interlineado, caja de texto y texto libre y texto en curvas.",
-            competence: "291301051 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            learningResult: "29130105107 - PREPARAR EQUIPOS Y MATERIALES PARA REALIZAR PRUEBAS DE COLOR SEGÚN ORDEN DE PRODUCCIÓN"
-        },
-    
-                // GRADO 10 - Instructor Sena
-        // Segundo Período
-        {
-            "week": 15,
-            "grade": "10",
-            "period": 2,
-            "role": "instructor",
-            "topic": "Illustrator",
-            "subtopics": "Exportación y optimización: Extensiones y Formatos, empaquetar, machote.",
-            "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            "learningResult": "29130105301"
-        },
-        {
-            "week": 16,
-            "grade": "10",
-            "period": 2,
-            "role": "instructor",
-            "topic": "Illustrator",
-            "subtopics": "Exportación y optimización: Extensiones y Formatos, empaquetar, machote.",
-            "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            "learningResult": "29130105301"
-        },
-        {
-            "week": 17,
-            "grade": "10",
-            "period": 2,
-            "role": "instructor",
-            "topic": "Illustrator",
-            "subtopics": "Exportación y optimización: Extensiones y Formatos, empaquetar, machote.",
-            "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            "learningResult": "29130105301"
-        },
-        {
-            "week": 18,
-            "grade": "10",
-            "period": 2,
-            "role": "instructor",
-            "topic": "Illustrator",
-            "subtopics": "Exportación y optimización: Extensiones y Formatos, empaquetar, machote.",
-            "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            "learningResult": "29130105301"
-        },
-        {
-            "week": 19,
-            "grade": "10",
-            "period": 2,
-            "role": "instructor",
-            "topic": "Illustrator",
-            "subtopics": "Exportación y optimización: Extensiones y Formatos, empaquetar, machote.",
-            "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            "learningResult": "29130105301"
-        },
-        {
-            "week": 20,
-            "grade": "10",
-            "period": 2,
-            "role": "instructor",
-            "topic": "Illustrator",
-            "subtopics": "Exportación y optimización: Extensiones y Formatos, empaquetar, machote.",
-            "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            "learningResult": "29130105301"
-        },
-        {
-            "week": 21,
-            "grade": "10",
-            "period": 2,
-            "role": "instructor",
-            "topic": "Illustrator",
-            "subtopics": "Elaboración de pruebas de color según requerimiento del cliente.",
-            "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            "learningResult": "29130105302"
-        },
-        {
-            "week": 22,
-            "grade": "10",
-            "period": 2,
-            "role": "instructor",
-            "topic": "Illustrator",
-            "subtopics": "Elaboración de pruebas de color según requerimiento del cliente.",
-            "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            "learningResult": "29130105302"
-        },
-        {
-            "week": 23,
-            "grade": "10",
-            "period": 2,
-            "role": "instructor",
-            "topic": "Illustrator",
-            "subtopics": "Elaboración de pruebas de color según requerimiento del cliente.",
-            "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            "learningResult": "29130105302"
-        },
-        {
-            "week": 24,
-            "grade": "10",
-            "period": 2,
-            "role": "instructor",
-            "topic": "Illustrator",
-            "subtopics": "Elaboración de pruebas de color según requerimiento del cliente.",
-            "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            "learningResult": "29130105302"
-        },
-        {
-            "week": 25,
-            "grade": "10",
-            "period": 2,
-            "role": "instructor",
-            "topic": "Illustrator",
-            "subtopics": "Elaboración de pruebas de color según requerimiento del cliente.",
-            "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            "learningResult": "29130105302"
-        },
-        {
-            "week": 26,
-            "grade": "10",
-            "period": 2,
-            "role": "instructor",
-            "topic": "Illustrator",
-            "subtopics": "Elaboración de pruebas de color según requerimiento del cliente.",
-            "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            "learningResult": "29130105302"
-        },
-        {
-            "week": 27,
-            "grade": "10",
-            "period": 2,
-            "role": "instructor",
-            "topic": "Illustrator",
-            "subtopics": "Elaboración de pruebas de color según requerimiento del cliente.",
-            "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            "learningResult": "29130105302"
-        },
-        {
-            "week": 28,
-            "grade": "10",
-            "period": 2,
-            "role": "instructor",
-            "topic": "Illustrator",
-            "subtopics": "Elaboración de pruebas de color según requerimiento del cliente.",
-            "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-            "learningResult": "29130105302"
-        },
+    // GRADO 10 - Instructor Sena
+    // Segundo Período
+    {
+        "week": 15,
+        "grade": "10",
+        "period": 2,
+        "role": "instructor",
+        "topic": "Instrucciones de control algorítmicas",
+        "subtopics": "Instrucción condicional (Pseint, JavaScript, Php)",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        "week": 16,
+        "grade": "10",
+        "period": 2,
+        "role": "instructor",
+        "topic": "Instrucciones de control algorítmicas",
+        "subtopics": "Instrucción condicional anidada (Pseint, JavaScript, Php)",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        "week": 17,
+        "grade": "10",
+        "period": 2,
+        "role": "instructor",
+        "topic": "Instrucciones de control algorítmicas",
+        "subtopics": "Ciclo Para (PseInt, JavaScript, php)",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        "week": 18,
+        "grade": "10",
+        "period": 2,
+        "role": "instructor",
+        "topic": "Instrucciones de control algorítmicas",
+        "subtopics": "Ciclo Mientras (PseInt, JavaScript, php)",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        "week": 19,
+        "grade": "10",
+        "period": 2,
+        "role": "instructor",
+        "topic": "Instrucciones de control algorítmicas",
+        "subtopics": "Ciclo Repetir (PseInt, JavaScript, php)",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        "week": 20,
+        "grade": "10",
+        "period": 2,
+        "role": "instructor",
+        "topic": "Instrucciones de control algorítmicas",
+        "subtopics": "Funciones (JavaScript, php)",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        "week": 21,
+        "grade": "10",
+        "period": 2,
+        "role": "instructor",
+        "topic": "Instrucciones de control algorítmicas",
+        "subtopics": "Arreglos (JavaScript, Php)",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        "week": 22,
+        "grade": "10",
+        "period": 2,
+        " role": "instructor",
+        "topic": "Instrucciones de control algorítmicas",
+        "subtopics": "Matrices (JavaScript, php)",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "RAP 1. RESOLVER PROCESOS LÓGICOS A TRAVÉS DE LA IMPLEMENTACIÓN DE ALGORITMOS Y EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
+    },
+    {
+        "week": 23,
+        "grade": "10",
+        "period": 2,
+        "role": "instructor",
+        "topic": "BD - Bases de datos Relacionales",
+        "subtopics": "*Historias de las bases de datos\n*Definición Bases de datos relacionales\n*Definición Bases de datos no relacionales\n*Definición SQL y MySql\n*Definición otros lenguajes (Oracle, PostgreSQL, etc.)",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 2. PROGRAMAR SENTENCIAS SQL EN UN SISTEMA MANEJADOR DE BASES DE DATOS SEGÚN REQUERIMIENTOS DEL CLIENTE."
+    },
+    {
+        "week": 24,
+        "grade": "10",
+        "period": 2,
+        "role": "instructor",
+        "topic": "Lenguaje de definición de datos (MySql)",
+        "subtopics": "*Introducción\n*Tipos de datos\n*¿Qué es una primary Key?\n*¿Qué es una Foreing Key?\n*Definición Filas y Columnas\n*Agregar y Quitar Columnas\n*Eliminar Tablas\n*Truncar tablas",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 2. PROGRAMAR SENTENCIAS SQL EN UN SISTEMA MANEJADOR DE BASES DE DATOS SEGÚN REQUERIMIENTOS DEL CLIENTE."
+    },
+    {
+        "week": 25,
+        "grade": "10",
+        "period": 2,
+        "role": "instructor",
+        "topic": "Diseño de base de datos",
+        "subtopics": "*Introducción\n*Diccionario de datos\n*Cardinalidad (Relaciones 1:1, 1:n, n:n)\n*Modelo relacional\n*Modelo Entidad - Relación\n*Entidades Fuertes y Débiles\n*Herencia y Agregación\n*Normalización (1ra, 2da, 3ra)",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 2. PROGRAMAR SENTENCIAS SQL EN UN SISTEMA MANEJADOR DE BASES DE DATOS SEGÚN REQUERIMIENTOS DEL CLIENTE."
+    },
+    {
+        "week": 26,
+        "grade": "10",
+        "period": 2,
+        "role": "instructor",
+        "topic": "Desarrollo Query MySql",
+        "subtopics": "*Introducción\n*Creación de una base de datos (créate Database, Use, Delete, Charset)\n*Creación de una tabla (Create, Delete, NULL, AI)",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 2. PROGRAMAR SENTENCIAS SQL EN UN SISTEMA MANEJADOR DE BASES DE DATOS SEGÚN REQUERIMIENTOS DEL CLIENTE."
+    },
+    {
+        "week": 27,
+        "grade": "10",
+        "period": 2,
+        "role": "instructor",
+        "topic": "Alter table",
+        "subtopics": "* Agregar y Quitar Primary Keys\n*Agregar y Quitar Foreing Keys\n*Cambiar nombre de una columna\n*Cambiar Tipo de datos",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 2. PROGRAMAR SENTENCIAS SQL EN UN SISTEMA MANEJADOR DE BASES DE DATOS SEGÚN REQUERIMIENTOS DEL CLIENTE."
+    },
+    {
+        "week": 28,
+        "grade": "10",
+        "period": 2,
+        "role": "instructor",
+        "topic": "DDL - Lenguaje de definición de datos",
+        "subtopics": "* Definición\n*Sentencias de creación(Tablas, Vistas, procedimientos almacenados, disparadores) \n*Sentencias de Modificación(Tablas, Vistas, procedimientos almacenados, disparadores) \n*Sentencias de Borrado Drop and Truncate(Tablas, Vistas, procedimientos almacenados, disparadores)",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 1. CONSTRUIR LA BASE DE DATOS SEGÚN REQUERIMIENTOS DEL CLIENTE."
+    },
     // GRADO 10 - Instructor Sena 
-// Tercer Período 
+    // Tercer Período 
+
     {
-        "week": 29, 
+        "week": 29,
         "grade": "10",
         "period": 3,
         "role": "instructor",
-        "topic": "Illustrator",
-        "subtopics": "Evaluación final de composición gráfica y ajustes de diagramación.",
-        "competence": "291301051 - PREPARAR IMÁGENES DIGITALES PARA LA DIAGRAMACIÓN DE ACUERDO CON LAS ESPECIFICACIONES SOLICITADAS.",
-        "learningResult": "29130105108 - EVALUACIÓN FINAL DE COMPOSICIÓN GRÁFICA Y AJUSTES DE DIAGRAMACIÓN."
+        "topic": "DML - Lenguaje de manipulación de datos",
+        "subtopics": "*Definición\n*Inserción de datos\n*Insert y Where\n*Consultas de datos SELECT",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 1. CONSTRUIR LA BASE DE DATOS SEGÚN REQUERIMIENTOS DEL CLIENTE."
     },
     {
-        "week": 30, 
+        "week": 30,
         "grade": "10",
         "period": 3,
         "role": "instructor",
-        "topic": "Illustrator",
-        "subtopics": "Evaluación final de composición gráfica y ajustes de diagramación.",
-        "competence": "291301051 - PREPARAR IMÁGENES DIGITALES PARA LA DIAGRAMACIÓN DE ACUERDO CON LAS ESPECIFICACIONES SOLICITADAS.",
-        "learningResult": "29130105108 - EVALUACIÓN FINAL DE COMPOSICIÓN GRÁFICA Y AJUSTES DE DIAGRAMACIÓN."
+        "topic": "DML - Lenguaje de manipulación de datos",
+        "subtopics": "*Consulta de datos de una tabla (SELECT * FROM)\n*Consulta de algunos datos de la tabla (SELECT --- , --- FROM )\n*Creación de una Base de datos - EJEMPLO\n*Creación de una base de datos y manipulación - EXAMEN",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 1. CONSTRUIR LA BASE DE DATOS SEGÚN REQUERIMIENTOS DEL CLIENTE."
     },
     {
-        "week": 31, 
+        "week": 31,
         "grade": "10",
         "period": 3,
         "role": "instructor",
-        "topic": "Illustrator",
-        "subtopics": "Evaluación final de composición gráfica y ajustes de diagramación.",
-        "competence": "291301051 - PREPARAR IMÁGENES DIGITALES PARA LA DIAGRAMACIÓN DE ACUERDO CON LAS ESPECIFICACIONES SOLICITADAS.",
-        "learningResult": "29130105108 - EVALUACIÓN FINAL DE COMPOSICIÓN GRÁFICA Y AJUSTES DE DIAGRAMACIÓN."
+        "topic": "Desarrollo en lenguaje y bases de datos",
+        "subtopics": "*Lenguajes de programación\n*Lenguajes de programación más usados",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 32, 
+        "week": 32,
         "grade": "10",
         "period": 3,
         "role": "instructor",
-        "topic": "Illustrator",
-        "subtopics": "Evaluación final de composición gráfica y ajustes de diagramación.",
-        "competence": "291301051 - PREPARAR IMÁGENES DIGITALES PARA LA DIAGRAMACIÓN DE ACUERDO CON LAS ESPECIFICACIONES SOLICITADAS.",
-        "learningResult": "29130105108 - EVALUACIÓN FINAL DE COMPOSICIÓN GRÁFICA Y AJUSTES DE DIAGRAMACIÓN."
+        "topic": "Desarrollo en lenguaje y bases de datos",
+        "subtopics": "Diferencias entre la programación web y programación de escritorio",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 33, 
+        "week": 33,
         "grade": "10",
         "period": 3,
         "role": "instructor",
-        "topic": "Illustrator",
-        "subtopics": "Evaluación final de composición gráfica y ajustes de diagramación.",
-        "competence": "291301051 - PREPARAR IMÁGENES DIGITALES PARA LA DIAGRAMACIÓN DE ACUERDO CON LAS ESPECIFICACIONES SOLICITADAS.",
-        "learningResult": "29130105108 - EVALUACIÓN FINAL DE COMPOSICIÓN GRÁFICA Y AJUSTES DE DIAGRAMACIÓN."
+        "topic": "Desarrollo en lenguaje y bases de datos",
+        "subtopics": "Introducción a la programación",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 34, 
+        "week": 34,
         "grade": "10",
         "period": 3,
         "role": "instructor",
-        "topic": "Illustrator",
-        "subtopics": "Evaluación final de composición gráfica y ajustes de diagramación.",
-        "competence": "291301051 - PREPARAR IMÁGENES DIGITALES PARA LA DIAGRAMACIÓN DE ACUERDO CON LAS ESPECIFICACIONES SOLICITADAS.",
-        "learningResult": "29130105108 - EVALUACIÓN FINAL DE COMPOSICIÓN GRÁFICA Y AJUSTES DE DIAGRAMACIÓN."
+        "topic": "Desarrollo en lenguaje y bases de datos",
+        "subtopics": "Introducción a la programación web",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 35, 
+        "week": 35,
         "grade": "10",
         "period": 3,
         "role": "instructor",
-        "topic": "Illustrator",
-        "subtopics": "Evaluación final de composición gráfica y ajustes de diagramación.",
-        "competence": "291301051 - PREPARAR IMÁGENES DIGITALES PARA LA DIAGRAMACIÓN DE ACUERDO CON LAS ESPECIFICACIONES SOLICITADAS.",
-        "learningResult": "29130105108 - EVALUACIÓN FINAL DE COMPOSICIÓN GRÁFICA Y AJUSTES DE DIAGRAMACIÓN."
+        "topic": "Desarrollo en lenguaje y bases de datos",
+        "subtopics": "¿Qué es PHP, JavaScript, Java?",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 36, 
+        "week": 36,
         "grade": "10",
         "period": 3,
         "role": "instructor",
-        "topic": "Illustrator",
-        "subtopics": "Presentación de proyectos finales.",
-        "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        "learningResult": "29130105303 - PRESENTACIÓN DE PROYECTOS FINALES."
+        "topic": "Desarrollo en lenguaje y bases de datos",
+        "subtopics": "Generalidades de PHP, JavaScript, Java",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 37, 
+        "week": 37,
         "grade": "10",
         "period": 3,
         "role": "instructor",
-        "topic": "Illustrator",
-        "subtopics": "Presentación de proyectos finales.",
-        "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        "learningResult": "29130105303 - PRESENTACIÓN DE PROYECTOS FINALES."
+        "topic": "Desarrollo en lenguaje y bases de datos",
+        "subtopics": "Introducción a PHP, JavaScript, Java",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 38, 
+        "week": 38,
         "grade": "10",
         "period": 3,
         "role": "instructor",
-        "topic": "Illustrator",
-        "subtopics": "Presentación de proyectos finales.",
-        "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        "learningResult": "29130105303 - PRESENTACIÓN DE PROYECTOS FINALES."
+        "topic": "Desarrollo en lenguaje y bases de datos",
+        "subtopics": "Estructura del lenguaje de programación",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 39, 
+        "week": 39,
         "grade": "10",
         "period": 3,
         "role": "instructor",
-        "topic": "Illustrator",
-        "subtopics": "Presentación de proyectos finales.",
-        "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        "learningResult": "29130105303 - PRESENTACIÓN DE PROYECTOS FINALES."
+        "topic": "Desarrollo en lenguaje y bases de datos",
+        "subtopics": "Introducción a relaciones PHP y HTML",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 40, 
+        "week": 40,
         "grade": "10",
         "period": 3,
         "role": "instructor",
-        "topic": "Illustrator",
-        "subtopics": "Presentación de proyectos finales.",
-        "competence": "291301053 - ELABORAR PRUEBAS DE COLOR SEGÚN REQUERIMIENTO DEL CLIENTE.",
-        "learningResult": "29130105303 - PRESENTACIÓN DE PROYECTOS FINALES."
+        "topic": "Desarrollo en lenguaje y bases de datos",
+        "subtopics": "Envíos de HTML y PHP",
+        "competence": "DESARROLLO DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     // GRADO 11 - Instructor SENA  
-// Primer Período  
+    // Primer Período  
     {
-        "week": 1, 
+        "week": 1,
         "grade": "11",
         "period": 1,
         "role": "instructor",
-        "topic": "Photoshop",
-        "subtopics": "Introducción a la Edición de Imágenes: Herramientas básicas, capas y ajustes.",
-        "competence": "291301061 - UTILIZAR SOFTWARE DE EDICIÓN GRÁFICA.",
-        "learningResult": "29130106101 - INTRODUCCIÓN A LA EDICIÓN DE IMÁGENES."
+        "topic": "Php y HTML",
+        "subtopics": "Conceptos",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 2, 
+        "week": 2,
         "grade": "11",
         "period": 1,
         "role": "instructor",
-        "topic": "Photoshop",
-        "subtopics": "Retoque y Manipulación Fotográfica: Máscaras, recortes y fotomontaje.",
-        "competence": "291301061 - UTILIZAR SOFTWARE DE EDICIÓN GRÁFICA.",
-        "learningResult": "29130106102 - RETOQUE Y MANIPULACIÓN FOTOGRÁFICA."
+        "topic": "Php y HTML",
+        "subtopics": "Llamados, inserción de código php en html",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 3, 
+        "week": 3,
         "grade": "11",
         "period": 1,
         "role": "instructor",
-        "topic": "Photoshop",
-        "subtopics": "Creación de Efectos Visuales: Filtros, iluminación y texturas.",
-        "competence": "291301061 - UTILIZAR SOFTWARE DE EDICIÓN GRÁFICA.",
-        "learningResult": "29130106103 - CREACIÓN DE EFECTOS VISUALES."
+        "topic": "Php y HTML",
+        "subtopics": "Conexión a la BD",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 1. CONSTRUIR LA BASE DE DATOS SEGÚN REQUERIMIENTOS DEL CLIENTE."
     },
     {
-        "week": 4, 
+        "week": 4,
         "grade": "11",
         "period": 1,
         "role": "instructor",
-        "topic": "Photoshop",
-        "subtopics": "Diseño de Interfaces Gráficas: Botones, fondos y elementos UI/UX.",
-        "competence": "291301061 - UTILIZAR SOFTWARE DE EDICIÓN GRÁFICA.",
-        "learningResult": "29130106104 - DISEÑO DE INTERFACES GRÁFICAS."
+        "topic": "Php y HTML",
+        "subtopics": "Inserción de código MySql en php",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 5, 
+        "week": 5,
         "grade": "11",
         "period": 1,
         "role": "instructor",
-        "topic": "Photoshop",
-        "subtopics": "Animación en Photoshop: GIFs y banners animados.",
-        "competence": "291301061 - UTILIZAR SOFTWARE DE EDICIÓN GRÁFICA.",
-        "learningResult": "29130106105 - ANIMACIÓN EN PHOTOSHOP."
+        "topic": "Php y HTML",
+        "subtopics": "CRUD: Inserción de datos desde php",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 6, 
+        "week": 6,
         "grade": "11",
         "period": 1,
         "role": "instructor",
-        "topic": "Photoshop",
-        "subtopics": "Creación de Portadas y Publicidad: Diseño para redes y marketing.",
-        "competence": "291301061 - UTILIZAR SOFTWARE DE EDICIÓN GRÁFICA.",
-        "learningResult": "29130106106 - CREACIÓN DE PORTADAS Y PUBLICIDAD."
+        "topic": "Php y HTML",
+        "subtopics": "CRUD: Consulta de datos desde php",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 7, 
+        "week": 7,
         "grade": "11",
         "period": 1,
         "role": "instructor",
-        "topic": "Photoshop",
-        "subtopics": "Optimización de Imágenes para Web: Resolución, formatos y peso.",
-        "competence": "291301061 - UTILIZAR SOFTWARE DE EDICIÓN GRÁFICA.",
-        "learningResult": "29130106107 - OPTIMIZACIÓN DE IMÁGENES PARA WEB."
+        "topic": "Php y HTML",
+        "subtopics": "CRUD: Modificación de datos desde php",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 8, 
+        "week": 8,
         "grade": "11",
         "period": 1,
         "role": "instructor",
-        "topic": "Photoshop",
-        "subtopics": "Proyecto Integrador: Creación de una pieza gráfica completa.",
-        "competence": "291301061 - UTILIZAR SOFTWARE DE EDICIÓN GRÁFICA.",
-        "learningResult": "29130106108 - PROYECTO INTEGRADOR."
+        "topic": "Php y HTML",
+        "subtopics": "CRUD: Eliminación de datos desde php",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 9, 
+        "week": 9,
         "grade": "11",
         "period": 1,
         "role": "instructor",
-        "topic": "Photoshop",
-        "subtopics": "Evaluación de Diseño y Ajustes Finales.",
-        "competence": "291301061 - UTILIZAR SOFTWARE DE EDICIÓN GRÁFICA.",
-        "learningResult": "29130106109 - EVALUACIÓN DE DISEÑO Y AJUSTES FINALES."
+        "topic": "Php y HTML",
+        "subtopics": "Inicio de sesión",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 10, 
+        "week": 10,
         "grade": "11",
         "period": 1,
         "role": "instructor",
-        "topic": "Photoshop",
-        "subtopics": "Presentación de Proyectos.",
-        "competence": "291301061 - UTILIZAR SOFTWARE DE EDICIÓN GRÁFICA.",
-        "learningResult": "29130106110 - PRESENTACIÓN DE PROYECTOS."
+        "topic": "Php y HTML",
+        "subtopics": "Manejo de Sesiones",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 11, 
+        "week": 11,
         "grade": "11",
         "period": 1,
         "role": "instructor",
-        "topic": "Premiere Pro",
-        "subtopics": "Edición de Video: Importación, línea de tiempo y cortes.",
-        "competence": "291301062 - UTILIZAR SOFTWARE DE EDICIÓN DE VIDEO.",
-        "learningResult": "29130106201 - EDICIÓN DE VIDEO."
+        "topic": "Php y HTML",
+        "subtopics": "Manejo de datos extraídos de BD",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 12, 
+        "week": 12,
         "grade": "11",
         "period": 1,
         "role": "instructor",
-        "topic": "Premiere Pro",
-        "subtopics": "Montaje de Secuencias: Transiciones y efectos básicos.",
-        "competence": "291301062 - UTILIZAR SOFTWARE DE EDICIÓN DE VIDEO.",
-        "learningResult": "29130106202 - MONTAJE DE SECUENCIAS."
+        "topic": "Php y HTML",
+        "subtopics": "Manejo de datos extraídos de BD",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 13, 
+        "week": 13,
         "grade": "11",
         "period": 1,
         "role": "instructor",
-        "topic": "Premiere Pro",
-        "subtopics": "Integración de Audio: Sincronización, edición y efectos de sonido.",
-        "competence": "291301062 - UTILIZAR SOFTWARE DE EDICIÓN DE VIDEO.",
-        "learningResult": "29130106203 - INTEGRACIÓN DE AUDIO."
+        "topic": "POO",
+        "subtopics": "Generalidades de la POO",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 14, 
+        "week": 14,
         "grade": "11",
         "period": 1,
         "role": "instructor",
-        "topic": "Premiere Pro",
-        "subtopics": "Corrección de Color: Ajustes de luz y colorimetría.",
-        "competence": "291301062 - UTILIZAR SOFTWARE DE EDICIÓN DE VIDEO.",
-        "learningResult": "29130106204 - CORRECCIÓN DE COLOR."
+        "topic": "POO",
+        "subtopics": "Generalidades de la POO",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     // GRADO 11 - Instructor SENA  
-// Segundo Período  
+    // Segundo Período  
     {
-        "week": 15, 
+        "week": 15,
         "grade": "11",
-        "period": 2,
+        "period": 1,
         "role": "instructor",
-        "topic": "Premiere Pro",
-        "subtopics": "Exportación de Videos: Formatos y configuraciones óptimas.",
-        "competence": "291301062 - UTILIZAR SOFTWARE DE EDICIÓN DE VIDEO.",
-        "learningResult": "29130106205 - EXPORTACIÓN DE VIDEOS."
+        "topic": "POO",
+        "subtopics": "Objetos, clases, utilidades, herencias",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 16, 
+        "week": 16,
         "grade": "11",
-        "period": 2,
+        "period": 1,
         "role": "instructor",
-        "topic": "Premiere Pro",
-        "subtopics": "Edición avanzada: Técnicas de corte dinámico.",
-        "competence": "291301062 - UTILIZAR SOFTWARE DE EDICIÓN DE VIDEO.",
-        "learningResult": "29130106206 - EDICIÓN AVANZADA."
+        "topic": "POO",
+        "subtopics": "Estructura de sats, Árboles",
+        "competence": "*DESARROLLO DE LA SOLUCIÓN DE SOFTWARE\n*ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 17, 
+        "week": 17,
         "grade": "11",
-        "period": 2,
+        "period": 1,
         "role": "instructor",
-        "topic": "Premiere Pro",
-        "subtopics": "Efectos y transiciones avanzadas.",
-        "competence": "291301062 - UTILIZAR SOFTWARE DE EDICIÓN DE VIDEO.",
-        "learningResult": "29130106207 - EFECTOS Y TRANSICIONES AVANZADAS."
+        "topic": "Bases de Datos",
+        "subtopics": "Consultas Operadores de MySQL",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 18, 
+        "week": 18,
         "grade": "11",
-        "period": 2,
+        "period": 1,
         "role": "instructor",
-        "topic": "Premiere Pro",
-        "subtopics": "Introducción a Motion Graphics con After Effects.",
-        "competence": "291301062 - UTILIZAR SOFTWARE DE EDICIÓN DE VIDEO.",
-        "learningResult": "29130106208 - INTRODUCCIÓN A MOTION GRAPHICS."
+        "topic": "Bases de Datos",
+        "subtopics": "Consultas Operadores de comparación",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 19, 
+        "week": 19,
         "grade": "11",
-        "period": 2,
+        "period": 1,
         "role": "instructor",
-        "topic": "After Effects",
-        "subtopics": "Animación de texto y gráficos.",
-        "competence": "291301062 - UTILIZAR SOFTWARE DE EDICIÓN DE VIDEO.",
-        "learningResult": "29130106209 - ANIMACIÓN DE TEXTO Y GRÁFICOS."
+        "topic": "Bases de Datos",
+        "subtopics": "Consultas Operadores con cadena",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 20, 
+        "week": 20,
         "grade": "11",
-        "period": 2,
+        "period": 1,
         "role": "instructor",
-        "topic": "After Effects",
-        "subtopics": "Creación de efectos especiales.",
-        "competence": "291301062 - UTILIZAR SOFTWARE DE EDICIÓN DE VIDEO.",
-        "learningResult": "29130106210 - CREACIÓN DE EFECTOS ESPECIALES."
+        "topic": "Bases de Datos",
+        "subtopics": "Consultas Operadores Lógicos",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 21, 
+        "week": 21,
         "grade": "11",
-        "period": 2,
+        "period": 1,
         "role": "instructor",
-        "topic": "After Effects",
-        "subtopics": "Animaciones avanzadas y cinemática.",
-        "competence": "291301062 - UTILIZAR SOFTWARE DE EDICIÓN DE VIDEO.",
-        "learningResult": "29130106211 - ANIMACIONES AVANZADAS Y CINEMÁTICA."
+        "topic": "Bases de Datos",
+        "subtopics": "Búsqueda Condicionada (WHERE, BETWEEN, LIKE, LIKE %%, IF)",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 22, 
+        "week": 22,
         "grade": "11",
-        "period": 2,
+        "period": 1,
         "role": "instructor",
-        "topic": "After Effects",
-        "subtopics": "Integración de elementos 3D.",
-        "competence": "291301062 - UTILIZAR SOFTWARE DE EDICIÓN DE VIDEO.",
-        "learningResult": "29130106212 - INTEGRACIÓN DE ELEMENTOS 3D."
+        "topic": "Bases de Datos",
+        "subtopics": "Búsqueda Agrupada (ORDER BY)",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 23, 
+        "week": 23,
         "grade": "11",
-        "period": 2,
+        "period": 1,
         "role": "instructor",
-        "topic": "Premiere Pro",
-        "subtopics": "Flujo de trabajo para edición profesional.",
-        "competence": "291301062 - UTILIZAR SOFTWARE DE EDICIÓN DE VIDEO.",
-        "learningResult": "29130106213 - FLUJO DE TRABAJO PROFESIONAL."
+        "topic": "Bases de Datos",
+        "subtopics": "Consulta Limitada",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 24, 
+        "week": 24,
         "grade": "11",
-        "period": 2,
+        "period": 1,
         "role": "instructor",
-        "topic": "Premiere Pro",
-        "subtopics": "Narrativa audiovisual y edición en documentales.",
-        "competence": "291301062 - UTILIZAR SOFTWARE DE EDICIÓN DE VIDEO.",
-        "learningResult": "29130106214 - NARRATIVA AUDIOVISUAL."
+        "topic": "Bases de Datos",
+        "subtopics": "Consulta Inner Join",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 25, 
+        "week": 25,
         "grade": "11",
-        "period": 2,
+        "period": 1,
         "role": "instructor",
-        "topic": "Premiere Pro",
-        "subtopics": "Proyecto intermedio: Creación de un cortometraje.",
-        "competence": "291301062 - UTILIZAR SOFTWARE DE EDICIÓN DE VIDEO.",
-        "learningResult": "29130106215 - PROYECTO INTERMEDIO."
+        "topic": "Bases de Datos",
+        "subtopics": "Consulta Left Join",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 26, 
+        "week": 26,
         "grade": "11",
-        "period": 2,
+        "period": 1,
         "role": "instructor",
-        "topic": "Proyecto",
-        "subtopics": "Planificación y conceptualización del proyecto final.",
-        "competence": "291301063 - DESARROLLAR PROYECTOS AUDIOVISUALES.",
-        "learningResult": "29130106301 - PLANIFICACIÓN DEL PROYECTO."
+        "topic": "Bases de Datos",
+        "subtopics": "Encriptación",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 27, 
+        "week": 27,
         "grade": "11",
-        "period": 2,
+        "period": 1,
         "role": "instructor",
-        "topic": "Proyecto",
-        "subtopics": "Desarrollo del guion y storyboard.",
-        "competence": "291301063 - DESARROLLAR PROYECTOS AUDIOVISUALES.",
-        "learningResult": "29130106302 - DESARROLLO DEL GUION Y STORYBOARD."
+        "topic": "Bases de Datos",
+        "subtopics": "Modificación de datos UPDATE",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 28, 
+        "week": 28,
         "grade": "11",
-        "period": 2,
+        "period": 1,
         "role": "instructor",
-        "topic": "Proyecto",
-        "subtopics": "Producción de contenido visual y audiovisual.",
-        "competence": "291301063 - DESARROLLAR PROYECTOS AUDIOVISUALES.",
-        "learningResult": "29130106303 - PRODUCCIÓN DE CONTENIDO VISUAL Y AUDIOVISUAL."
+        "topic": "Bases de Datos",
+        "subtopics": "Eliminación de datos DELETE",
+        "competence": "ADMINISTRACION DE BASES DE DATOS",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
-// GRADO 11 - Instructor SENA  
-// Tercer Período  
+    // GRADO 11 - Instructor SENA  
+    // Tercer Período  
     {
-        "week": 29, 
+        "week": 29,
         "grade": "11",
-        "period": 3,
+        "period": 1,
         "role": "instructor",
-        "topic": "Proyecto",
-        "subtopics": "Diseño de identidad gráfica del proyecto.",
-        "competence": "291301063 - DESARROLLAR PROYECTOS AUDIOVISUALES.",
-        "learningResult": "29130106304 - DISEÑO DE IDENTIDAD GRÁFICA."
-    },
-    {
-        "week": 30, 
-        "grade": "11",
-        "period": 3,
-        "role": "instructor",
-        "topic": "Proyecto",
-        "subtopics": "Edición inicial y ajustes de contenido.",
-        "competence": "291301063 - DESARROLLAR PROYECTOS AUDIOVISUALES.",
-        "learningResult": "29130106305 - EDICIÓN Y AJUSTES INICIALES."
+        "topic": "Bases de Datos",
+        "subtopics": "*Lenguajes de programación\n*Lenguajes de programación más usados",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 31, 
+        "week": 30,
         "grade": "11",
-        "period": 3,
+        "period": 1,
         "role": "instructor",
-        "topic": "Proyecto",
-        "subtopics": "Revisión intermedia y correcciones.",
-        "competence": "291301063 - DESARROLLAR PROYECTOS AUDIOVISUALES.",
-        "learningResult": "29130106306 - REVISIÓN INTERMEDIA."
+        "topic": "Bases de Datos",
+        "subtopics": "*Diferencias entre la programación web y programación de escritorio\n*Introducción a la programación\n*Introducción a la programación web\n*Qué es php, JavaScript, Java?",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 32, 
+        "week": 31,
         "grade": "11",
-        "period": 3,
+        "period": 1,
         "role": "instructor",
-        "topic": "Proyecto",
-        "subtopics": "Producción avanzada: Integración de elementos gráficos y efectos.",
-        "competence": "291301063 - DESARROLLAR PROYECTOS AUDIOVISUALES.",
-        "learningResult": "29130106307 - PRODUCCIÓN AVANZADA."
+        "topic": "Bases de Datos",
+        "subtopics": "*Generalidades de php, JavaScript, Java\n*Introducción a php, JavaScript, Java\n*Estructura del lenguaje de programación\n*Introducción a Relaciones php y html\n*Envíos de Html y php",
+        "competence": "ESTABLECIMIENTO DE REQUISITOS DE LA SOLUCIÓN DE SOFTWARE",
+        "learningResult": "*RAP 2. CREAR COMPONENTES FRONT-END DEL SOFTWARE DE ACUERDO CON LAS NECESIDADES DEL CLIENTE\n*RAP 3. CODIFICAR EL SOFTWARE EMPLEANDO EL LENGUAJE DE PROGRAMACIÓN SELECCIONADO."
     },
     {
-        "week": 33, 
+        "week": 32,
         "grade": "11",
-        "period": 3,
+        "period": 1,
         "role": "instructor",
-        "topic": "Proyecto",
-        "subtopics": "Postproducción: Color, sonido y retoques finales.",
-        "competence": "291301063 - DESARROLLAR PROYECTOS AUDIOVISUALES.",
-        "learningResult": "29130106308 - POSTPRODUCCIÓN."
+        "topic": "Proyecto de formación (Entregables)",
+        "subtopics": "1. Descripción del proyecto (Diapositivas, PowerPoint, Video) (Planteamiento del problema.\n2. Justificación.\n3. Objetivo General.\n4. Objetivos específicos, Impactos (Ambiental, Social, económico, Tecnológico).\n5. Usuarios directos e indirectos.\n6. Valor del proyecto.\n7. Metodología.",
+        "competence": "ETAPA PRACTICA",
+        "learningResult": "*APLICAR EN LA RESOLUCIÓN DE PROBLEMAS REALES DEL SECTOR PRODUCTIVO, LOS CONOCIMIENTOS, HABILIDADES Y DESTREZAS PERTINENTES A LAS COMPETENCIAS DEL PROGRAMA DE FORMACIÓN, ASUMIENDO ESTRATEGIAS Y METODOLOGÍAS DE AUTOGESTIÓN."
     },
     {
-        "week": 34, 
+        "week": 33,
         "grade": "11",
-        "period": 3,
+        "period": 1,
         "role": "instructor",
-        "topic": "Proyecto",
-        "subtopics": "Exportación y formatos finales para distintas plataformas.",
-        "competence": "291301063 - DESARROLLAR PROYECTOS AUDIOVISUALES.",
-        "learningResult": "29130106309 - EXPORTACIÓN Y FORMATOS FINALES."
+        "topic": "Proyecto de formación (Entregables)",
+        "subtopics": "2. Definición de requisitos para el sistema (funcionales, no funcionales). Se puede utilizar un formato para definición de requerimientos.",
+        "competence": "ETAPA PRACTICA",
+        "learningResult": "*APLICAR EN LA RESOLUCIÓN DE PROBLEMAS REALES DEL SECTOR PRODUCTIVO, LOS CONOCIMIENTOS, HABILIDADES Y DESTREZAS PERTINENTES A LAS COMPETENCIAS DEL PROGRAMA DE FORMACIÓN, ASUMIENDO ESTRATEGIAS Y METODOLOGÍAS DE AUTOGESTIÓN."
     },
     {
-        "week": 35, 
+        "week": 34,
         "grade": "11",
-        "period": 3,
+        "period": 1,
         "role": "instructor",
-        "topic": "Proyecto",
-        "subtopics": "Evaluación preliminar y ajustes finales.",
-        "competence": "291301063 - DESARROLLAR PROYECTOS AUDIOVISUALES.",
-        "learningResult": "29130106310 - EVALUACIÓN PRELIMINAR."
+        "topic": "Proyecto de formación (Entregables)",
+        "subtopics": "3. Diagramación UML del sistema",
+        "competence": "ETAPA PRACTICA",
+        "learningResult": "*APLICAR EN LA RESOLUCIÓN DE PROBLEMAS REALES DEL SECTOR PRODUCTIVO, LOS CONOCIMIENTOS, HABILIDADES Y DESTREZAS PERTINENTES A LAS COMPETENCIAS DEL PROGRAMA DE FORMACIÓN, ASUMIENDO ESTRATEGIAS Y METODOLOGÍAS DE AUTOGESTIÓN."
     },
     {
-        "week": 36, 
+        "week": 35,
         "grade": "11",
-        "period": 3,
+        "period": 1,
         "role": "instructor",
-        "topic": "Proyecto",
-        "subtopics": "Desarrollo de los primeros prototipos multimedia.",
-        "competence": "291301063 - DESARROLLAR PROYECTOS AUDIOVISUALES.",
-        "learningResult": "29130106311 - DESARROLLO DE PROTOTIPOS MULTIMEDIA."
+        "topic": "Proyecto de formación (Entregables)",
+        "subtopics": "4. Diccionario de datos",
+        "competence": "ETAPA PRACTICA",
+        "learningResult": "*APLICAR EN LA RESOLUCIÓN DE PROBLEMAS REALES DEL SECTOR PRODUCTIVO, LOS CONOCIMIENTOS, HABILIDADES Y DESTREZAS PERTINENTES A LAS COMPETENCIAS DEL PROGRAMA DE FORMACIÓN, ASUMIENDO ESTRATEGIAS Y METODOLOGÍAS DE AUTOGESTIÓN."
     },
     {
-        "week": 37, 
+        "week": 36,
         "grade": "11",
-        "period": 3,
+        "period": 1,
         "role": "instructor",
-        "topic": "Proyecto",
-        "subtopics": "Revisión y ajustes según feedback del instructor.",
-        "competence": "291301063 - DESARROLLAR PROYECTOS AUDIOVISUALES.",
-        "learningResult": "29130106312 - AJUSTES SEGÚN FEEDBACK."
+        "topic": "Proyecto de formación (Entregables)",
+        "subtopics": "5. Modelo relacional de la BD",
+        "competence": "ETAPA PRACTICA",
+        "learningResult": "*APLICAR EN LA RESOLUCIÓN DE PROBLEMAS REALES DEL SECTOR PRODUCTIVO, LOS CONOCIMIENTOS, HABILIDADES Y DESTREZAS PERTINENTES A LAS COMPETENCIAS DEL PROGRAMA DE FORMACIÓN, ASUMIENDO ESTRATEGIAS Y METODOLOGÍAS DE AUTOGESTIÓN."
     },
     {
-        "week": 38, 
+        "week": 37,
         "grade": "11",
-        "period": 3,
+        "period": 1,
         "role": "instructor",
-        "topic": "Proyecto",
-        "subtopics": "Presentación y evaluación del proyecto final.",
-        "competence": "291301063 - DESARROLLAR PROYECTOS AUDIOVISUALES.",
-        "learningResult": "29130106313 - PRESENTACIÓN Y EVALUACIÓN FINAL."
+        "topic": "Proyecto de formación (Entregables)",
+        "subtopics": "6. Prototipo del sistema",
+        "competence": "ETAPA PRACTICA",
+        "learningResult": "*APLICAR EN LA RESOLUCIÓN DE PROBLEMAS REALES DEL SECTOR PRODUCTIVO, LOS CONOCIMIENTOS, HABILIDADES Y DESTREZAS PERTINENTES A LAS COMPETENCIAS DEL PROGRAMA DE FORMACIÓN, ASUMIENDO ESTRATEGIAS Y METODOLOGÍAS DE AUTOGESTIÓN."
     },
     {
-        "week": 39, 
+        "week": 38,
         "grade": "11",
-        "period": 3,
+        "period": 1,
         "role": "instructor",
-        "topic": "Proyecto",
-        "subtopics": "Preparación para exhibición o portafolio.",
-        "competence": "291301063 - DESARROLLAR PROYECTOS AUDIOVISUALES.",
-        "learningResult": "29130106314 - PREPARACIÓN PARA EXHIBICIÓN."
+        "topic": "Proyecto de formación (Entregables)",
+        "subtopics": "7. Inicio de sesión del sistema\n8. Crud del sistema (MVC)",
+        "competence": "ETAPA PRACTICA",
+        "learningResult": "*APLICAR EN LA RESOLUCIÓN DE PROBLEMAS REALES DEL SECTOR PRODUCTIVO, LOS CONOCIMIENTOS, HABILIDADES Y DESTREZAS PERTINENTES A LAS COMPETENCIAS DEL PROGRAMA DE FORMACIÓN, ASUMIENDO ESTRATEGIAS Y METODOLOGÍAS DE AUTOGESTIÓN."
     },
     {
-        "week": 40, 
+        "week": 39,
         "grade": "11",
-        "period": 3,
+        "period": 1,
         "role": "instructor",
-        "topic": "Proyecto",
-        "subtopics": "Autoevaluación y cierre de curso.",
-        "competence": "291301063 - DESARROLLAR PROYECTOS AUDIOVISUALES.",
-        "learningResult": "29130106315 - AUTOEVALUACIÓN Y CIERRE."
+        "topic": "Proyecto de formación (Entregables)",
+        "subtopics": "9. Pruebas al sistema",
+        "competence": "ETAPA PRACTICA",
+        "learningResult": "*APLICAR EN LA RESOLUCIÓN DE PROBLEMAS REALES DEL SECTOR PRODUCTIVO, LOS CONOCIMIENTOS, HABILIDADES Y DESTREZAS PERTINENTES A LAS COMPETENCIAS DEL PROGRAMA DE FORMACIÓN, ASUMIENDO ESTRATEGIAS Y METODOLOGÍAS DE AUTOGESTIÓN."
     },
-// fin de los períodos
+    {
+        "week": 40,
+        "grade": "11",
+        "period": 1,
+        "role": "instructor",
+        "topic": "Proyecto de formación (Entregables)",
+        "subtopics": "10. Manual del Usuario",
+        "competence": "ETAPA PRACTICA",
+        "learningResult": "*APLICAR EN LA RESOLUCIÓN DE PROBLEMAS REALES DEL SECTOR PRODUCTIVO, LOS CONOCIMIENTOS, HABILIDADES Y DESTREZAS PERTINENTES A LAS COMPETENCIAS DEL PROGRAMA DE FORMACIÓN, ASUMIENDO ESTRATEGIAS Y METODOLOGÍAS DE AUTOGESTIÓN."
+    }
+    // fin de los períodos
 
 ]
 // Información de los períodos
@@ -1635,7 +1574,7 @@ const periodInfo = [
     {
         period: 1,
         name: "PRIMER PERÍODO",
-        dates: "20 de enero - 25 de abril", 
+        dates: "20 de enero - 25 de abril",
         weeks: "Semanas 1 - 14"
     },
     {
@@ -1646,7 +1585,7 @@ const periodInfo = [
     },
     {
         period: 3,
-        name: "TERCER PERÍODO", 
+        name: "TERCER PERÍODO",
         dates: "18 de agosto - 28 de noviembre",
         weeks: "Semanas 29 - 40"
     }
@@ -1668,7 +1607,7 @@ function generateGridView() {
                 instructor: curriculumData.filter(course => course.period === period.period && course.grade === "10" && course.role === "instructor")
             },
             grade11: {
-                docente: curriculumData.filter(course => course.period === period.period && course.grade === "11" && course.role === "docente"), 
+                docente: curriculumData.filter(course => course.period === period.period && course.grade === "11" && course.role === "docente"),
                 instructor: curriculumData.filter(course => course.period === period.period && course.grade === "11" && course.role === "instructor")
             }
         };
@@ -1677,33 +1616,33 @@ function generateGridView() {
     // Crear secciones para cada período
     for (let periodNum = 1; periodNum <= 3; periodNum++) {
         const periodData = coursesByPeriodAndGrade[periodNum];
-        
+
         const periodSection = document.createElement('div');
         periodSection.className = 'period-section';
         periodSection.dataset.period = periodNum;
-        
+
         const periodHeader = document.createElement('div');
         periodHeader.className = 'period-header';
         periodHeader.innerHTML = `
             <h2>${periodData.info.name} (${periodData.info.weeks})</h2>
             <span class="period-dates">${periodData.info.dates}</span>
         `;
-        
+
         const periodContent = document.createElement('div');
         periodContent.className = 'period-content';
-        
+
         const coursesGrid = document.createElement('div');
         coursesGrid.className = 'grid-container';
-        
+
         // Añadir cursos de cada grado y rol
         ['grade10', 'grade11'].forEach(grade => {
             ['docente', 'instructor'].forEach(role => {
                 periodData[grade][role].forEach(course => {
                     coursesGrid.appendChild(createCourseCard(course));
-        });
+                });
             });
         });
-        
+
         periodContent.appendChild(coursesGrid);
         periodSection.appendChild(periodHeader);
         periodSection.appendChild(periodContent);
@@ -1719,7 +1658,7 @@ function createCourseCard(course) {
     courseCard.dataset.grade = course.grade;
     courseCard.dataset.period = course.period;
     courseCard.dataset.role = course.role;
-    
+
     courseCard.innerHTML = `
         <div class="course-week">Semana ${course.week}</div>
         <div class="course-title">${course.topic}</div>
@@ -1731,9 +1670,9 @@ function createCourseCard(course) {
             </div>
         </div>
     `;
-    
+
     courseCard.addEventListener('click', () => showCourseDetails(course));
-    
+
     return courseCard;
 }
 
@@ -1746,24 +1685,24 @@ function generateListView() {
     for (let periodNum = 1; periodNum <= 3; periodNum++) {
         const periodCourses = curriculumData.filter(course => course.period === periodNum);
         const periodInfo = getPeriodInfo(periodNum);
-        
+
         const periodSection = document.createElement('div');
         periodSection.className = 'period-section-list';
         periodSection.dataset.period = periodNum;
-        
+
         const periodHeader = document.createElement('div');
         periodHeader.className = 'period-header-list';
         periodHeader.innerHTML = `
             <span>${periodInfo.name} (${periodInfo.weeks})</span>
             <span>${periodInfo.dates}</span>
         `;
-        
+
         const periodCoursesList = document.createElement('div');
         periodCoursesList.className = 'period-courses';
-        
+
         // Ordenar cursos por semana
         periodCourses.sort((a, b) => a.week - b.week);
-        
+
         periodCourses.forEach(course => {
             const courseItem = document.createElement('div');
             courseItem.className = `course-item period-${course.period} ${course.role}`;
@@ -1771,18 +1710,18 @@ function generateListView() {
             courseItem.dataset.grade = course.grade;
             courseItem.dataset.period = course.period;
             courseItem.dataset.role = course.role;
-            
+
             courseItem.innerHTML = `
                 <div class="course-item-week">Semana ${course.week}</div>
                 <div class="course-item-title">${course.topic}: ${course.subtopics}</div>
                 <div class="course-item-grade">Grado ${course.grade}°</div>
                 <div class="course-item-role">${course.role === 'docente' ? 'Docente PAR' : 'Instructor SENA'}</div>
             `;
-            
+
             courseItem.addEventListener('click', () => showCourseDetails(course));
             periodCoursesList.appendChild(courseItem);
         });
-        
+
         periodSection.appendChild(periodHeader);
         periodSection.appendChild(periodCoursesList);
         listContainer.appendChild(periodSection);
@@ -1805,19 +1744,19 @@ function showCourseDetails(course) {
     const modalLearningResult = document.getElementById('modalLearningResult');
     const modalRole = document.getElementById('modalRole');
     const modalSubtopics = document.getElementById('modalSubtopics');
-    
+
     modalTitle.textContent = course.topic;
     modalWeek.textContent = `Semana ${course.week}`;
     modalGrade.textContent = `${course.grade}°`;
-    
+
     const periodData = getPeriodInfo(course.period);
     modalPeriod.textContent = `${periodData.name} (${periodData.dates})`;
-    
+
     modalCompetence.textContent = course.competence || 'No especificado';
     modalLearningResult.textContent = course.learningResult || 'No especificado';
     modalRole.textContent = course.role === 'docente' ? 'Docente PAR' : 'Instructor SENA';
     modalSubtopics.textContent = course.subtopics;
-    
+
     modal.style.display = 'block';
 }
 
@@ -1827,12 +1766,12 @@ function applyFilters() {
     const periodFilter = document.getElementById('periodFilter').value;
     const roleFilter = document.getElementById('roleFilter').value;
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    
+
     // Aplicar filtros en vista de cuadrícula
     const periodSections = document.querySelectorAll('.period-section');
     periodSections.forEach(section => {
         const periodNum = section.dataset.period;
-        
+
         // Mostrar/ocultar sección según filtro de período
         if (periodFilter === 'all' || periodFilter === periodNum) {
             section.style.display = '';
@@ -1840,7 +1779,7 @@ function applyFilters() {
             section.style.display = 'none';
             return;
         }
-        
+
         // Filtrar tarjetas de curso
         const courseCards = section.querySelectorAll('.course-card');
         courseCards.forEach(card => {
@@ -1848,14 +1787,14 @@ function applyFilters() {
             const cardRole = card.dataset.role;
             const cardTitle = card.querySelector('.course-title').textContent.toLowerCase();
             const cardSubtopics = card.querySelector('.course-code').textContent.toLowerCase();
-            
+
             // Aplicar filtros
             const matchesGrade = gradeFilter === 'all' || gradeFilter === cardGrade;
             const matchesRole = roleFilter === 'all' || roleFilter === cardRole;
-            const matchesSearch = searchTerm === '' || 
-                                cardTitle.includes(searchTerm) || 
-                                cardSubtopics.includes(searchTerm);
-            
+            const matchesSearch = searchTerm === '' ||
+                cardTitle.includes(searchTerm) ||
+                cardSubtopics.includes(searchTerm);
+
             // Mostrar u ocultar según los filtros
             if (matchesGrade && matchesRole && matchesSearch) {
                 card.style.display = '';
@@ -1864,12 +1803,12 @@ function applyFilters() {
             }
         });
     });
-    
+
     // Aplicar filtros en vista de lista
     const periodSectionsList = document.querySelectorAll('.period-section-list');
     periodSectionsList.forEach(section => {
         const periodNum = section.dataset.period;
-        
+
         // Mostrar/ocultar sección según filtro de período
         if (periodFilter === 'all' || periodFilter === periodNum) {
             section.style.display = '';
@@ -1877,21 +1816,21 @@ function applyFilters() {
             section.style.display = 'none';
             return;
         }
-        
+
         // Filtrar elementos de curso
         const courseItems = section.querySelectorAll('.course-item');
         let visibleItems = 0;
-        
+
         courseItems.forEach(item => {
             const itemGrade = item.dataset.grade;
             const itemRole = item.dataset.role;
             const itemTitle = item.querySelector('.course-item-title').textContent.toLowerCase();
-            
+
             // Aplicar filtros
             const matchesGrade = gradeFilter === 'all' || gradeFilter === itemGrade;
             const matchesRole = roleFilter === 'all' || roleFilter === itemRole;
             const matchesSearch = searchTerm === '' || itemTitle.includes(searchTerm);
-            
+
             // Mostrar u ocultar según los filtros
             if (matchesGrade && matchesRole && matchesSearch) {
                 item.style.display = '';
@@ -1900,7 +1839,7 @@ function applyFilters() {
                 item.style.display = 'none';
             }
         });
-        
+
         // Ocultar sección si no hay elementos visibles
         if (visibleItems === 0) {
             section.style.display = 'none';
@@ -1913,12 +1852,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Generar vistas
     generateGridView();
     generateListView();
-    
+
     // Configurar eventos
     document.getElementById('toggleView').addEventListener('click', () => {
         const gridContainer = document.getElementById('curriculumGrid');
         const listContainer = document.getElementById('curriculumList');
-        
+
         if (gridContainer.style.display === 'none') {
             gridContainer.style.display = 'block';
             listContainer.style.display = 'none';
@@ -1929,12 +1868,12 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('toggleView').textContent = 'Vista Cuadrícula';
         }
     });
-    
+
     document.getElementById('toggleFilters').addEventListener('click', () => {
         const filterPanel = document.getElementById('filterPanel');
         filterPanel.style.display = filterPanel.style.display === 'none' ? 'block' : 'none';
     });
-    
+
     document.getElementById('gradeFilter').addEventListener('change', applyFilters);
     document.getElementById('periodFilter').addEventListener('change', applyFilters);
     document.getElementById('roleFilter').addEventListener('change', applyFilters);
@@ -1944,7 +1883,7 @@ document.addEventListener('DOMContentLoaded', () => {
             applyFilters();
         }
     });
-    
+
     document.getElementById('resetFilters').addEventListener('click', () => {
         document.getElementById('gradeFilter').value = 'all';
         document.getElementById('periodFilter').value = 'all';
@@ -1952,15 +1891,15 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('searchInput').value = '';
         applyFilters();
     });
-    
+
     // Configurar modal
     const modal = document.getElementById('courseModal');
     const closeBtn = document.getElementsByClassName('close')[0];
-    
+
     closeBtn.addEventListener('click', () => {
         modal.style.display = 'none';
     });
-    
+
     window.addEventListener('click', event => {
         if (event.target === modal) {
             modal.style.display = 'none';
@@ -1977,7 +1916,7 @@ function exportarMallaPDF() {
     doc.text("Malla Curricular - Plan de Estudios", 14, 10);
 
     const columnas = ["Semana", "Periodo", "Grado", "Docente/Instructor", "Tema", "Subtema"];
-    
+
     const filas = curriculumData.map(item => [
         item.week, item.period, item.grade, item.role, item.topic, item.subtopics
     ]);

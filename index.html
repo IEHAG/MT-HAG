@@ -1,51 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Técnica - I.E. Héctor Abad Gómez</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(60, 83, 213, 0.5); /* Azulito clarito transparente */
-            padding: 10px 20px;
-            display: flex;
-            justify-content: center; /* Centra horizontalmente */
-            align-items: center;
-            z-index: 100;
-            transition: background-color 0.8s ease;
-        }
-
-        header:hover {
-            background-color: rgba(137, 145, 170, 0.8); /* Azulito clarito un poco menos transparente al pasar el mouse */
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo {
-            max-height: 200px;
-            margin-right: 0px;
-        }
-
-        .header-text {
-            text-align: center; /* Centra el texto dentro de .header-text */
-        }
-
-        body {
-            padding-top: 205px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+
+    <!-- Modal (Debe ir dentro del <body>, no en el <head>) -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <!-- Logo de la institución -->
+            <img src="img/escudo.png" alt="Logo IE Héctor Abad Gómez" class="logo">
+
+            <!-- Mensaje de bienvenida -->
+            <h2 class="titulo">¡BIENVENIDO A LA PÁGINA DE MEDIA TÉCNICA!</h2>
+            <p class="subtitulo">Institución Educativa Héctor Abad Gómez</p>
+
+            <!-- Contenedor del video -->
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1-fi5Vd7NkmEwTK7iYBT6AkAl7Eou8lKb/preview" 
+                        width="640" height="360" 
+                        allow="autoplay" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
     
-    <div class="container">
+    <div id="main-content">
         <header>
             <button onclick="location.href='https://www.iehectorabadgomez.edu.co/'" class="nav-button">
                 <i class="fas fa-home"></i> Volver a la Página Principal
@@ -163,7 +149,7 @@
     </div>
     <script src="main.js"></script>
 <!-- Agrega esto en el <head> si no tienes Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 
     <footer>
         <p>Síguenos en nuestras redes sociales</p>
@@ -180,6 +166,5 @@
         <p>&copy; 2025 - Todos los derechos reservados</p>
         <p>&copy; Elaboración y Desarrollo- Docente Victor Cañola</p>
     </footer>    
-    
 </body>
 </html>

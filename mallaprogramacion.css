@@ -1,15 +1,15 @@
 /* Variables */
 :root {
-    --primary-color: #ff5722;
-    --secondary-color: #e64a19;
-    --accent-color: #2196f3;
-    --light-color: #ecf0f1;
+    --primary-color: #3ab01d;
+    --secondary-color: #138617;
+    --accent-color: #6f9cc0;
+    --light-color: #69b9cd;
     --dark-color: #263238;
     --success-color: #4caf50;
     --warning-color: #ffc107;
     --info-color: #03a9f4;
-    --docente-color: #8e44ad;
-    --instructor-color: #2980b9;
+    --docente-color: #ac1f1f;
+    --instructor-color: #2b420f;
     --period1-color: #27ae60;
     --period2-color: #f39c12;
     --period3-color: #e74c3c;
@@ -28,13 +28,13 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--dark-color);
-    background-color: #f5f7fa;
+    background-color: #f3f4f6;
 }
 
 /* Header Styles */
 header {
     background-color: var(--accent-color);
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 1rem 0;
     box-shadow: var(--shadow);
     position: sticky;
@@ -52,6 +52,9 @@ header {
 }
 
 .titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
