@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
     <!-- Modal (Debe ir dentro del <body>, no en el <head>) -->
     <div id="modal" class="modal">
@@ -22,19 +24,18 @@
 
             <!-- Contenedor del video -->
             <div class="video-container">
-                <iframe src="https://drive.google.com/file/d/1-fi5Vd7NkmEwTK7iYBT6AkAl7Eou8lKb/preview" 
-                        width="640" height="360" 
-                        allow="autoplay" allowfullscreen>
+                <iframe src="https://drive.google.com/file/d/139wPK-IomEK6HXoCYki6ao7xUvHgeqzz/preview" width="640"
+                    height="360" allow="autoplay" allowfullscreen>
                 </iframe>
             </div>
         </div>
     </div>
-    
+
     <div id="main-content">
         <header>
             <button onclick="location.href='https://www.iehectorabadgomez.edu.co/'" class="nav-button">
                 <i class="fas fa-home"></i> Volver a la Página Principal
-            </button>            
+            </button>
             <div class="logo-container">
                 <img src="img/escudo.png" alt="Logo" class="logo">
                 <div class="header-text">
@@ -57,10 +58,12 @@
                 <i class="icon">📋</i> Plan de Estudio
             </button>
             <!-- Menú desplegable oculto -->
-<div id="submenu" class="submenu hidden">
-    <button onclick="location.href='mallapreprensa.html'" class="submenu-btn">📖 Preprensa Digital</button>
-    <button onclick="location.href='mallaprogramacion.html'" class="submenu-btn">💻 Programación</button>
-</div>
+            <div id="submenu" class="submenu hidden">
+                <button onclick="location.href='mallapreprogramacion.html'" class="submenu-btn">💻 Programación</button>
+                <button onclick="location.href='mallapreprensa.html'" class="submenu-btn">📖 Preprensa
+                    Digital</button>
+
+            </div>
             <button onclick="location.href='material.html'" class="nav-button">
                 <i class="icon">📥</i>
                 Material
@@ -77,15 +80,19 @@
                 <i class="icon">🚀</i>
                 Proyecto Propio
             </button>
-            <button onclick="location.href='https://modulo.master2000.net/recursos/uploads/98/INDICADORES_DE_DESEMPENO_MT.pdf'" class="nav-button">
+            <button
+                onclick="location.href='https://modulo.master2000.net/recursos/uploads/98/INDICADORES_DE_DESEMPENO_MT.pdf'"
+                class="nav-button">
                 <i class="icon">📊</i>
                 Indicadores
             </button>
-            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=108866&idmenutipo=7334'" class="nav-button">
+            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=108866&idmenutipo=7334'"
+                class="nav-button">
                 <i class="icon">📚</i>
                 Módulos
             </button>
-            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=93701&idmenutipo=7334'" class="nav-button">
+            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=93701&idmenutipo=7334'"
+                class="nav-button">
                 <i class="icon">✍️</i>
                 Pruebas de Periodo
             </button>
@@ -98,19 +105,23 @@
                 <i class="icon">📖</i>
                 Revista Intectiva
             </button>
-            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=62127&idmenutipo=2098'" class="nav-button">
+            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=62127&idmenutipo=2098'"
+                class="nav-button">
                 <i class="icon">📢</i>
                 Circulares
             </button>
-            <button onclick="location.href='https://media.master2000.net/uploads/98/Ajustes_al_PEI_HAG_26_05_19.pdf'" class="nav-button">
+            <button onclick="location.href='https://media.master2000.net/uploads/98/Ajustes_al_PEI_HAG_26_05_19.pdf'"
+                class="nav-button">
                 <i class="icon">📑</i>
                 Proyecto Educativo Institucional
             </button>
-            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=92307'" class="nav-button">
+            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=92307'"
+                class="nav-button">
                 <i class="icon">📜</i>
                 Manual para la convivencia escolar
             </button>
-            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=63500&idmenutipo=2098'" class="nav-button">
+            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=63500&idmenutipo=2098'"
+                class="nav-button">
                 <i class="icon">✓</i>
                 Sistema de Evaluación
             </button>
@@ -123,50 +134,53 @@
                 Contactanos
             </button>
             <!-- Botón para abrir el chatbot -->
-<button id="chatbot-toggle">💬</button>
+            <button id="chatbot-toggle">💬</button>
 
-<!-- Contenedor del chatbot -->
-<div id="chatbot-container">
-    <div id="chatbot-header">HAG</div>
-    <div id="chatbot-messages"></div>
-    <div id="chatbot-input">
-        <input type="text" id="chatbot-text" placeholder="Escribe un mensaje...">
-        <button onclick="sendMessage()">Enviar</button>
-    </div>
-</div>
+            <!-- Contenedor del chatbot -->
+            <div id="chatbot-container">
+                <div id="chatbot-header">HAG</div>
+                <div id="chatbot-messages"></div>
+                <div id="chatbot-input">
+                    <input type="text" id="chatbot-text" placeholder="Escribe un mensaje...">
+                    <button onclick="sendMessage()">Enviar</button>
+                </div>
+            </div>
 
-<!-- Enlace a los archivos CSS y JS del chatbot -->
-<link rel="stylesheet" href="chatbot.css">
-<script src="chatbot.js"></script>
+            <!-- Enlace a los archivos CSS y JS del chatbot -->
+            <link rel="stylesheet" href="chatbot.css">
+            <script src="chatbot.js"></script>
 
         </nav>
-        
-</div>
-        <section class="featured">
-           
-            <div class="featured-books" id="featured-books">
-                <!-- Programs will be added here by JavaScript -->
-            </div>
-        </section>
+
+    </div>
+    <section class="featured">
+
+        <div class="featured-books" id="featured-books">
+            <!-- Programs will be added here by JavaScript -->
+        </div>
+    </section>
     </div>
     <script src="main.js"></script>
-<!-- Agrega esto en el <head> si no tienes Font Awesome -->
+    <!-- Agrega esto en el <head> si no tienes Font Awesome -->
 
 
     <footer>
         <p>Síguenos en nuestras redes sociales</p>
         <ul class="social-icons">
             <li><a href="https://www.facebook.com/AbadistaHAG/?locale=es_LA" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-facebook"></i> Facebook</a></li>
+                    <i class="fab fa-facebook"></i> Facebook</a></li>
             <li><a href="https://iehag.github.io/HAGONOTICIAS/" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-newspaper"></i> Periódico</a></li>
-            <li><a href="https://www.instagram.com/i.e.hectorabadgomez/?hl=en" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-instagram"></i> Instagram</a></li>
-            <li><a href="https://www.youtube.com/channel/UC1k1n-IAG9auH6aJr6Lm_kw" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-youtube"></i> YouTube</a></li>
+                    <i class="fas fa-newspaper"></i> Periódico</a></li>
+            <li><a href="https://www.instagram.com/i.e.hectorabadgomez/?hl=en" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://www.youtube.com/channel/UC1k1n-IAG9auH6aJr6Lm_kw" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fab fa-youtube"></i> YouTube</a></li>
         </ul>
         <p>&copy; 2025 - Todos los derechos reservados</p>
         <p>&copy; Elaboración y Desarrollo- Docente Victor Cañola</p>
-    </footer>    
+    </footer>
 </body>
+
 </html>
