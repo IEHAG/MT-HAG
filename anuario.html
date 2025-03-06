@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuario Escolar - I.E. Héctor Abad Gómez - Grado 11-2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2e60cc;
+            --accent-color: #143296;
+            --text-color: #34495e;
+            --light-bg: #ecf0f1;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('/api/placeholder/400/320');
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .year {
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--accent-color);
+            border-radius: 50px;
+            margin-top: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro-quote {
+            font-style: italic;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+
+        .students-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .student-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .student-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .student-photo {
+            width: 70%;
+            height: 5;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            position: relative;
+        }
+
+        .student-card:hover .student-photo {
+            transform: scale(1.1);
+        }
+
+        .photo-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .student-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .student-name {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .student-quote {
+            font-style: italic;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .achievements {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .achievement-badge {
+            padding: 0.2rem 0.7rem;
+            background-color: var(--light-bg);
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .teachers-section {
+            margin-top: 4rem;
+        }
+
+        .memories-section {
+            margin-top: 4rem;
+            background-color: rgb(0, 0, 0);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .image-caption {
+            transform: translateY(0);
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            width: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            margin: 1rem 0;
+        }
+
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            text-decoration: none;
+        }
+
+        .copyright {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Sección de mensajes */
+        .messages-section {
+            margin-top: 4rem;
+        }
+
+        .message-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-author {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .message-role {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .students-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .student-photo {
+                height: 250px;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .gallery-item {
+                height: 150px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .students-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+            
+            .gallery-item {
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Institución Educativa Héctor Abad Gómez</h1>
+            <div class="subtitle">Anuario Escolar - Media Técnica Grado 11-2</div>
+            <div class="year">2025</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Generación 2025</h2>
+            <p>Bienvenidos al anuario digital de la Media Técnica Grado 11-2 de la Institución Educativa Héctor Abad Gómez. Este espacio está dedicado a conmemorar nuestros logros, momentos especiales y las amistades forjadas durante nuestra etapa escolar.</p>
+            <p class="intro-quote">"La educación es el arma más poderosa que puedes usar para cambiar el mundo" - Nelson Mandela</p>
+            <p>Cada uno de nosotros lleva consigo recuerdos únicos y aprendizajes que nos han formado no solo como estudiantes sino como personas. Este anuario es un testimonio de nuestro camino juntos.</p>
+        </div>
+
+        <section>
+            <h2 class="section-title">Nuestros Estudiantes</h2>
+            <div class="students-grid">
+                <!-- Estudiante 1 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Bassa Revuelta Keily Vanesa" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Bassa Revuelta Keily Vanesa</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Arte</span>
+                            <span class="achievement-badge">Liderazgo</span>
+                        </div>
+                        <p class="student-quote">"El éxito es la suma de pequeños esfuerzos repetidos día tras día."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 2 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Bermudez Chavarria Mariana" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Bermudez Chavarria Mariana</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Matemáticas</span>
+                            <span class="achievement-badge">Deporte</span>
+                        </div>
+                        <p class="student-quote">"La perseverancia es la clave para alcanzar cualquier meta."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 3 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Bolivar Ojeda Glediangelis NMV" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Bolivar Ojeda Glediangelis</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Ciencias</span>
+                            <span class="achievement-badge">Colaboración</span>
+                        </div>
+                        <p class="student-quote">"Los sueños no se hacen realidad por arte de magia, requieren determinación."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 4 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Casas Grajales Jose Angel" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Casas Grajales Jose Angel</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Tecnología</span>
+                            <span class="achievement-badge">Creatividad</span>
+                        </div>
+                        <p class="student-quote">"La innovación distingue a los líderes de los seguidores."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 5 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Castrillon Orozco Juan Felipe" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Castrillon Orozco Juan Felipe</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Informática</span>
+                            <span class="achievement-badge">Debate</span>
+                        </div>
+                        <p class="student-quote">"La disciplina es el puente entre las metas y los logros."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 6 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Castro Gonzalez Dayana" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Castro Gonzalez Dayana</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Literatura</span>
+                            <span class="achievement-badge">Oratoria</span>
+                        </div>
+                        <p class="student-quote">"Las palabras tienen el poder de inspirar y transformar realidades."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 7 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="estudiantes/SOFIA.png" alt="Cataño Zuluaga Laura Sofia" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Cataño Zuluaga Laura Sofia</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Música</span>
+                            <span class="achievement-badge">Compañerismo</span>
+                        </div>
+                        <p class="student-quote">"La música es el lenguaje universal que une a las personas."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 8 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="estudiantes/VALERIA.png" alt="Cumachina Gonzalez Valeria Valentina" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Cumachina Gonzalez Valeria Valentina</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Diseño</span>
+                            <span class="achievement-badge">Innovación</span>
+                        </div>
+                        <p class="student-quote">"La creatividad es la inteligencia divirtiéndose."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 9 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Gamboa Romero Mikell Gabriel" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Gamboa Romero Mikell Gabriel</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Deportes</span>
+                            <span class="achievement-badge">Liderazgo</span>
+                        </div>
+                        <p class="student-quote">"El trabajo en equipo nos hace alcanzar lo imposible."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 10 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Gomez Mendez Jefry" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Gomez Mendez Jefry</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Programación</span>
+                            <span class="achievement-badge">Matemáticas</span>
+                        </div>
+                        <p class="student-quote">"La tecnología es mejor cuando une a las personas."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 11 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Graterol Aular Leokary Anabel" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Graterol Aular Leokary Anabel</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Ciencias</span>
+                            <span class="achievement-badge">Investigación</span>
+                        </div>
+                        <p class="student-quote">"La curiosidad es la base de todo conocimiento y descubrimiento."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 12 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Guzman Perez Didier Alexander" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Guzman Perez Didier Alexander</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Tecnología</span>
+                            <span class="achievement-badge">Resolución de problemas</span>
+                        </div>
+                        <p class="student-quote">"La tecnología puede ser nuestra mejor aliada cuando la usamos sabiamente."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 13 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Lopez Garcia Keren Jhoana" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Lopez Garcia Keren Jhoana</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Arte</span>
+                            <span class="achievement-badge">Comunicación</span>
+                        </div>
+                        <p class="student-quote">"La creatividad requiere el coraje de dejar ir las certezas."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 14 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Lopez Aguirre Maycol" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Lopez Aguirre Maycol</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Deportes</span>
+                            <span class="achievement-badge">Trabajo en equipo</span>
+                        </div>
+                        <p class="student-quote">"La perfección no es alcanzable, pero si perseguimos la perfección, alcanzaremos la excelencia."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 15 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Lozano Zapata Ibet Nicol" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Lozano Zapata Ibet Nicol</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Humanidades</span>
+                            <span class="achievement-badge">Creatividad</span>
+                        </div>
+                        <p class="student-quote">"Lo que aprendemos con placer, nunca lo olvidamos."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 16 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Martinez Largacha Maria Alexandra" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Martinez Largacha Maria Alexandra</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Ciencias sociales</span>
+                            <span class="achievement-badge">Debate</span>
+                        </div>
+                        <p class="student-quote">"El camino hacia el éxito siempre está en construcción."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 17 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Minota Advincola Jesus David" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Minota Advincola Jesus David</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Informática</span>
+                            <span class="achievement-badge">Lógica</span>
+                        </div>
+                        <p class="student-quote">"El éxito no es definitivo, el fracaso no es fatal: es el valor para continuar lo que cuenta."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 18 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Moreno Palacios Mariana" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Moreno Palacios Mariana</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Literatura</span>
+                            <span class="achievement-badge">Liderazgo</span>
+                        </div>
+                        <p class="student-quote">"La educación es el pasaporte hacia el futuro, el mañana pertenece a aquellos que se preparan hoy."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 19 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Moreno Solorzano Juliana Sofia" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Moreno Solorzano Juliana Sofia</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Arte</span>
+                            <span class="achievement-badge">Innovación</span>
+                        </div>
+                        <p class="student-quote">"Nuestra actitud hacia la vida determina la actitud de la vida hacia nosotros."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 20 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="estudiantes/MANUELA.png" alt="Perez Lopera Manuela" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Perez Lopera Manuela</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Música</span>
+                            <span class="achievement-badge">Expresión artística</span>
+                        </div>
+                        <p class="student-quote">"La música es el arte más directo, entra por el oído y va al corazón."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 21 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Pineda Jaramillo Kevin Alexis" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Pineda Jaramillo Kevin Alexis</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Programación</span>
+                            <span class="achievement-badge">Deporte</span>
+                        </div>
+                        <p class="student-quote">"El código es poesía para las máquinas, creatividad para los humanos."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 22 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Sampayo Noguera Leoriadnys Lizai" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Sampayo Noguera Leoriadnys Lizai</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Ciencias</span>
+                            <span class="achievement-badge">Investigación</span>
+                        </div>
+                        <p class="student-quote">"La ciencia no conoce país, porque el conocimiento pertenece a la humanidad."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 23 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="/api/placeholder/400/320" alt="Tapia Murillo Jannys Andrea" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Tapia Murillo Jannys Andrea</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Humanidades</span>
+                            <span class="achievement-badge">Servicio social</span>
+                        </div>
+                        <p class="student-quote">"El éxito es la suma de pequeños esfuerzos repetidos día tras día."</p>
+                    </div>
+                </div>
+
+                <!-- Estudiante 24 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="estudiantes/WILLINTON.png" alt="Tascon Martinez Willinton Andres" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Tascon Martinez Willinton Andres</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Tecnología</span>
+                            <span class="achievement-badge">Trabajo en equipo</span>
+                        </div>
+
+
+                                        <!-- Estudiante 25 -->
+                <div class="student-card">
+                    <div class="photo-container">
+                        <img src="estudiantes/DANIEL.png" alt="Teran Guerrero Daniel Alejandro" class="student-photo">
+                    </div>
+                    <div class="student-info">
+                        <h3 class="student-name">Tapia Murillo Jannys Andrea</h3>
+                        <div class="achievements">
+                            <span class="achievement-badge">Humanidades</span>
+                            <span class="achievement-badge">Servicio social</span>
+                        </div>
+                        <p class="student-quote">"El éxito es la suma de pequeños esfuerzos repetidos día tras día."</p>
+                    </div>
+                </div>
+                        <p class="student-quote">"La tecnología es solo una herramienta, lo importante es cómo la usamos para crear un mejor futuro."</p>
+                
