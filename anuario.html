@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -18,8 +18,18 @@
             background-color: var(--light-bg);
             color: var(--text-color);
             line-height: 2.1;
-          
+
             /* Ajusta este valor según la altura de tu header */
+        }
+
+        .nav-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 1px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         header {
@@ -49,30 +59,14 @@
 
         .logo {
             width: 200px;
-            /* Tamaño del logo */
             height: auto;
-            /* Mantener la proporción */
             transition: transform 0.3s ease, filter 0.3s ease;
-            /* Transición suave */
             cursor: pointer;
-            /* Cambia el cursor al pasar el mouse */
-            margin-bottom: 0rem;
-            /* Espacio entre el logo y el título */
+            margin-bottom: 0;
+            /* Asegúrate de que no haya margen inferior */
         }
 
-        /* Efecto al pasar el mouse */
-        .logo:hover {
-            transform: scale(1.5) rotate(0deg);
-            /* Escala y rotación */
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
-            /* Sombra blanca */
-        }
 
-        /* Efecto al hacer clic */
-        .logo:active {
-            transform: scale(0.9);
-            /* Reduce el tamaño al hacer clic */
-        }
 
         .subtitle {
             font-size: 1.4rem;
@@ -407,15 +401,21 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-content">
-            <!-- Logo interactivo -->
-            <img src="img/escudo.png" alt="Logo Institución Educativa Héctor Abad Gómez" class="logo">
-            <h1>Institución Educativa Héctor Abad Gómez</h1>
-            <div class="subtitle">Anuario Escolar - Media Técnica</div>
-            <div class="year">2025</div>
-        </div>
-    </header>
+    <div id="main-content">
+        <header>
+            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/'" class="nav-button">
+                <i class="fas fa-home"></i> Volver a la Página Principal
+            </button>
+            <div class="logo-container">
+                <div class="header-text">
+                    <img src="img/escudo.png" alt="Logo Institución Educativa Héctor Abad Gómez" class="logo">
+                    <h1>Institución Educativa Héctor Abad Gómez</h1>
+                    <div class="subtitle">Anuario Escolar - Media Técnica</div>
+                    <div class="year">2025</div>
+                </div>
+            </div>
+        </header>
+
         <!-- Sección de Docentes -->
         <section class="teachers-section">
             <h2 class="section-title"> Docentes de Media Técnica</h2>
