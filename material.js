@@ -10,7 +10,7 @@ const materialsData = [
             {
                 name: "Instructor SENA",
                 downloadUrl: "/materials/manual-javascript.pdf",
-                driveUrl: "d"
+                driveUrl: "https://goo.su/08zYK"
             }
         ]
     },
@@ -25,7 +25,7 @@ const materialsData = [
             {
                 name: "Instructor SENA",
                 downloadUrl: "/materials/bases-datos.pdf",
-                driveUrl: "https://drive.google.com/drive/folders/your-folder-id-4"
+                driveUrl: "4"
             }
         ]
     },
