@@ -10,7 +10,7 @@ const materialsData = [
             {
                 name: "Actividades",
                 downloadUrl: "/materials/manual-javascript.pdf",
-                driveUrl: "https://drive.google.com/drive/folders/your-folder-id-2"
+                driveUrl: "https://goo.su/08zYK"
             }
         ]
     },
