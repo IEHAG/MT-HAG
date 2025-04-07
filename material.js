@@ -3,12 +3,12 @@ const materialsData = [
         title: "Programación de Software - Grado 10-1",
         items: [
             {
-                name: "Actividades",
+                name: "Docente HAG",
                 downloadUrl: "/materials/guia-algoritmos.pdf",
                 driveUrl: "https://drive.google.com/drive/folders/17VH6V6G1LufK0cq-bRDZlJ8Uu3Meyfgf02WR3iyii3XdPC1l4NvM78SMrV-U_UayP2?usp=sharing"
             },
             {
-                name: "Actividades",
+                name: "Instructor SENA",
                 downloadUrl: "/materials/manual-javascript.pdf",
                 driveUrl: "https://goo.su/08zYK"
             }
@@ -18,12 +18,12 @@ const materialsData = [
         title: "Programación de Software - Grado 11-1",
         items: [
             {
-                name: "Actividades",
+                name: "Docente HAG",
                 downloadUrl: "/materials/desarrollo-web.pdf",
                 driveUrl: "https://drive.google.com/drive/folders/17VH6V6G1LufK0cq-bRDHRGSEkZlJ8Uu3Meyfgf02WR3iyii3XdPC1l4NvM78SMrV-U_UayP2?usp=sharing"
             },
             {
-                name: "Actividades",
+                name: "Instructor SENA",
                 downloadUrl: "/materials/bases-datos.pdf",
                 driveUrl: "https://drive.google.com/drive/folders/your-folder-id-4"
             }
@@ -33,12 +33,12 @@ const materialsData = [
         title: "Preprensa Digital para Medios Impresos - Grado 10-2",
         items: [
             {
-                name: "Actividades",
+                name: "Docente HAG",
                 downloadUrl: "/materials/fundamentos-diseno.pdf",
                 driveUrl: "https://drive.google.com/drive/folders/your-folder-id-5"
             },
             {
-                name: "Actividades",
+                name: "Instructor SENA",
                 downloadUrl: "/materials/software-diseno.pdf",
                 driveUrl: "https://drive.google.com/drive/folders/your-folder-id-6"
             }
