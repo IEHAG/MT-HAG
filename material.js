@@ -5,12 +5,12 @@ const materialsData = [
             {
                 name: "Docente HAG",
                 downloadUrl: "/materials/guia-algoritmos.pdf",
-                driveUrl: "https://drive.google.com/drive/folders/17VH6V6G1LufK0cq-bRDZlJ8Uu3Meyfgf02WR3iyii3XdPC1l4NvM78SMrV-U_UayP2?usp=sharing"
+                driveUrl: "https://goo.su/08zYK"
             },
             {
                 name: "Instructor SENA",
                 downloadUrl: "/materials/manual-javascript.pdf",
-                driveUrl: "https://goo.su/08zYK"
+                driveUrl: "d"
             }
         ]
     },
