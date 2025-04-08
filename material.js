@@ -40,7 +40,7 @@ const materialsData = [
             {
                 name: "Instructor SENA",
                 downloadUrl: "/materials/software-diseno.pdf",
-                driveUrl: "https://drive.google.com/drive/folders/your-folder-id-6"
+                driveUrl: "https://drive.google.com/drive/folders/1fBn7ZjrF1OcqsJ4WDWyiBPbytNcEa2Bv"
             }
         ]
     },
