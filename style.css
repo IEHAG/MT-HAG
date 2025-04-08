@@ -6,7 +6,7 @@
     --text-color: #2c3e50;
     --success-color: #2ecc71;
     --drive-color: #4285f4;
-    --background-image: url('img/VICO1.jpeg');
+    --background-image: url('img/VICO1.png');
     
 }
 
@@ -53,13 +53,13 @@ body {
     line-height: 1.6;
     
     background-image: var(--background-image);
-    background-size: 40%; /* Reduce el tamaño de la imagen */
+    background-size: 45%; /* Reduce el tamaño de la imagen */
    /* background-repeat: no-repeat; /* Evita que se repita */
     background-position: center top; /* Centra y mueve la imagen hacia arriba */
     background-attachment: fixed;
     background-blend-mode: overlay;
    
-    padding: 210px; /* Agrega espacio alrededor del contenido */
+    padding: 230px; /* Agrega espacio alrededor del contenido */
 }
 
 
