@@ -35,12 +35,12 @@ const materialsData = [
             {
                 name: "Docente HAG",
                 downloadUrl: "/materials/fundamentos-diseno.pdf",
-                driveUrl: "https://drive.google.com/drive/folders/your-folder-id-5"
+                driveUrl: "https://drive.google.com/drive/folders/1KziQ3hLBSzz7UWKaYsZ_ioJ4xevtxtTG?usp=sharing"
             },
             {
                 name: "Instructor SENA",
                 downloadUrl: "/materials/software-diseno.pdf",
-                driveUrl: "https://drive.google.com/drive/folders/your-folder-id-6"
+                driveUrl: "https://drive.google.com/drive/folders/1fBn7ZjrF1OcqsJ4WDWyiBPbytNcEa2Bv"
             }
         ]
     },
