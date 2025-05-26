@@ -1,0 +1,925 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoevaluación-Media Técnica -</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .card-header {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .card-title {
+            margin: 0;
+            font-size: 1.4rem;
+        }
+        
+        .alert {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px;
+            border-radius: 4px;
+        }
+        
+        .student-info {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 20px;
+            gap: 20px;
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .teacher-info {
+            padding: 0 20px 20px;
+            font-style: italic;
+        }
+        
+        .question-container {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .evaluation-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .option {
+            display: flex;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 4px;
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .option input {
+            margin-right: 8px;
+        }
+        
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .result-item {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        
+        .result-good {
+            background-color: #e6f7e6;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .result-bad {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+        }
+        
+        .results-container {
+            margin: 20px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+        
+        .email-input {
+            margin-top: 1rem;
+        }
+        
+        .student-summary {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .student-summary p {
+            margin: 8px 0;
+        }
+        
+        @media print {
+            .no-print {
+                display: none;
+            }
+            
+            body {
+                background: none;
+                font-size: 12pt;
+            }
+            
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+            
+            .card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Autoevaluación Aula Media Técnica</h1>
+            <p>Institución Educativa Héctor Abad Gómez</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <form id="self-evaluation-form">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Datos del Estudiante</h2>
+                </div>
+                
+                <div class="alert">
+                    <strong>Instrucciones:</strong> Evalúa tu cumplimiento de las normas del Aula Media Técnica durante este período. Sé honesto contigo mismo para identificar áreas de mejora.
+                </div>
+                
+                <div class="student-info">
+                    <div>
+                        <div class="info-item">
+                            <label for="nombre">Nombre completo:</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="info-item">
+                            <label for="grado">Grado:</label>
+                            <input type="text" id="grado" name="grado" required>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="info-item">
+                            <label for="grupo">Grupo:</label>
+                            <input type="text" id="grupo" name="grupo" required>
+                        </div>
+                        <div class="info-item">
+                            <label for="fecha">Fecha:</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-item email-input">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="teacher-info">
+                    <p><strong>Docente responsable:</strong> Victor Cañola</p>
+                    <p><strong>Área:</strong> Media Técnica</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Autoevaluación de Normas</h2>
+                </div>
+                
+                <p style="margin: 0 20px 20px;">Evalúa tu cumplimiento de cada norma marcando la opción que mejor describa tu comportamiento:</p>
+                
+                <!-- Pregunta 1 -->
+                <div class="question-container">
+                    <p class="question-text">1. ¿Ingreso al Aula Media Técnica en silencio y orden, con las manos limpias?</p>
+                    <div class="evaluation-options">
+                        <div class="option">
+                            <input type="radio" id="q1-5" name="p1" value="Siempre" required>
+                            <label for="q1-5">Siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q1-4" name="p1" value="Casi siempre">
+                            <label for="q1-4">Casi siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q1-3" name="p1" value="A veces">
+                            <label for="q1-3">A veces</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q1-2" name="p1" value="Casi nunca">
+                            <label for="q1-2">Casi nunca</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q1-1" name="p1" value="Nunca">
+                            <label for="q1-1">Nunca</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 2 -->
+                <div class="question-container">
+                    <p class="question-text">2. ¿Solicito la ayuda del monitor o del docente encargado cuando utilizo el Aula Media Técnica?</p>
+                    <div class="evaluation-options">
+                        <div class="option">
+                            <input type="radio" id="q2-5" name="p2" value="Siempre" required>
+                            <label for="q2-5">Siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q2-4" name="p2" value="Casi siempre">
+                            <label for="q2-4">Casi siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q2-3" name="p2" value="A veces">
+                            <label for="q2-3">A veces</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q2-2" name="p2" value="Casi nunca">
+                            <label for="q2-2">Casi nunca</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q2-1" name="p2" value="Nunca">
+                            <label for="q2-1">Nunca</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 3 -->
+                <div class="question-container">
+                    <p class="question-text">3. ¿Me siento en el equipo que ha sido asignado por el docente o monitor?</p>
+                    <div class="evaluation-options">
+                        <div class="option">
+                            <input type="radio" id="q3-5" name="p3" value="Siempre" required>
+                            <label for="q3-5">Siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q3-4" name="p3" value="Casi siempre">
+                            <label for="q3-4">Casi siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q3-3" name="p3" value="A veces">
+                            <label for="q3-3">A veces</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q3-2" name="p3" value="Casi nunca">
+                            <label for="q3-2">Casi nunca</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q3-1" name="p3" value="Nunca">
+                            <label for="q3-1">Nunca</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 4 -->
+                <div class="question-container">
+                    <p class="question-text">4. ¿Prendo cuidadosamente el CPU, monitor y parlantes antes de empezar a trabajar?</p>
+                    <div class="evaluation-options">
+                        <div class="option">
+                            <input type="radio" id="q4-5" name="p4" value="Siempre" required>
+                            <label for="q4-5">Siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q4-4" name="p4" value="Casi siempre">
+                            <label for="q4-4">Casi siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q4-3" name="p4" value="A veces">
+                            <label for="q4-3">A veces</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q4-2" name="p4" value="Casi nunca">
+                            <label for="q4-2">Casi nunca</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q4-1" name="p4" value="Nunca">
+                            <label for="q4-1">Nunca</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 5 -->
+                <div class="question-container">
+                    <p class="question-text">5. ¿Reviso que mi equipo esté completo (teclado, mouse, parlantes y almohadilla) y aviso de inmediato cualquier anomalía?</p>
+                    <div class="evaluation-options">
+                        <div class="option">
+                            <input type="radio" id="q5-5" name="p5" value="Siempre" required>
+                            <label for="q5-5">Siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q5-4" name="p5" value="Casi siempre">
+                            <label for="q5-4">Casi siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q5-3" name="p5" value="A veces">
+                            <label for="q5-3">A veces</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q5-2" name="p5" value="Casi nunca">
+                            <label for="q5-2">Casi nunca</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q5-1" name="p5" value="Nunca">
+                            <label for="q5-1">Nunca</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 6 -->
+                <div class="question-container">
+                    <p class="question-text">6. ¿Mantengo los equipos y dispositivos en su lugar sin hacer cambios sin autorización?</p>
+                    <div class="evaluation-options">
+                        <div class="option">
+                            <input type="radio" id="q6-5" name="p6" value="Siempre" required>
+                            <label for="q6-5">Siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q6-4" name="p6" value="Casi siempre">
+                            <label for="q6-4">Casi siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q6-3" name="p6" value="A veces">
+                            <label for="q6-3">A veces</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q6-2" name="p6" value="Casi nunca">
+                            <label for="q6-2">Casi nunca</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q6-1" name="p6" value="Nunca">
+                            <label for="q6-1">Nunca</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 7 -->
+                <div class="question-container">
+                    <p class="question-text">7. ¿Cuido los equipos para garantizar su duración y buen funcionamiento?</p>
+                    <div class="evaluation-options">
+                        <div class="option">
+                            <input type="radio" id="q7-5" name="p7" value="Siempre" required>
+                            <label for="q7-5">Siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q7-4" name="p7" value="Casi siempre">
+                            <label for="q7-4">Casi siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q7-3" name="p7" value="A veces">
+                            <label for="q7-3">A veces</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q7-2" name="p7" value="Casi nunca">
+                            <label for="q7-2">Casi nunca</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q7-1" name="p7" value="Nunca">
+                            <label for="q7-1">Nunca</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 8 -->
+                <div class="question-container">
+                    <p class="question-text">8. ¿Evito consumir alimentos, bebidas, fumar o ingerir alcohol dentro del Aula Media Técnica?</p>
+                    <div class="evaluation-options">
+                        <div class="option">
+                            <input type="radio" id="q8-5" name="p8" value="Siempre" required>
+                            <label for="q8-5">Siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q8-4" name="p8" value="Casi siempre">
+                            <label for="q8-4">Casi siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q8-3" name="p8" value="A veces">
+                            <label for="q8-3">A veces</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q8-2" name="p8" value="Casi nunca">
+                            <label for="q8-2">Casi nunca</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q8-1" name="p8" value="Nunca">
+                            <label for="q8-1">Nunca</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 9 -->
+                <div class="question-container">
+                    <p class="question-text">9. ¿Apago correctamente el equipo y dejo todo limpio y en orden al terminar la sesión?</p>
+                    <div class="evaluation-options">
+                        <div class="option">
+                            <input type="radio" id="q9-5" name="p9" value="Siempre" required>
+                            <label for="q9-5">Siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q9-4" name="p9" value="Casi siempre">
+                            <label for="q9-4">Casi siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q9-3" name="p9" value="A veces">
+                            <label for="q9-3">A veces</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q9-2" name="p9" value="Casi nunca">
+                            <label for="q9-2">Casi nunca</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q9-1" name="p9" value="Nunca">
+                            <label for="q9-1">Nunca</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 10 -->
+                <div class="question-container">
+                    <p class="question-text">10. ¿Evito traer dispositivos que puedan contagiar los equipos con virus informáticos?</p>
+                    <div class="evaluation-options">
+                        <div class="option">
+                            <input type="radio" id="q10-5" name="p10" value="Siempre" required>
+                            <label for="q10-5">Siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q10-4" name="p10" value="Casi siempre">
+                            <label for="q10-4">Casi siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q10-3" name="p10" value="A veces">
+                            <label for="q10-3">A veces</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q10-2" name="p10" value="Casi nunca">
+                            <label for="q10-2">Casi nunca</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q10-1" name="p10" value="Nunca">
+                            <label for="q10-1">Nunca</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 11 -->
+                <div class="question-container">
+                    <p class="question-text">11. ¿Comparto el computador de manera responsable cuando es necesario, recordando que es para el uso de todos?</p>
+                    <div class="evaluation-options">
+                        <div class="option">
+                            <input type="radio" id="q11-5" name="p11" value="Siempre" required>
+                            <label for="q11-5">Siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q11-4" name="p11" value="Casi siempre">
+                            <label for="q11-4">Casi siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q11-3" name="p11" value="A veces">
+                            <label for="q11-3">A veces</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q11-2" name="p11" value="Casi nunca">
+                            <label for="q11-2">Casi nunca</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q11-1" name="p11" value="Nunca">
+                            <label for="q11-1">Nunca</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 12 -->
+                <div class="question-container">
+                    <p class="question-text">12. ¿Aprovecho el computador y la conexión a Internet para aprender cosas nuevas e interesantes?</p>
+                    <div class="evaluation-options">
+                        <div class="option">
+                            <input type="radio" id="q12-5" name="p12" value="Siempre" required>
+                            <label for="q12-5">Siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q12-4" name="p12" value="Casi siempre">
+                            <label for="q12-4">Casi siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q12-3" name="p12" value="A veces">
+                            <label for="q12-3">A veces</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q12-2" name="p12" value="Casi nunca">
+                            <label for="q12-2">Casi nunca</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q12-1" name="p12" value="Nunca">
+                            <label for="q12-1">Nunca</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 13 -->
+                <div class="question-container">
+                    <p class="question-text">13. ¿Evito utilizar el celular sin autorización del docente?</p>
+                    <div class="evaluation-options">
+                        <div class="option">
+                            <input type="radio" id="q13-5" name="p13" value="Siempre" required>
+                            <label for="q13-5">Siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q13-4" name="p13" value="Casi siempre">
+                            <label for="q13-4">Casi siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q13-3" name="p13" value="A veces">
+                            <label for="q13-3">A veces</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q13-2" name="p13" value="Casi nunca">
+                            <label for="q13-2">Casi nunca</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q13-1" name="p13" value="Nunca">
+                            <label for="q13-1">Nunca</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 14 -->
+                <div class="question-container">
+                    <p class="question-text">14. ¿Permanezco atento y participativo en clase, evitando dormir durante las sesiones?</p>
+                    <div class="evaluation-options">
+                        <div class="option">
+                            <input type="radio" id="q14-5" name="p14" value="Siempre" required>
+                            <label for="q14-5">Siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q14-4" name="p14" value="Casi siempre">
+                            <label for="q14-4">Casi siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q14-3" name="p14" value="A veces">
+                            <label for="q14-3">A veces</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q14-2" name="p14" value="Casi nunca">
+                            <label for="q14-2">Casi nunca</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q14-1" name="p14" value="Nunca">
+                            <label for="q14-1">Nunca</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 15 -->
+                <div class="question-container">
+                    <p class="question-text">15. ¿Me presento siempre con el uniforme adecuado?</p>
+                    <div class="evaluation-options">
+                        <div class="option">
+                            <input type="radio" id="q15-5" name="p15" value="Siempre" required>
+                            <label for="q15-5">Siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q15-4" name="p15" value="Casi siempre">
+                            <label for="q15-4">Casi siempre</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q15-3" name="p15" value="A veces">
+                            <label for="q15-3">A veces</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q15-2" name="p15" value="Casi nunca">
+                            <label for="q15-2">Casi nunca</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q15-1" name="p15" value="Nunca">
+                            <label for="q15-1">Nunca</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question-container">
+                    <label for="reflexion">Reflexión personal: ¿Qué aspectos debo mejorar en mi comportamiento en el Aula Media Técnica?</label>
+                    <textarea id="reflexion" name="reflexion" rows="4" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                </div>
+                
+                <div style="padding: 20px;">
+                    <button type="submit" class="btn btn-block">Enviar Autoevaluación</button>
+                </div>
+            </div>
+        </form>
+        
+        <div id="results" class="hidden">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Resultados de tu Autoevaluación</h2>
+                </div>
+                
+                <div class="student-summary">
+                    <h3>Datos del Estudiante:</h3>
+                    <p><strong>Nombre:</strong> <span id="result-nombre"></span></p>
+                    <p><strong>Grado:</strong> <span id="result-grado"></span></p>
+                    <p><strong>Grupo:</strong> <span id="result-grupo"></span></p>
+                    <p><strong>Fecha:</strong> <span id="result-fecha"></span></p>
+                    <p><strong>Correo electrónico:</strong> <span id="result-email"></span></p>
+                    <p><strong>Reflexión personal:</strong> <span id="result-reflexion"></span></p>
+                </div>
+                
+                <div class="alert">
+                    <strong>Docente:</strong> Victor Cañola<br>
+                    <strong>Área:</strong> Media Técnica<br>
+                    <strong>Nota Final (1–5):</strong> <span id="final-score"></span>
+                </div>
+                
+                <div class="results-container" id="results-container"></div>
+                
+                <div class="teacher-info" style="padding: 0 20px 20px;">
+                    <h3>Recomendaciones:</h3>
+                    <p id="recommendations"></p>
+                </div>
+                
+                <div style="padding: 0 20px 20px; display: flex; gap: 10px;">
+                    <button id="print-btn" class="btn btn-secondary no-print">Imprimir Resultados</button>
+                    <button id="email-btn" class="btn btn-secondary no-print">Enviar Resultados al Correo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Institución Educativa Héctor Abad Gómez © 2025</p>
+            <p>Sistema de Autoevaluación - Aula Media Técnica</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('self-evaluation-form');
+            const resultsSection = document.getElementById('results');
+            const resultsContainer = document.getElementById('results-container');
+            const recommendations = document.getElementById('recommendations');
+            const finalScoreElement = document.getElementById('final-score');
+            const printBtn = document.getElementById('print-btn');
+            const emailBtn = document.getElementById('email-btn');
+            
+            // Definición de todas las preguntas con sus textos
+            const questions = [
+                { id: 'p1', text: '¿Ingreso al Aula Media Técnica en silencio y orden, con las manos limpias?' },
+                { id: 'p2', text: '¿Solicito la ayuda del monitor o del docente encargado cuando utilizo el Aula Media Técnica?' },
+                { id: 'p3', text: '¿Me siento en el equipo que ha sido asignado por el docente o monitor?' },
+                { id: 'p4', text: '¿Prendo cuidadosamente el CPU, monitor y parlantes antes de empezar a trabajar?' },
+                { id: 'p5', text: '¿Reviso que mi equipo esté completo (teclado, mouse, parlantes y almohadilla) y aviso de inmediato cualquier anomalía?' },
+                { id: 'p6', text: '¿Mantengo los equipos y dispositivos en su lugar sin hacer cambios sin autorización?' },
+                { id: 'p7', text: '¿Cuido los equipos para garantizar su duración y buen funcionamiento?' },
+                { id: 'p8', text: '¿Evito consumir alimentos, bebidas, fumar o ingerir alcohol dentro del Aula Media Técnica?' },
+                { id: 'p9', text: '¿Apago correctamente el equipo y dejo todo limpio y en orden al terminar la sesión?' },
+                { id: 'p10', text: '¿Evito traer dispositivos que puedan contagiar los equipos con virus informáticos?' },
+                { id: 'p11', text: '¿Comparto el computador de manera responsable cuando es necesario, recordando que es para el uso de todos?' },
+                { id: 'p12', text: '¿Aprovecho el computador y la conexión a Internet para aprender cosas nuevas e interesantes?' },
+                { id: 'p13', text: '¿Evito utilizar el celular sin autorización del docente?' },
+                { id: 'p14', text: '¿Permanezco atento y participativo en clase, evitando dormir durante las sesiones?' },
+                { id: 'p15', text: '¿Me presento siempre con el uniforme adecuado?' }
+            ];
+            
+            // Función para convertir respuesta a valor numérico
+            function responseToValue(response) {
+                switch(response) {
+                    case 'Siempre': return 5;
+                    case 'Casi siempre': return 4;
+                    case 'A veces': return 3;
+                    case 'Casi nunca': return 2;
+                    case 'Nunca': return 1;
+                    default: return 0;
+                }
+            }
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                form.classList.add('hidden');
+                resultsSection.classList.remove('hidden');
+                
+                let goodPractices = [];
+                let badPractices = [];
+                let totalScore = 0;
+                let responses = {};
+                let answeredQuestions = 0;
+                
+                // Obtener datos del estudiante
+                const nombre = document.getElementById('nombre').value;
+                const grado = document.getElementById('grado').value;
+                const grupo = document.getElementById('grupo').value;
+                const fecha = document.getElementById('fecha').value;
+                const email = document.getElementById('email').value;
+                const reflexion = document.getElementById('reflexion').value;
+                
+                // Mostrar datos del estudiante en los resultados
+                document.getElementById('result-nombre').textContent = nombre;
+                document.getElementById('result-grado').textContent = grado;
+                document.getElementById('result-grupo').textContent = grupo;
+                document.getElementById('result-fecha').textContent = fecha;
+                document.getElementById('result-email').textContent = email;
+                document.getElementById('result-reflexion').textContent = reflexion;
+                
+                // Procesar cada pregunta
+                questions.forEach((q, index) => {
+                    const selectedOption = document.querySelector(`input[name="${q.id}"]:checked`);
+                    if (selectedOption) {
+                        const value = selectedOption.value;
+                        const numericValue = responseToValue(value);
+                        const questionNumber = index + 1;
+                        
+                        totalScore += numericValue;
+                        answeredQuestions++;
+                        responses[q.id] = value;
+                        
+                        if (numericValue >= 4) {
+                            goodPractices.push(`${questionNumber}. ${q.text}`);
+                        } else {
+                            badPractices.push(`${questionNumber}. ${q.text}`);
+                        }
+                        
+                        // Mostrar resultado por pregunta
+                        const resultDiv = document.createElement('div');
+                        resultDiv.className = `result-item ${numericValue >= 4 ? 'result-good' : 'result-bad'}`;
+                        resultDiv.innerHTML = `
+                            <p><strong>${questionNumber}. ${q.text}</strong></p>
+                            <p>Tu evaluación: <strong>${value} (${numericValue}/5)</strong></p>
+                        `;
+                        resultsContainer.appendChild(resultDiv);
+                    }
+                });
+                
+                // Calcular nota final (1-5)
+                let finalScore = 1; // Nota mínima
+                if (answeredQuestions > 0) {
+                    finalScore = (totalScore / answeredQuestions);
+                    finalScore = Math.max(1, Math.min(5, finalScore));
+                }
+                
+                // Mostrar nota final con un decimal
+                finalScoreElement.textContent = finalScore.toFixed(1);
+                
+                // Generar recomendaciones basadas en el desempeño
+                let recText = '';
+                if (badPractices.length === 0) {
+                    recText = '¡Excelente! Cumples con todas las normas de manera sobresaliente. Sigue manteniendo este excelente comportamiento en el Aula Media Técnica.';
+                } else if (finalScore >= 4) {
+                    recText = '¡Buen trabajo! Cumples con la mayoría de las normas. Áreas específicas para mejorar:<br><br>' + 
+                              badPractices.join('<br>') +
+                              '<br><br>Sigue esforzándote para mejorar en estos aspectos.';
+                } else if (finalScore >= 3) {
+                    recText = 'Tienes un desempeño aceptable pero hay varias áreas que necesitan mejora:<br><br>' + 
+                              badPractices.join('<br>') +
+                              '<br><br>Debes trabajar más en cumplir las normas del Aula Media Técnica.';
+                } else {
+                    recText = 'Necesitas mejorar significativamente tu comportamiento en el Aula Media Técnica. Áreas críticas:<br><br>' + 
+                              badPractices.join('<br>') +
+                              '<br><br>Es importante que reflexiones sobre estas normas y te comprometas a cumplirlas.';
+                }
+                
+                // Agregar las buenas prácticas si hay alguna
+                if (goodPractices.length > 0) {
+                    recText += '<br><br><strong>Normas que cumples adecuadamente:</strong><br><br>' + 
+                               goodPractices.join('<br>');
+                }
+                
+                recommendations.innerHTML = recText;
+                
+                // Configurar datos para el correo
+                const emailData = {
+                    to: 'victorcanola@iehectorabadgomez.edu.co',
+                    cc: email, // Enviar copia al estudiante
+                    subject: `Resultados Autoevaluación - ${nombre} - Nota: ${finalScore.toFixed(1)}`,
+                    body: `Estimado Docente Victor Cañola,\n\n` +
+                          `Se ha recibido la autoevaluación del Aula Media Técnica de ${nombre} con una nota de ${finalScore.toFixed(1)}/5.0.\n\n` +
+                          `Datos del estudiante:\n` +
+                          `Nombre: ${nombre}\n` +
+                          `Grado: ${grado}\n` +
+                          `Grupo: ${grupo}\n` +
+                          `Fecha: ${fecha}\n\n` +
+                          `Detalle de la evaluación:\n` +
+                          questions.map((q, i) => `${i+1}. ${q.text}: ${responses[q.id] || 'No respondida'}`).join('\n') +
+                          `\n\nReflexión personal:\n${reflexion}\n\n` +
+                          `Recomendaciones:\n${recText.replace(/<br>/g, '\n')}\n\n` +
+                          `Docente: Victor Cañola\nÁrea: Media Técnica`
+                };
+                
+                console.log('Datos para correo:', emailData);
+                
+                // Almacenar emailData para usar en el botón de enviar correo
+                form.dataset.emailData = JSON.stringify(emailData);
+                
+                // Desplazarse a los resultados
+                resultsSection.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            printBtn.addEventListener('click', function() {
+                window.print();
+            });
+            
+            emailBtn.addEventListener('click', function() {
+                const emailData = JSON.parse(form.dataset.emailData || '{}');
+                
+                // Mostrar mensaje al usuario
+                alert('Enviando resultados al correo del docente...');
+                
+                // Placeholder para enviar el correo mediante una solicitud a un backend
+                console.log('Para enviar el correo, configura un endpoint de backend (ej. /api/send-email) que procese los datos:', emailData);
+                alert('Nota: El envío de correo requiere un servidor backend configurado. Los datos del correo están listos en la consola.');
+            });
+        });
+    </script>
+</body>
+</html>
