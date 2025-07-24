@@ -1307,7 +1307,7 @@ const curriculumData = [
     {
         "week": 15,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "POO",
         "subtopics": "Objetos, clases, utilidades, herencias",
@@ -1317,7 +1317,7 @@ const curriculumData = [
     {
         "week": 16,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "POO",
         "subtopics": "Estructura de sats, Árboles",
@@ -1327,7 +1327,7 @@ const curriculumData = [
     {
         "week": 17,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "Consultas Operadores de MySQL",
@@ -1337,7 +1337,7 @@ const curriculumData = [
     {
         "week": 18,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "Consultas Operadores de comparación",
@@ -1347,7 +1347,7 @@ const curriculumData = [
     {
         "week": 19,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "Consultas Operadores con cadena",
@@ -1357,7 +1357,7 @@ const curriculumData = [
     {
         "week": 20,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "Consultas Operadores Lógicos",
@@ -1367,7 +1367,7 @@ const curriculumData = [
     {
         "week": 21,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "Búsqueda Condicionada (WHERE, BETWEEN, LIKE, LIKE %%, IF)",
@@ -1377,7 +1377,7 @@ const curriculumData = [
     {
         "week": 22,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "Búsqueda Agrupada (ORDER BY)",
@@ -1387,7 +1387,7 @@ const curriculumData = [
     {
         "week": 23,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "Consulta Limitada",
@@ -1397,7 +1397,7 @@ const curriculumData = [
     {
         "week": 24,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "Consulta Inner Join",
@@ -1407,7 +1407,7 @@ const curriculumData = [
     {
         "week": 25,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "Consulta Left Join",
@@ -1417,7 +1417,7 @@ const curriculumData = [
     {
         "week": 26,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "Encriptación",
@@ -1427,7 +1427,7 @@ const curriculumData = [
     {
         "week": 27,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "Modificación de datos UPDATE",
@@ -1437,7 +1437,7 @@ const curriculumData = [
     {
         "week": 28,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "Eliminación de datos DELETE",
@@ -1449,7 +1449,7 @@ const curriculumData = [
     {
         "week": 29,
         "grade": "11",
-        "period": 1,
+        "period": 3,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "*Lenguajes de programación\n*Lenguajes de programación más usados",
@@ -1459,7 +1459,7 @@ const curriculumData = [
     {
         "week": 30,
         "grade": "11",
-        "period": 1,
+        "period": 3,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "*Diferencias entre la programación web y programación de escritorio\n*Introducción a la programación\n*Introducción a la programación web\n*Qué es php, JavaScript, Java?",
@@ -1469,7 +1469,7 @@ const curriculumData = [
     {
         "week": 31,
         "grade": "11",
-        "period": 1,
+        "period": 3,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "*Generalidades de php, JavaScript, Java\n*Introducción a php, JavaScript, Java\n*Estructura del lenguaje de programación\n*Introducción a Relaciones php y html\n*Envíos de Html y php",
@@ -1479,7 +1479,7 @@ const curriculumData = [
     {
         "week": 32,
         "grade": "11",
-        "period": 1,
+        "period": 3,
         "role": "instructor",
         "topic": "Proyecto de formación (Entregables)",
         "subtopics": "1. Descripción del proyecto (Diapositivas, PowerPoint, Video) (Planteamiento del problema.\n2. Justificación.\n3. Objetivo General.\n4. Objetivos específicos, Impactos (Ambiental, Social, económico, Tecnológico).\n5. Usuarios directos e indirectos.\n6. Valor del proyecto.\n7. Metodología.",
@@ -1489,7 +1489,7 @@ const curriculumData = [
     {
         "week": 33,
         "grade": "11",
-        "period": 1,
+        "period": 3,
         "role": "instructor",
         "topic": "Proyecto de formación (Entregables)",
         "subtopics": "2. Definición de requisitos para el sistema (funcionales, no funcionales). Se puede utilizar un formato para definición de requerimientos.",
@@ -1499,7 +1499,7 @@ const curriculumData = [
     {
         "week": 34,
         "grade": "11",
-        "period": 1,
+        "period": 3,
         "role": "instructor",
         "topic": "Proyecto de formación (Entregables)",
         "subtopics": "3. Diagramación UML del sistema",
@@ -1509,7 +1509,7 @@ const curriculumData = [
     {
         "week": 35,
         "grade": "11",
-        "period": 1,
+        "period": 3,
         "role": "instructor",
         "topic": "Proyecto de formación (Entregables)",
         "subtopics": "4. Diccionario de datos",
@@ -1519,7 +1519,7 @@ const curriculumData = [
     {
         "week": 36,
         "grade": "11",
-        "period": 1,
+        "period": 3,
         "role": "instructor",
         "topic": "Proyecto de formación (Entregables)",
         "subtopics": "5. Modelo relacional de la BD",
@@ -1529,7 +1529,7 @@ const curriculumData = [
     {
         "week": 37,
         "grade": "11",
-        "period": 1,
+        "period": 3,
         "role": "instructor",
         "topic": "Proyecto de formación (Entregables)",
         "subtopics": "6. Prototipo del sistema",
@@ -1539,7 +1539,7 @@ const curriculumData = [
     {
         "week": 38,
         "grade": "11",
-        "period": 1,
+        "period": 3,
         "role": "instructor",
         "topic": "Proyecto de formación (Entregables)",
         "subtopics": "7. Inicio de sesión del sistema\n8. Crud del sistema (MVC)",
@@ -1549,7 +1549,7 @@ const curriculumData = [
     {
         "week": 39,
         "grade": "11",
-        "period": 1,
+        "period": 3,
         "role": "instructor",
         "topic": "Proyecto de formación (Entregables)",
         "subtopics": "9. Pruebas al sistema",
@@ -1559,7 +1559,7 @@ const curriculumData = [
     {
         "week": 40,
         "grade": "11",
-        "period": 1,
+        "period": 3,
         "role": "instructor",
         "topic": "Proyecto de formación (Entregables)",
         "subtopics": "10. Manual del Usuario",
