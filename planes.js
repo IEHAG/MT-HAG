@@ -54,7 +54,7 @@ function displayPlanes() {
             <ul class="activities-list">
                 ${activitiesList}
             </ul>
-            <a href="https://www.iehectorabadgomez.edu.co/index2.php?id=100591&idmenutipo=7334" class="button">Planes de Mejoramiento</a>
+            <a href="https://www.iehectorabadgomez.edu.co/index2.php?id=93702&idmenutipo=7334" class="button">Planes de Mejoramiento</a>
         `;
         
         planesSection.appendChild(planElement);

@@ -3,12 +3,12 @@ const materialsData = [
         title: "Programación de Software - Grado 10-1",
         items: [
             {
-                name: "Docente HAG",
+                name: "Docente HAG_Víctor Cañola",
                 downloadUrl: "/materials/guia-algoritmos.pdf",
                 driveUrl: "https://goo.su/08zYK"
             },
             {
-                name: "Instructor SENA",
+                name: "Instructor SENA_John Riaño",
                 downloadUrl: "/materials/manual-javascript.pdf",
                 driveUrl: "https://goo.su/08zYK"
             }
@@ -18,12 +18,12 @@ const materialsData = [
         title: "Programación de Software - Grado 11-1",
         items: [
             {
-                name: "Docente HAG",
+                name: "Docente HAG_Víctor Cañola",
                 downloadUrl: "/materials/desarrollo-web.pdf",
                 driveUrl: "https://drive.google.com/drive/folders/17VH6V6G1LufK0cq-bRDHRGSEkZlJ8Uu3Meyfgf02WR3iyii3XdPC1l4NvM78SMrV-U_UayP2?usp=sharing"
             },
             {
-                name: "Instructor SENA",
+                name: "Instructor SENA_Carlos Andrés",
                 downloadUrl: "/materials/bases-datos.pdf",
                 driveUrl: "4"
             }
@@ -33,12 +33,12 @@ const materialsData = [
         title: "Preprensa Digital para Medios Impresos - Grado 10-2",
         items: [
             {
-                name: "Docente HAG",
+                name: "Docente HAG_Víctor Cañola",
                 downloadUrl: "/materials/fundamentos-diseno.pdf",
                 driveUrl: "https://drive.google.com/drive/folders/1KziQ3hLBSzz7UWKaYsZ_ioJ4xevtxtTG?usp=sharing"
             },
             {
-                name: "Instructor SENA",
+                name: "Instructor SENA_Daniel Yepes",
                 downloadUrl: "/materials/software-diseno.pdf",
                 driveUrl: "https://drive.google.com/drive/folders/1fBn7ZjrF1OcqsJ4WDWyiBPbytNcEa2Bv"
             }
@@ -48,12 +48,12 @@ const materialsData = [
         title: "Preprensa Digital para Medios Impresos - Grado 11-2",
         items: [
             {
-                name: "Docente HAG",
+                name: "Docente HAG_Víctor Cañola",
                 downloadUrl: "/materials/control-calidad.pdf",
                 driveUrl: "https://drive.google.com/drive/folders/1IYscZPyYwfkNuxJcTOV0lyHiJjozBSiz?usp=sharing"
             },
             {
-                name: "Instructor SENA",
+                name: "Instructor SENA_Ana Pérez",
                 downloadUrl: "#",
                 driveUrl: "https://drive.google.com/drive/folders/1wIFfqyUn6VQtzeU9MiW-a6IduVGQYr1A?usp=sharing"
             },
