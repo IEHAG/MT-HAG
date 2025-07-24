@@ -7,7 +7,7 @@ const proyectosData = [
             "Uso de tecnologías modernas",
             "Documentación del proceso"
         ],
-        link: "https://modulo.master2000.net/recursos/uploads/98/PROYECTO_DE_EDUCACION_MEDIA_TECNICA_HAG.pdf"
+        link: "https://drive.google.com/file/d/1Guus5IjODrpaMNLim70Re7xtXH53QSZJ/view"
     },
     {
         title: "Diseño y Preprensa",
@@ -17,7 +17,7 @@ const proyectosData = [
             "Optimización para impresión",
             "Control de calidad"
         ],
-        link: "https://modulo.master2000.net/recursos/uploads/98/PROYECTO_DE_EDUCACION_MEDIA_TECNICA_HAG.pdf"
+        link: "https://drive.google.com/file/d/1Guus5IjODrpaMNLim70Re7xtXH53QSZJ/view"
     }
 ];
 
