@@ -1,15 +1,386 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(10, 10, 10, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(168, 47, 47, 0.704) 0%, transparent 50%),
+        linear-gradient(135deg, #1d1e20 0%, #086cee 100%);
+    color: rgb(255, 255, 255);
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeInDown 1s ease-out;
+    position: relative;
+}
+
 .back-button {
-    padding: 15px 30px; /* Increase padding for a larger button */
-    font-size: 1.2em; /* Increase font size for better readability */
-    background-color: #4CAF50; /* A green background color */
-    color: white; /* White text color */
-    border: none; /* Remove the border */
-    border-radius: 8px; /* Round the corners */
-    cursor: pointer; /* Change the cursor to a pointer on hover */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+    z-index: 10;
 }
 
 .back-button:hover {
-    background-color: #367c39; /* Darker green on hover */
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(-3px);
+}
+
+.header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.header p {
+    font-size: 1.3em;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.developer {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 1em;
+    opacity: 0.8;
+}
+
+.legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    margin-bottom: 30px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 1s ease-out 0.3s both;
+}
+
+.category {
+    padding: 12px 16px;
+    border-radius: 25px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.category:hover::before {
+    left: 100%;
+}
+
+.category:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.category.active {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+/* Colores brillantes por categoría */
+.category.escritura { background: linear-gradient(135deg, #ff6b6b, #ff8e8e); }
+.category.diseno { background: linear-gradient(135deg, #4ecdc4, #7fdbda); }
+.category.codigo { background: linear-gradient(135deg, #45b7d1, #74c7e3); }
+.category.programacion { background: linear-gradient(135deg, #96ceb4, #b5dcc8); }
+.category.web { background: linear-gradient(135deg, #feca57, #fed87a); }
+.category.video { background: linear-gradient(135deg, #ff9ff3, #ffb8f9); }
+.category.voz { background: linear-gradient(135deg, #a29bfe, #bcb8ff); }
+.category.aprendizaje { background: linear-gradient(135deg, #fd79a8, #fd9bc0); }
+.category.traduccion { background: linear-gradient(135deg, #fdcb6e, #fed789); }
+.category.productividad { background: linear-gradient(135deg, #6c5ce7, #8b7ff3); }
+.category.3d { background: linear-gradient(135deg, #00b894, #33c7aa); }
+.category.descargas { background: linear-gradient(135deg, #e17055, #e88f76); }
+.category.musica { background: linear-gradient(135deg, #00cec9, #33d6e0); }
+.category.recursos { background: linear-gradient(135deg, #ff7675, #ff928e); }
+.category.frameworks { background: linear-gradient(135deg, #74b9ff, #93c5fd); }
+.category.bases { background: linear-gradient(135deg, #55a3ff, #77b5ff); }
+.category.documentacion { background: linear-gradient(135deg, #00b894, #33c7aa); }
+.category.git { background: linear-gradient(135deg, #fdcb6e, #fed789); }
+
+.controls {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.search-box {
+    padding: 15px 25px;
+    border-radius: 50px;
+    border: none;
+    width: 350px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.search-box:focus {
+    outline: none;
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+
+.search-box::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+    animation: fadeInUp 1s ease-out 0.7s both;
+}
+
+.element {
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.element::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.element:hover::before {
+    opacity: 1;
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+.element:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.element-icon {
+    font-size: 2em;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.element-name {
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 2px;
+    line-height: 1.2;
+}
+
+.element-symbol {
+    font-size: 0.7em;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+/* Colores de borde por categoría */
+.element.escritura { border-left: 4px solid #ff6b6b; }
+.element.diseno { border-left: 4px solid #4ecdc4; }
+.element.codigo { border-left: 4px solid #45b7d1; }
+.element.programacion { border-left: 4px solid #96ceb4; }
+.element.web { border-left: 4px solid #feca57; }
+.element.video { border-left: 4px solid #ff9ff3; }
+.element.voz { border-left: 4px solid #a29bfe; }
+.element.aprendizaje { border-left: 4px solid #fd79a8; }
+.element.traduccion { border-left: 4px solid #fdcb6e; }
+.element.productividad { border-left: 4px solid #6c5ce7; }
+.element.3d { border-left: 4px solid #00b894; }
+.element.descargas { border-left: 4px solid #e17055; }
+.element.musica { border-left: 4px solid #00cec9; }
+.element.recursos { border-left: 4px solid #ff7675; }
+.element.frameworks { border-left: 4px solid #74b9ff; }
+.element.bases { border-left: 4px solid #55a3ff; }
+.element.documentacion { border-left: 4px solid #00b894; }
+.element.git { border-left: 4px solid #fdcb6e; }
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #2d3436, #636e72);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    border: 2px solid rgba(255,255,255,0.2);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #ddd;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #ff6b6b;
+}
+
+.counter {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .periodic-table {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .element {
+        padding: 10px;
+    }
+    
+    .element-icon {
+        font-size: 1.5em;
+    }
+    
+    .element-name {
+        font-size: 0.8em;
+    }
+    
+    .header h1 {
+        font-size: 2.5em;
+    }
+    
+    .search-box {
+        width: 280px;
+    }
+    
+    .back-button {
+        position: relative;
+        left: 0;
+        top: 0;
+        margin-bottom: 15px;
+        font-size: 1em;
+    }
 }
