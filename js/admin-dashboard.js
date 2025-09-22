@@ -682,13 +682,30 @@ function editPage(title) {
 }
 
 function createSchedule() {
-    console.log('Crear horario');
-    // Implementar creación de horario
+    if (window.dashboard) {
+        window.dashboard.openModal('addScheduleModal');
+    }
 }
 
 // Inicializar dashboard cuando se carga la página
 document.addEventListener('DOMContentLoaded', () => {
-    window.dashboard = new AdminDashboard();
+    try {
+        window.dashboard = new AdminDashboard();
+        // Exponer accesos directos globales por si se requieren
+        window.editMenuItem = (id) => window.dashboard && window.dashboard.editMenuItem(id);
+        window.deleteMenuItem = (id) => window.dashboard && window.dashboard.deleteMenuItem(id);
+        window.prepareNewMenuItem = () => window.dashboard && window.dashboard.prepareNewMenuItem();
+        console.log('Dashboard inicializado');
+    } catch (err) {
+        console.error('Error inicializando dashboard', err);
+        const el = document.getElementById('appInitError');
+        if (el) {
+            el.textContent = 'Error inicializando el panel. Recarga la página o revisa la consola.';
+            el.style.display = 'block';
+        } else {
+            alert('Error inicializando el panel. Revisa la consola del navegador.');
+        }
+    }
 });
 
 // Cerrar modales al hacer clic fuera de ellos
