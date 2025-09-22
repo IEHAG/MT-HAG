@@ -10,8 +10,12 @@ class AdminAuth {
     }
 
     init() {
-        // Verificar si ya está autenticado
-        if (this.isAuthenticated()) {
+        // Verificar si ya está autenticado y redirigir según la página actual
+        const path = window.location.pathname || '';
+        const isLoginPage = /\/admin\/login\.html$/i.test(path) || path.endsWith('/admin/') || path.endsWith('/admin');
+        const isAuthenticated = this.isAuthenticated();
+
+        if (isAuthenticated && isLoginPage) {
             this.redirectToDashboard();
             return;
         }

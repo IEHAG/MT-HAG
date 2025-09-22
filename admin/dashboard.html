@@ -108,6 +108,33 @@
                             <p class="stat-number">98%</p>
                         </div>
                     </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Visitas 2024</h3>
+                            <p class="stat-number" id="visits2024Number">0</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Visitas 2025</h3>
+                            <p class="stat-number" id="visits2025Number">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-content">
+                    <div class="recent-activity">
+                        <h3>Visitas por mes (2025)</h3>
+                        <div id="visitsChart" class="visits-chart"></div>
+                    </div>
                 </div>
                 
                 <div class="dashboard-content">
@@ -291,6 +318,49 @@
                     <button type="submit" class="btn-primary">Agregar</button>
                 </div>
             </form>
+        </div>
+
+        <!-- Modal: Agregar/Editar Horario -->
+        <div id="addScheduleModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Nuevo Horario</h3>
+                    <span class="close" onclick="closeModal('addScheduleModal')">&times;</span>
+                </div>
+                <form id="addScheduleForm">
+                    <div class="form-group">
+                        <label for="scheduleGrade">Grado</label>
+                        <select id="scheduleGrade" required>
+                            <option value="10.1">10.1</option>
+                            <option value="10.2">10.2</option>
+                            <option value="11.1">11.1</option>
+                            <option value="11.2">11.2</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="scheduleDay">Día</label>
+                        <select id="scheduleDay" required>
+                            <option>Lunes</option>
+                            <option>Martes</option>
+                            <option>Miércoles</option>
+                            <option>Jueves</option>
+                            <option>Viernes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="scheduleTime">Hora</label>
+                        <input type="text" id="scheduleTime" placeholder="1:00 PM - 6:00 PM" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="scheduleSubject">Materia / Descripción</label>
+                        <input type="text" id="scheduleSubject" placeholder="Programación de Software - Docente HAG" required />
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-secondary" onclick="closeModal('addScheduleModal')">Cancelar</button>
+                        <button type="submit" class="btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     

@@ -159,3 +159,6 @@ Institución Educativa Héctor Abad Gómez
 ---
 
 *Para soporte técnico o consultas, contacta al administrador del sistema.*
+## 🔒 Aviso de Licencia y Derechos
+
+Este proyecto es propiedad del Docente Victor Cañola (Institución Educativa Héctor Abad Gómez). Todos los derechos reservados. No se autoriza su copia, redistribución o modificación sin permiso escrito del titular.

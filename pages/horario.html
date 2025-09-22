@@ -5,15 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horario - Media Técnica</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Horario de Clases</h1>
-            <button onclick="location.href='index.html'" class="back-button">
+            <button onclick="location.href='../index.html'" class="back-button">
                 <i class="icon">⬅️</i> Volver
             </button>
         </header>
+
+        <div class="schedule-toolbar" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 15px; align-items: end;">
+            <div>
+                <label for="gradeFilter" style="display:block; font-weight:600; margin-bottom:6px;">Grado</label>
+                <select id="gradeFilter" style="width:100%; padding:10px; border:2px solid #ddd; border-radius:8px;">
+                    <option value="">Todos</option>
+                </select>
+            </div>
+            <div>
+                <label for="dayFilter" style="display:block; font-weight:600; margin-bottom:6px;">Día</label>
+                <select id="dayFilter" style="width:100%; padding:10px; border:2px solid #ddd; border-radius:8px;">
+                    <option value="">Todos</option>
+                </select>
+            </div>
+            <div>
+                <label for="searchFilter" style="display:block; font-weight:600; margin-bottom:6px;">Buscar</label>
+                <input id="searchFilter" type="text" placeholder="Materia / Instructor" style="width:100%; padding:10px; border:2px solid #ddd; border-radius:8px;" />
+            </div>
+            <div style="display:flex; gap:10px;">
+                <button id="resetFilters" class="btn-secondary">Limpiar</button>
+                <button id="printSchedule" class="btn-primary">Exportar PDF</button>
+            </div>
+        </div>
+
+        <div class="schedule-legend" style="display:flex; gap:12px; align-items:center; margin: 10px 0 20px 0; flex-wrap: wrap;">
+            <span style="display:inline-flex; align-items:center; gap:6px;"><span style="width:14px; height:14px; border-radius:4px; background: linear-gradient(135deg, #1e3c72, #2a5298);"></span> Programación</span>
+            <span style="display:inline-flex; align-items:center; gap:6px;"><span style="width:14px; height:14px; border-radius:4px; background: linear-gradient(135deg, #6a00f4, #b5179e);"></span> Preprensa</span>
+            <span style="display:inline-flex; align-items:center; gap:6px;"><span style="width:14px; height:14px; border-radius:4px; background: linear-gradient(135deg, #2d6a4f, #52b788);"></span> Descansos</span>
+            <span style="display:inline-flex; align-items:center; gap:6px;"><span style="width:14px; height:14px; border-radius:4px; background: linear-gradient(135deg, #495057, #6c757d);"></span> Otros</span>
+        </div>
 
         <div class="schedule-container">
             <div class="schedule-grid" id="schedule">

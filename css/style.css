@@ -394,8 +394,27 @@ footer {
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    position: relative;
+}
+
+.footer-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 18px 18px 0 0;
+    background: linear-gradient(90deg, #00ffff, #00bfff, #ff00ff);
+    opacity: 0.6;
 }
 
 .footer-info {
@@ -408,6 +427,13 @@ footer {
     margin: 5px 0;
     font-size: 0.9rem;
     opacity: 0.8;
+}
+
+#visitsCounter {
+    margin-top: 8px;
+    font-weight: 700;
+    color: #ffffff;
+    opacity: 1;
 }
 
 .social-icons {
@@ -488,6 +514,52 @@ footer {
     .social-icons a {
         width: 100%;
         justify-content: center;
+    }
+
+    /* Header responsive adjustments */
+    header {
+        padding: 8px 12px;
+        gap: 8px;
+    }
+
+    .back-to-main {
+        margin-right: 8px;
+    }
+
+    .admin-access {
+        margin-left: 8px;
+    }
+
+    .logo-container {
+        flex: 1;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .logo {
+        max-height: 70px;
+    }
+
+    .header-text h1 {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+
+    .header-text .subtitle {
+        font-size: 0.95rem;
+    }
+
+    .header-text .teacher {
+        font-size: 0.85rem;
+    }
+
+    /* Permitir salto de línea en móviles para evitar desbordes del typewriter */
+    .header-text h1,
+    .header-text .subtitle,
+    .header-text .teacher {
+        white-space: normal;
+        overflow: visible;
+        border-right: 0;
     }
 }
 

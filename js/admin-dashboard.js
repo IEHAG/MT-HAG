@@ -67,6 +67,12 @@ class AdminDashboard {
         if (securityConfigForm) {
             securityConfigForm.addEventListener('submit', (e) => this.handleSecurityConfig(e));
         }
+
+        // Formulario de nuevo horario (público)
+        const addScheduleForm = document.getElementById('addScheduleForm');
+        if (addScheduleForm) {
+            addScheduleForm.addEventListener('submit', (e) => this.handleAddPublicSchedule(e));
+        }
     }
 
     showSection(sectionName) {
@@ -137,12 +143,31 @@ class AdminDashboard {
         // Cargar estadísticas
         this.updateStats();
         this.loadRecentActivity();
+        this.updateVisitsStats();
     }
 
     updateStats() {
         document.getElementById('totalStudents').textContent = this.students.length;
         document.getElementById('totalMaterials').textContent = this.materials.length;
         document.getElementById('totalSchedules').textContent = this.schedules.length;
+    }
+
+    updateVisitsStats() {
+        // 2024 fijo a 590
+        const el2024 = document.getElementById('visits2024Number');
+        if (el2024) el2024.textContent = '590';
+
+        // 2025 toma del localStorage del contador global (clave siteVisitsCount)
+        const el2025 = document.getElementById('visits2025Number');
+        if (el2025) {
+            const raw = localStorage.getItem('siteVisitsCount');
+            let count = 355; // default
+            if (raw !== null) {
+                const parsed = parseInt(raw, 10);
+                if (!isNaN(parsed)) count = parsed;
+            }
+            el2025.textContent = String(count);
+        }
     }
 
     loadRecentActivity() {
@@ -303,9 +328,52 @@ class AdminDashboard {
                             <i class="fas fa-plus"></i> Crear Nuevo Horario
                         </button>
                     </div>
+                    <div style="margin-top:12px; color: var(--dark-gray); font-size: 0.9rem;">
+                        Total registros públicos: <strong id="publicSchedulesCount">0</strong>
+                    </div>
                 </div>
             `;
         }
+
+        // Mostrar conteo de horarios públicos
+        const countEl = document.getElementById('publicSchedulesCount');
+        if (countEl) {
+            const list = this.loadPublicSchedules();
+            countEl.textContent = String(list.length);
+        }
+    }
+
+    // --- Horarios Públicos (para página horario.html) ---
+    loadPublicSchedules() {
+        const raw = localStorage.getItem('publicSchedules');
+        try { return raw ? JSON.parse(raw) : []; } catch { return []; }
+    }
+
+    savePublicSchedules(list) {
+        localStorage.setItem('publicSchedules', JSON.stringify(list));
+    }
+
+    handleAddPublicSchedule(e) {
+        e.preventDefault();
+        const grade = (document.getElementById('scheduleGrade') || {}).value || '';
+        const day = (document.getElementById('scheduleDay') || {}).value || '';
+        const time = (document.getElementById('scheduleTime') || {}).value || '';
+        const subject = (document.getElementById('scheduleSubject') || {}).value || '';
+
+        if (!grade || !day || !time || !subject) {
+            this.showNotification('Completa todos los campos del horario', 'warning');
+            return;
+        }
+
+        const list = this.loadPublicSchedules();
+        list.push({ id: Date.now().toString(), grade, day, time, subject });
+        this.savePublicSchedules(list);
+        this.closeModal('addScheduleModal');
+        this.showNotification('Horario agregado', 'success');
+
+        // Actualizar conteo en sección horarios
+        const countEl = document.getElementById('publicSchedulesCount');
+        if (countEl) countEl.textContent = String(list.length);
     }
 
     switchTab(tabName) {
