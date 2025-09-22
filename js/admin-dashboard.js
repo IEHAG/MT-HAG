@@ -442,6 +442,9 @@ class AdminDashboard {
             const list = this.loadPublicSchedules();
             countEl.textContent = String(list.length);
         }
+
+        // Renderizar lista editable
+        this.renderPublicSchedulesList();
     }
 
     // --- Horarios Públicos (para página horario.html) ---
@@ -467,14 +470,70 @@ class AdminDashboard {
         }
 
         const list = this.loadPublicSchedules();
-        list.push({ id: Date.now().toString(), grade, day, time, subject });
-        this.savePublicSchedules(list);
+        if (this.editingScheduleId) {
+            // Update existente
+            const updated = list.map(x => x.id === this.editingScheduleId ? { ...x, grade, day, time, subject } : x);
+            this.savePublicSchedules(updated);
+            this.editingScheduleId = null;
+        } else {
+            // Crear nuevo
+            list.push({ id: Date.now().toString(), grade, day, time, subject });
+            this.savePublicSchedules(list);
+        }
         this.closeModal('addScheduleModal');
         this.showNotification('Horario agregado', 'success');
 
         // Actualizar conteo en sección horarios
         const countEl = document.getElementById('publicSchedulesCount');
         if (countEl) countEl.textContent = String(list.length);
+
+        this.renderPublicSchedulesList();
+    }
+
+    renderPublicSchedulesList() {
+        const container = document.getElementById('publicSchedulesList');
+        if (!container) return;
+        const list = this.loadPublicSchedules();
+        if (!list.length) {
+            container.innerHTML = '<div class="content-item"><div class="content-info">No hay horarios públicos.</div></div>';
+            return;
+        }
+        container.innerHTML = list.map(item => `
+            <div class="content-item">
+                <div class="content-icon"><i class="fas fa-calendar"></i></div>
+                <div class="content-info">
+                    <div class="content-title">${item.grade} — ${item.day}</div>
+                    <div class="content-description">${item.time} · ${item.subject}</div>
+                </div>
+                <div class="content-actions">
+                    <button class="btn-primary" onclick="window.dashboard && window.dashboard.editPublicSchedule('${item.id}')"><i class="fas fa-edit"></i> Editar</button>
+                    <button class="btn-secondary" onclick="window.dashboard && window.dashboard.deletePublicSchedule('${item.id}')"><i class="fas fa-trash"></i> Eliminar</button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    editPublicSchedule(id) {
+        const list = this.loadPublicSchedules();
+        const item = list.find(x => x.id === id);
+        if (!item) return;
+        (document.getElementById('scheduleGrade') || {}).value = item.grade;
+        (document.getElementById('scheduleDay') || {}).value = item.day;
+        (document.getElementById('scheduleTime') || {}).value = item.time;
+        (document.getElementById('scheduleSubject') || {}).value = item.subject;
+        // Guardar id temporal para saber que es edición
+        this.editingScheduleId = id;
+        this.openModal('addScheduleModal');
+    }
+
+    deletePublicSchedule(id) {
+        if (!confirm('¿Eliminar este horario?')) return;
+        const list = this.loadPublicSchedules().filter(x => x.id !== id);
+        this.savePublicSchedules(list);
+        this.renderPublicSchedulesList();
+        const countEl = document.getElementById('publicSchedulesCount');
+        if (countEl) countEl.textContent = String(list.length);
+        this.showNotification('Horario eliminado', 'success');
     }
 
     switchTab(tabName) {

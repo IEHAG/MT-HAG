@@ -9,16 +9,15 @@
 </head>
 <body>
     <div class="admin-layout">
-        <div id="appInitError" style="display:none; background:#fdecea; color:#c0392b; padding:12px; margin:10px 10px 0; border:1px solid #f5c6cb; border-radius:6px;">
-            <!-- Mensaje de error de inicialización -->
-        </div>
+        <div id="appInitError" style="display:none; background:#fdecea; color:#c0392b; padding:12px; margin:10px 10px 0; border:1px solid #f5c6cb; border-radius:6px;"></div>
+
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
                 <img src="../assets/images/escudo.png" alt="Logo" class="sidebar-logo">
                 <h3>Admin Panel</h3>
             </div>
-            
+
             <nav class="sidebar-nav">
                 <ul>
                     <li class="nav-item active" data-section="dashboard">
@@ -51,7 +50,7 @@
                     </li>
                 </ul>
             </nav>
-            
+
             <div class="sidebar-footer">
                 <button id="logoutBtn" class="logout-btn">
                     <i class="fas fa-sign-out-alt"></i>
@@ -59,7 +58,7 @@
                 </button>
             </div>
         </aside>
-        
+
         <!-- Main Content -->
         <main class="main-content">
             <header class="main-header">
@@ -72,64 +71,47 @@
                     </button>
                 </div>
             </header>
-            
+
             <!-- Dashboard Section -->
             <section id="dashboard-section" class="content-section active">
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
                         <div class="stat-content">
                             <h3>Estudiantes</h3>
                             <p class="stat-number" id="totalStudents">0</p>
                         </div>
                     </div>
-                    
                     <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
+                        <div class="stat-icon"><i class="fas fa-book"></i></div>
                         <div class="stat-content">
                             <h3>Materiales</h3>
                             <p class="stat-number" id="totalMaterials">0</p>
                         </div>
                     </div>
-                    
                     <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-calendar"></i>
-                        </div>
+                        <div class="stat-icon"><i class="fas fa-calendar"></i></div>
                         <div class="stat-content">
                             <h3>Horarios</h3>
                             <p class="stat-number" id="totalSchedules">0</p>
                         </div>
                     </div>
-                    
                     <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
+                        <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
                         <div class="stat-content">
                             <h3>Actividad</h3>
                             <p class="stat-number">98%</p>
                         </div>
                     </div>
-
                     <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
+                        <div class="stat-icon"><i class="fas fa-eye"></i></div>
                         <div class="stat-content">
                             <h3>Visitas 2024</h3>
                             <p class="stat-number" id="visits2024Number">0</p>
                         </div>
                     </div>
-
                     <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
+                        <div class="stat-icon"><i class="fas fa-eye"></i></div>
                         <div class="stat-content">
                             <h3>Visitas 2025</h3>
                             <p class="stat-number" id="visits2025Number">0</p>
@@ -139,35 +121,12 @@
 
                 <div class="dashboard-content">
                     <div class="recent-activity">
+                        <h3>Actividad Reciente</h3>
+                        <div class="activity-list" id="activityList"></div>
+                    </div>
+                    <div class="quick-actions">
                         <h3>Visitas por mes (2025)</h3>
                         <div id="visitsChart" class="visits-chart"></div>
-                    </div>
-                </div>
-                
-                <div class="dashboard-content">
-                    <div class="recent-activity">
-                        <h3>Actividad Reciente</h3>
-                        <div class="activity-list" id="activityList">
-                            <!-- Actividad se cargará dinámicamente -->
-                        </div>
-                    </div>
-                    
-                    <div class="quick-actions">
-                        <h3>Acciones Rápidas</h3>
-                        <div class="action-buttons">
-                            <button class="action-btn" onclick="showSection('estudiantes')">
-                                <i class="fas fa-user-plus"></i>
-                                Agregar Estudiante
-                            </button>
-                            <button class="action-btn" onclick="showSection('contenido')">
-                                <i class="fas fa-file-plus"></i>
-                                Nuevo Material
-                            </button>
-                            <button class="action-btn" onclick="showSection('horarios')">
-                                <i class="fas fa-calendar-plus"></i>
-                                Crear Horario
-                            </button>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -183,7 +142,7 @@
                 </div>
                 <div class="content-list" id="menuItemsList"></div>
             </section>
-            
+
             <!-- Estudiantes Section -->
             <section id="estudiantes-section" class="content-section">
                 <div class="section-header">
@@ -193,83 +152,66 @@
                         Agregar Estudiante
                     </button>
                 </div>
-                
-                <div class="students-grid" id="studentsGrid">
-                    <!-- Estudiantes se cargarán dinámicamente -->
-                </div>
+                <div class="students-grid" id="studentsGrid"></div>
             </section>
-            
+
             <!-- Contenido Section -->
             <section id="contenido-section" class="content-section">
                 <div class="section-header">
                     <h2>Gestión de Contenido</h2>
-                    <button class="btn-primary" onclick="openModal('addContentModal')">
+                    <button class="btn-primary" onclick="window.dashboard && window.dashboard.prepareNewPage()">
                         <i class="fas fa-plus"></i>
-                        Agregar Contenido
+                        Agregar Página
                     </button>
                 </div>
-                
                 <div class="content-tabs">
                     <button class="tab-btn active" data-tab="pages">Páginas</button>
                     <button class="tab-btn" data-tab="materials">Materiales</button>
                     <button class="tab-btn" data-tab="schedules">Horarios</button>
                 </div>
-                
                 <div class="tab-content">
                     <div id="pages-tab" class="tab-pane active">
-                        <div class="content-list" id="pagesList">
-                            <!-- Páginas se cargarán dinámicamente -->
-                        </div>
+                        <div class="content-list" id="pagesList"></div>
                     </div>
                     <div id="materials-tab" class="tab-pane">
-                        <div class="content-list" id="materialsList">
-                            <!-- Materiales se cargarán dinámicamente -->
-                        </div>
+                        <div class="content-list" id="materialsList"></div>
                     </div>
                     <div id="schedules-tab" class="tab-pane">
-                        <div class="content-list" id="schedulesList">
-                            <!-- Horarios se cargarán dinámicamente -->
-                        </div>
+                        <div class="content-list" id="schedulesList"></div>
                     </div>
                 </div>
             </section>
-            
+
             <!-- Horarios Section -->
             <section id="horarios-section" class="content-section">
                 <div class="section-header">
                     <h2>Gestión de Horarios</h2>
-                    <button class="btn-primary" onclick="openModal('addScheduleModal')">
+                    <button class="btn-primary" onclick="createSchedule()">
                         <i class="fas fa-plus"></i>
                         Nuevo Horario
                     </button>
                 </div>
-                
-                <div class="schedule-calendar" id="scheduleCalendar">
-                    <!-- Calendario se cargará dinámicamente -->
-                </div>
+                <div class="schedule-calendar" id="scheduleCalendar"></div>
+                <div class="content-list" id="publicSchedulesList" style="margin-top:20px;"></div>
             </section>
-            
+
             <!-- Materiales Section -->
             <section id="materiales-section" class="content-section">
                 <div class="section-header">
                     <h2>Gestión de Materiales</h2>
-                    <button class="btn-primary" onclick="openModal('addMaterialModal')">
+                    <button class="btn-primary" onclick="window.dashboard && window.dashboard.prepareNewMaterial()">
                         <i class="fas fa-plus"></i>
                         Agregar Material
                     </button>
                 </div>
-                
-                <div class="materials-grid" id="materialsGrid">
-                    <!-- Materiales se cargarán dinámicamente -->
-                </div>
+                <div class="materials-grid" id="materialsGrid"></div>
             </section>
-            
+
             <!-- Configuración Section -->
             <section id="configuracion-section" class="content-section">
                 <div class="section-header">
                     <h2>Configuración del Sistema</h2>
                 </div>
-                
                 <div class="config-sections">
                     <div class="config-card">
                         <h3>Información General</h3>
@@ -285,7 +227,6 @@
                             <button type="submit" class="btn-primary">Guardar Cambios</button>
                         </form>
                     </div>
-                    
                     <div class="config-card">
                         <h3>Seguridad</h3>
                         <form id="securityConfigForm">
@@ -308,7 +249,7 @@
             </section>
         </main>
     </div>
-    
+
     <!-- Modales -->
     <div id="addStudentModal" class="modal">
         <div class="modal-content">
@@ -338,88 +279,156 @@
                 </div>
             </form>
         </div>
+    </div>
 
-        <!-- Modal: Agregar/Editar Horario -->
-        <div id="addScheduleModal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3>Nuevo Horario</h3>
-                    <span class="close" onclick="closeModal('addScheduleModal')">&times;</span>
-                </div>
-                <form id="addScheduleForm">
-                    <div class="form-group">
-                        <label for="scheduleGrade">Grado</label>
-                        <select id="scheduleGrade" required>
-                            <option value="10.1">10.1</option>
-                            <option value="10.2">10.2</option>
-                            <option value="11.1">11.1</option>
-                            <option value="11.2">11.2</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="scheduleDay">Día</label>
-                        <select id="scheduleDay" required>
-                            <option>Lunes</option>
-                            <option>Martes</option>
-                            <option>Miércoles</option>
-                            <option>Jueves</option>
-                            <option>Viernes</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="scheduleTime">Hora</label>
-                        <input type="text" id="scheduleTime" placeholder="1:00 PM - 6:00 PM" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="scheduleSubject">Materia / Descripción</label>
-                        <input type="text" id="scheduleSubject" placeholder="Programación de Software - Docente HAG" required />
-                    </div>
-                    <div class="modal-actions">
-                        <button type="button" class="btn-secondary" onclick="closeModal('addScheduleModal')">Cancelar</button>
-                        <button type="submit" class="btn-primary">Guardar</button>
-                    </div>
-                </form>
+    <!-- Modal: Agregar/Editar Horario -->
+    <div id="addScheduleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Nuevo Horario</h3>
+                <span class="close" onclick="closeModal('addScheduleModal')">&times;</span>
             </div>
-        </div>
-
-        <!-- Modal: Agregar/Editar Botón de Menú -->
-        <div id="menuItemModal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 id="menuModalTitle">Nuevo botón</h3>
-                    <span class="close" onclick="closeModal('menuItemModal')">&times;</span>
+            <form id="addScheduleForm">
+                <div class="form-group">
+                    <label for="scheduleGrade">Grado</label>
+                    <select id="scheduleGrade" required>
+                        <option value="10.1">10.1</option>
+                        <option value="10.2">10.2</option>
+                        <option value="11.1">11.1</option>
+                        <option value="11.2">11.2</option>
+                    </select>
                 </div>
-                <form id="menuItemForm">
-                    <input type="hidden" id="menuItemId" />
-                    <div class="form-group">
-                        <label for="menuTitle">Título</label>
-                        <input type="text" id="menuTitle" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="menuIcon">Ícono (emoji o clase FA: fa-solid fa-code)</label>
-                        <input type="text" id="menuIcon" placeholder="💻 o fa-solid fa-code" />
-                    </div>
-                    <div class="form-group">
-                        <label for="menuHref">Enlace</label>
-                        <input type="text" id="menuHref" placeholder="pages/programacion.html o https://..." required />
-                    </div>
-                    <div class="form-group">
-                        <label for="menuTarget">Destino</label>
-                        <select id="menuTarget">
-                            <option value="_self">Misma pestaña</option>
-                            <option value="_blank">Nueva pestaña</option>
-                        </select>
-                    </div>
-                    <div class="modal-actions">
-                        <button type="button" class="btn-secondary" onclick="closeModal('menuItemModal')">Cancelar</button>
-                        <button type="submit" class="btn-primary">Guardar</button>
-                    </div>
-                </form>
-            </div>
+                <div class="form-group">
+                    <label for="scheduleDay">Día</label>
+                    <select id="scheduleDay" required>
+                        <option>Lunes</option>
+                        <option>Martes</option>
+                        <option>Miércoles</option>
+                        <option>Jueves</option>
+                        <option>Viernes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="scheduleTime">Hora</label>
+                    <input type="text" id="scheduleTime" placeholder="1:00 PM - 6:00 PM" required />
+                </div>
+                <div class="form-group">
+                    <label for="scheduleSubject">Materia / Descripción</label>
+                    <input type="text" id="scheduleSubject" placeholder="Programación de Software - Docente HAG" required />
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal('addScheduleModal')">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
         </div>
     </div>
-    
+
+    <!-- Modal: Agregar/Editar Botón de Menú -->
+    <div id="menuItemModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="menuModalTitle">Nuevo botón</h3>
+                <span class="close" onclick="closeModal('menuItemModal')">&times;</span>
+            </div>
+            <form id="menuItemForm">
+                <input type="hidden" id="menuItemId" />
+                <div class="form-group">
+                    <label for="menuTitle">Título</label>
+                    <input type="text" id="menuTitle" required />
+                </div>
+                <div class="form-group">
+                    <label for="menuIcon">Ícono (emoji o clase FA: fa-solid fa-code)</label>
+                    <input type="text" id="menuIcon" placeholder="💻 o fa-solid fa-code" />
+                </div>
+                <div class="form-group">
+                    <label for="menuHref">Enlace</label>
+                    <input type="text" id="menuHref" placeholder="pages/programacion.html o https://..." required />
+                </div>
+                <div class="form-group">
+                    <label for="menuTarget">Destino</label>
+                    <select id="menuTarget">
+                        <option value="_self">Misma pestaña</option>
+                        <option value="_blank">Nueva pestaña</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal('menuItemModal')">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Agregar/Editar Material -->
+    <div id="materialModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="materialModalTitle">Nuevo Material</h3>
+                <span class="close" onclick="closeModal('materialModal')">&times;</span>
+            </div>
+            <form id="materialForm">
+                <input type="hidden" id="materialId" />
+                <div class="form-group">
+                    <label for="materialTitle">Título</label>
+                    <input type="text" id="materialTitle" required />
+                </div>
+                <div class="form-group">
+                    <label for="materialDescription">Descripción</label>
+                    <input type="text" id="materialDescription" />
+                </div>
+                <div class="form-group">
+                    <label for="materialType">Tipo</label>
+                    <select id="materialType">
+                        <option>Documento</option>
+                        <option>Presentación</option>
+                        <option>Enlace</option>
+                        <option>Video</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal('materialModal')">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Agregar/Editar Página -->
+    <div id="pageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="pageModalTitle">Nueva Página</h3>
+                <span class="close" onclick="closeModal('pageModal')">&times;</span>
+            </div>
+            <form id="pageForm">
+                <input type="hidden" id="pageId" />
+                <div class="form-group">
+                    <label for="pageTitle">Título</label>
+                    <input type="text" id="pageTitle" required />
+                </div>
+                <div class="form-group">
+                    <label for="pageDescription">Descripción</label>
+                    <input type="text" id="pageDescription" />
+                </div>
+                <div class="form-group">
+                    <label for="pageStatus">Estado</label>
+                    <select id="pageStatus">
+                        <option>Activa</option>
+                        <option>Oculta</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal('pageModal')">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script src="../js/admin-auth.js"></script>
     <script src="../js/admin-dashboard.js"></script>
 </body>
 </html>
+
+
