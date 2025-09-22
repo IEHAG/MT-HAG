@@ -80,6 +80,18 @@ class AdminDashboard {
         if (menuItemForm) {
             menuItemForm.addEventListener('submit', (e) => this.handleSaveMenuItem(e));
         }
+
+        // Formulario de material
+        const materialForm = document.getElementById('materialForm');
+        if (materialForm) {
+            materialForm.addEventListener('submit', (e) => this.handleSaveMaterial(e));
+        }
+
+        // Formulario de página
+        const pageForm = document.getElementById('pageForm');
+        if (pageForm) {
+            pageForm.addEventListener('submit', (e) => this.handleSavePage(e));
+        }
     }
 
     showSection(sectionName) {
@@ -139,6 +151,7 @@ class AdminDashboard {
                 break;
             case 'contenido':
                 this.loadContentTabs();
+                this.loadMaterialsList();
                 break;
             case 'horarios':
                 this.loadScheduleCalendar();
@@ -357,7 +370,7 @@ class AdminDashboard {
                         <div class="content-description">${page.description} - ${page.status}</div>
                     </div>
                     <div class="content-actions">
-                        <button class="btn-primary" onclick="editPage('${page.title}')">
+                        <button class="btn-primary" onclick="window.dashboard && window.dashboard.editPage('${page.title}')">
                             <i class="fas fa-edit"></i> Editar
                         </button>
                     </div>
@@ -382,10 +395,10 @@ class AdminDashboard {
                         <div class="content-description">${material.description}</div>
                     </div>
                     <div class="content-actions">
-                        <button class="btn-primary" onclick="editMaterial('${material.id}')">
+                        <button class="btn-primary" onclick="window.dashboard && window.dashboard.editMaterial('${material.id}')">
                             <i class="fas fa-edit"></i> Editar
                         </button>
-                        <button class="btn-secondary" onclick="deleteMaterial('${material.id}')">
+                        <button class="btn-secondary" onclick="window.dashboard && window.dashboard.deleteMaterial('${material.id}')">
                             <i class="fas fa-trash"></i> Eliminar
                         </button>
                     </div>
@@ -405,16 +418,112 @@ class AdminDashboard {
                     <div class="student-name">${material.title}</div>
                     <div class="student-program">${material.type}</div>
                     <div class="student-actions">
-                        <button class="edit-btn" onclick="editMaterial('${material.id}')">
+                        <button class="edit-btn" onclick="window.dashboard && window.dashboard.editMaterial('${material.id}')">
                             <i class="fas fa-edit"></i> Editar
                         </button>
-                        <button class="delete-btn" onclick="deleteMaterial('${material.id}')">
+                        <button class="delete-btn" onclick="window.dashboard && window.dashboard.deleteMaterial('${material.id}')">
                             <i class="fas fa-trash"></i> Eliminar
                         </button>
                     </div>
                 </div>
             `).join('');
         }
+    }
+
+    // ---- Materiales CRUD ----
+    prepareNewMaterial() {
+        (document.getElementById('materialId') || {}).value = '';
+        (document.getElementById('materialTitle') || {}).value = '';
+        (document.getElementById('materialDescription') || {}).value = '';
+        (document.getElementById('materialType') || {}).value = 'Documento';
+        const titleEl = document.getElementById('materialModalTitle');
+        if (titleEl) titleEl.textContent = 'Nuevo Material';
+        this.openModal('materialModal');
+    }
+
+    editMaterial(id) {
+        const item = this.materials.find(m => m.id === id);
+        if (!item) return;
+        (document.getElementById('materialId') || {}).value = item.id;
+        (document.getElementById('materialTitle') || {}).value = item.title;
+        (document.getElementById('materialDescription') || {}).value = item.description || '';
+        (document.getElementById('materialType') || {}).value = item.type || 'Documento';
+        const titleEl = document.getElementById('materialModalTitle');
+        if (titleEl) titleEl.textContent = 'Editar Material';
+        this.openModal('materialModal');
+    }
+
+    handleSaveMaterial(e) {
+        e.preventDefault();
+        const id = (document.getElementById('materialId') || {}).value;
+        const title = (document.getElementById('materialTitle') || {}).value || '';
+        const description = (document.getElementById('materialDescription') || {}).value || '';
+        const type = (document.getElementById('materialType') || {}).value || 'Documento';
+        if (!title) { this.showNotification('El título es obligatorio', 'warning'); return; }
+        if (id) {
+            this.materials = this.materials.map(m => m.id === id ? { ...m, title, description, type } : m);
+        } else {
+            this.materials.push({ id: Date.now().toString(), title, description, type });
+        }
+        this.saveMaterials();
+        this.loadMaterialsList();
+        this.loadMaterialsGrid();
+        this.updateStats();
+        this.closeModal('materialModal');
+        this.showNotification('Material guardado', 'success');
+    }
+
+    deleteMaterial(id) {
+        if (!confirm('¿Eliminar este material?')) return;
+        this.materials = this.materials.filter(m => m.id !== id);
+        this.saveMaterials();
+        this.loadMaterialsList();
+        this.loadMaterialsGrid();
+        this.updateStats();
+        this.showNotification('Material eliminado', 'success');
+    }
+
+    // ---- Páginas CRUD (simple sobre lista mock) ----
+    prepareNewPage() {
+        (document.getElementById('pageId') || {}).value = '';
+        (document.getElementById('pageTitle') || {}).value = '';
+        (document.getElementById('pageDescription') || {}).value = '';
+        (document.getElementById('pageStatus') || {}).value = 'Activa';
+        const titleEl = document.getElementById('pageModalTitle');
+        if (titleEl) titleEl.textContent = 'Nueva Página';
+        this.openModal('pageModal');
+    }
+
+    editPage(title) {
+        // Como las páginas son mock, prellenamos con el título
+        (document.getElementById('pageId') || {}).value = title;
+        (document.getElementById('pageTitle') || {}).value = title;
+        (document.getElementById('pageDescription') || {}).value = 'Descripción editable';
+        (document.getElementById('pageStatus') || {}).value = 'Activa';
+        const titleEl = document.getElementById('pageModalTitle');
+        if (titleEl) titleEl.textContent = 'Editar Página';
+        this.openModal('pageModal');
+    }
+
+    handleSavePage(e) {
+        e.preventDefault();
+        // Persistencia simple en localStorage como demo
+        const id = (document.getElementById('pageId') || {}).value;
+        const title = (document.getElementById('pageTitle') || {}).value || '';
+        const description = (document.getElementById('pageDescription') || {}).value || '';
+        const status = (document.getElementById('pageStatus') || {}).value || 'Activa';
+        const savedRaw = localStorage.getItem('adminPages');
+        const pages = savedRaw ? JSON.parse(savedRaw) : [];
+        if (id) {
+            const updated = pages.map(p => (p.id === id || p.title === id) ? { ...p, id: id, title, description, status } : p);
+            localStorage.setItem('adminPages', JSON.stringify(updated));
+        } else {
+            pages.push({ id: Date.now().toString(), title, description, status });
+            localStorage.setItem('adminPages', JSON.stringify(pages));
+        }
+        this.closeModal('pageModal');
+        this.showNotification('Página guardada', 'success');
+        this.loadContentTabs();
     }
 
     loadScheduleCalendar() {
