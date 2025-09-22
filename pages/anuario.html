@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anuario- I.E. Héctor Abad Gómez - MEDIA TÉCNICA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
             --primary-color: #3498db;
@@ -23,18 +24,49 @@
         }
 
         .nav-button {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
             color: white;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 1px;
+            padding: 15px 25px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            z-index: 4;
+            margin-bottom: 20px;
+        }
+
+        .nav-button:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-button i {
+            font-size: 1.1rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
 
         header {
-            color: rgb(27, 25, 25);
+            color: white;
             text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.95), rgba(41, 128, 185, 0.9), rgba(31, 97, 141, 0.85));
+            backdrop-filter: blur(15px);
+            padding: 30px 20px;
+            margin-bottom: 20px;
+            border-radius: 0 0 25px 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
             position: relative;
         }
 
@@ -45,43 +77,210 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url(img/BANNER.jpeg);
+            background-image: url(../assets/images/BANNER.jpeg);
             background-size: cover;
-            opacity: 0.2;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0.4;
             z-index: 1;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.8), rgba(41, 128, 185, 0.7), rgba(31, 97, 141, 0.6));
+            z-index: 2;
+        }
+
+        /* Efectos decorativos adicionales */
+        header .decorative-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        header .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        header .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        header .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        header .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 30%;
+            right: 30%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 4;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+            max-width: 700px;
+            animation: slideInUp 1s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1 {
             font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 0.8rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(45deg, #fff, #e8f4fd, #fff, #d1ecf1);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease-in-out infinite;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+            animation: underlineExpand 3s ease-in-out infinite;
+        }
+
+        @keyframes underlineExpand {
+            0%, 100% { width: 0; }
+            50% { width: 100%; }
         }
 
         .logo {
-            width: 200px;
+            width: 100px;
             height: auto;
-            transition: transform 0.3s ease, filter 0.3s ease;
+            transition: all 0.5s ease;
             cursor: pointer;
-            margin-bottom: 0;
-            /* Asegúrate de que no haya margen inferior */
+            margin-bottom: 15px;
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 5;
         }
 
-
+        .logo:hover {
+            transform: scale(1.15) rotate(10deg);
+            filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.4));
+            border-color: rgba(255, 255, 255, 0.6);
+        }
 
         .subtitle {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            opacity: 0.95;
+            animation: fadeInUp 1.2s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 0.95;
+                transform: translateY(0);
+            }
         }
 
         .year {
             font-size: 1.2rem;
             font-weight: bold;
             display: inline-block;
-            padding: 0.5rem 1.5rem;
-            background-color: var(--accent-color);
-            border-radius: 50px;
-            margin-top: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px 25px;
+            background: linear-gradient(135deg, var(--accent-color), #1e3a8a, var(--accent-color));
+            background-size: 200% 200%;
+            border-radius: 30px;
+            margin-top: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+            animation: gradientShift 3s ease-in-out infinite, fadeInUp 1.5s ease-out 0.6s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .year::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .year:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.6);
         }
 
         .container {
@@ -284,22 +483,85 @@
         }
 
         footer {
-            background-color: var(--text-color);
+            background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
             color: white;
             text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 4rem;
+            padding: 20px 15px;
+            margin-top: 30px;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            animation: shimmer 2s ease-in-out infinite;
         }
 
         .footer-content {
-            max-width: 800px;
+            max-width: 500px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #ecf0f1;
+            font-weight: 600;
+        }
+
+        .footer-content p {
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .back-to-main {
+            background: linear-gradient(135deg, var(--primary-color), #2980b9);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .back-to-main:hover {
+            background: linear-gradient(135deg, #2980b9, var(--primary-color));
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .back-to-main i {
+            font-size: 0.8rem;
         }
 
         .copyright {
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
+            margin-top: 15px;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 10px;
+        }
+
+        .copyright p {
+            margin: 3px 0;
         }
 
         /* Modal para ampliar fotos */
@@ -356,6 +618,113 @@
         }
 
         /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 25px 15px;
+                margin-bottom: 20px;
+            }
+
+            .header-content {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                letter-spacing: 0.5px;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .logo {
+                width: 80px;
+            }
+
+            .year {
+                font-size: 1rem;
+                padding: 8px 20px;
+            }
+
+            .nav-button {
+                padding: 10px 15px;
+                font-size: 0.8rem;
+            }
+
+            .shape {
+                display: none; /* Ocultar formas decorativas en móvil */
+            }
+
+            .students-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .student-photo {
+                width: 80px;
+                height: 105px;
+            }
+
+            .teachers-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            footer {
+                padding: 15px 10px;
+            }
+
+            .footer-content h3 {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 20px 10px;
+            }
+
+            .header-content {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                letter-spacing: 0.3px;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .logo {
+                width: 70px;
+            }
+
+            .year {
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
+
+            .nav-button {
+                padding: 8px 12px;
+                font-size: 0.75rem;
+            }
+
+            footer {
+                padding: 12px 8px;
+            }
+
+            .footer-content h3 {
+                font-size: 0.9rem;
+            }
+
+            .footer-content p {
+                font-size: 0.7rem;
+            }
+        }
+
         @media (max-width: 668px) {
             h1 {
                 font-size: 1.8rem;
@@ -403,16 +772,22 @@
 <body>
     <div id="main-content">
         <header>
-            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/'" class="nav-button">
+            <button onclick="location.href='../index.html'" class="nav-button">
                 <i class="fas fa-home"></i> Volver a la Página Principal
             </button>
-            <div class="logo-container">
-                <div class="header-text">
-                    <img src="img/escudo.png" alt="Logo Institución Educativa Héctor Abad Gómez" class="logo">
-                    <h1>Institución Educativa Héctor Abad Gómez</h1>
-                    <div class="subtitle">Anuario Escolar - Media Técnica</div>
-                    <div class="year">2025</div>
-                </div>
+            
+            <!-- Formas decorativas flotantes -->
+            <div class="decorative-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            
+            <div class="header-content">
+                <img src="../assets/images/escudo.png" alt="Logo Institución Educativa Héctor Abad Gómez" class="logo">
+                <h1>Institución Educativa Héctor Abad Gómez</h1>
+                <div class="subtitle">Anuario Escolar - Media Técnica</div>
+                <div class="year">2025</div>
             </div>
         </header>
 
@@ -423,7 +798,7 @@
             <div class="teachers-grid">
                 <!-- Docente 1 -->
                 <div class="teacher-card">
-                    <img src="estudiantes/vico1.png" alt="docente Víctor Cañola" class="teacher-photo">
+                    <img src="../assets/images/vico1.png" alt="docente Víctor Cañola" class="teacher-photo">
                     <div class="teacher-info">
                         <h3 class="teacher-name">Víctor Cañola</h3>
                         <p class="teacher-subject">Docente de Preprensa y Programación</p>
@@ -432,7 +807,7 @@
 
                 <!-- Docente 2 -->
                 <div class="teacher-card">
-                    <img src="docentes/docente2.jpg" alt="Profesor/a 2" class="teacher-photo">
+                    <img src="../assets/images/vico2.png" alt="Profesor/a 2" class="teacher-photo">
                     <div class="teacher-info">
                         <h3 class="teacher-name">Ana María Pérez</h3>
                         <p class="teacher-subject">Instructora de Preprensa</p>
@@ -441,7 +816,7 @@
 
                 <!-- Docente 3 -->
                 <div class="teacher-card">
-                    <img src="docentes/docente3.jpg" alt="Profesor/a 3" class="teacher-photo">
+                    <img src="../assets/images/vico3.png" alt="Profesor/a 3" class="teacher-photo">
                     <div class="teacher-info">
                         <h3 class="teacher-name">Orlando Restrepo</h3>
                         <p class="teacher-subject">Instructor de Programación</p>
@@ -463,7 +838,7 @@
                 <!-- Estudiante 1 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/kelly.png" alt="Bassa Revuelta Keily Vanesa" class="student-photo"
+                        <img src="../assets/images/kelly.png" alt="Bassa Revuelta Keily Vanesa" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -474,7 +849,7 @@
                 <!-- Estudiante 2 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/Mariana.png" alt="Bermudez Chavarria Mariana" class="student-photo"
+                        <img src="../assets/images/Mariana.png" alt="Bermudez Chavarria Mariana" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -485,7 +860,7 @@
                 <!-- Estudiante 3 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/Glediangelis.png" alt="Bolivar Ojeda Glediangelis" class="student-photo"
+                        <img src="../assets/images/Glediangelis.png" alt="Bolivar Ojeda Glediangelis" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -496,7 +871,7 @@
                 <!-- Estudiante 4 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/casas.png" alt="Casas Grajales Jose Angel" class="student-photo"
+                        <img src="../assets/images/casas.png" alt="Casas Grajales Jose Angel" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -507,7 +882,7 @@
                 <!-- Estudiante 5 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/Felipe.png" alt="Castrillon Orozco Juan Felipe" class="student-photo"
+                        <img src="../assets/images/Felipe.png" alt="Castrillon Orozco Juan Felipe" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -518,7 +893,7 @@
                 <!-- Estudiante 6 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/Dayan.png" alt="Castro Gonzalez Dayana" class="student-photo"
+                        <img src="../assets/images/Dayan.png" alt="Castro Gonzalez Dayana" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -529,7 +904,7 @@
                 <!-- Estudiante 7 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/SOFIA.png" alt="Cataño Zuluaga Laura Sofia" class="student-photo"
+                        <img src="../assets/images/SOFIA.png" alt="Cataño Zuluaga Laura Sofia" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -540,7 +915,7 @@
                 <!-- Estudiante 8 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/VALERIA.png" alt="Cumachina Gonzalez Valeria Valentina"
+                        <img src="../assets/images/VALERIA.png" alt="Cumachina Gonzalez Valeria Valentina"
                             class="student-photo" onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -551,7 +926,7 @@
                 <!-- Estudiante 9 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/mikel.png" alt="Gamboa Romero Mikell Gabriel" class="student-photo"
+                        <img src="../assets/images/mikel.png" alt="Gamboa Romero Mikell Gabriel" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -562,7 +937,7 @@
                 <!-- Estudiante 10 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/jefry (1).png" alt="Gomez Mendez Jefry" class="student-photo"
+                        <img src="../assets/images/jefry (1).png" alt="Gomez Mendez Jefry" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -573,7 +948,7 @@
                 <!-- Estudiante 11 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/Leokary.png" alt="Graterol Aular Leokary Anabel" class="student-photo"
+                        <img src="../assets/images/Leokary.png" alt="Graterol Aular Leokary Anabel" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -584,7 +959,7 @@
                 <!-- Estudiante 12 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="/api/placeholder/400/320" alt="Guzman Perez Didier Alexander" class="student-photo"
+                        <img src="../assets/images/escudo.png" alt="Guzman Perez Didier Alexander" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -595,7 +970,7 @@
                 <!-- Estudiante 13 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/keren.png" alt="Lopez Garcia Keren Jhoana" class="student-photo"
+                        <img src="../assets/images/keren.png" alt="Lopez Garcia Keren Jhoana" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -606,7 +981,7 @@
                 <!-- Estudiante 14 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/Maicol.png" alt="Lopez Aguirre Maycol" class="student-photo"
+                        <img src="../assets/images/Maicol.png" alt="Lopez Aguirre Maycol" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -617,7 +992,7 @@
                 <!-- Estudiante 15 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/Nicol (1).png" alt="Lozano Zapata Ibet Nicol" class="student-photo"
+                        <img src="../assets/images/Nicol (1).png" alt="Lozano Zapata Ibet Nicol" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -628,7 +1003,7 @@
                 <!-- Estudiante 16 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/alexandra.png" alt="Martinez Largacha Maria Alexandra"
+                        <img src="../assets/images/alexandra.png" alt="Martinez Largacha Maria Alexandra"
                             class="student-photo" onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -639,7 +1014,7 @@
                 <!-- Estudiante 17 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/minotta.png" alt="Minota Advincola Jesus David" class="student-photo"
+                        <img src="../assets/images/minotta.png" alt="Minota Advincola Jesus David" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -650,7 +1025,7 @@
                 <!-- Estudiante 18 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/marianamore.png" alt="Moreno Palacios Mariana" class="student-photo"
+                        <img src="../assets/images/marianamore.png" alt="Moreno Palacios Mariana" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -661,7 +1036,7 @@
                 <!-- Estudiante 19 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/Juliana.png" alt="Moreno Solorzano Juliana Sofia" class="student-photo"
+                        <img src="../assets/images/Juliana.png" alt="Moreno Solorzano Juliana Sofia" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -672,7 +1047,7 @@
                 <!-- Estudiante 20 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/MANUELA.png" alt="Perez Lopera Manuela" class="student-photo"
+                        <img src="../assets/images/MANUELA.png" alt="Perez Lopera Manuela" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -683,7 +1058,7 @@
                 <!-- Estudiante 21 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/Kevin.png" alt="Pineda Jaramillo Kevin Alexis" class="student-photo"
+                        <img src="../assets/images/Kevin.png" alt="Pineda Jaramillo Kevin Alexis" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -694,7 +1069,7 @@
                 <!-- Estudiante 22 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/lizai.png" alt="Sampayo Noguera Leoriadnys Lizai" class="student-photo"
+                        <img src="../assets/images/lizai.png" alt="Sampayo Noguera Leoriadnys Lizai" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -705,7 +1080,7 @@
                 <!-- Estudiante 23 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/JANNYS.png" alt="Tapia Murillo Jannys Andrea" class="student-photo"
+                        <img src="../assets/images/JANNYS.png" alt="Tapia Murillo Jannys Andrea" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -716,7 +1091,7 @@
                 <!-- Estudiante 24 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/WILLINTON.png" alt="Tascon Martinez Willinton Andres"
+                        <img src="../assets/images/WILLINTON.png" alt="Tascon Martinez Willinton Andres"
                             class="student-photo" onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -727,7 +1102,7 @@
                 <!-- Estudiante 25 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="estudiantes/DANIEL.png" alt="Teran Guerrero Daniel Alejandro" class="student-photo"
+                        <img src="../assets/images/DANIEL.png" alt="Teran Guerrero Daniel Alejandro" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -746,7 +1121,7 @@
                 <!-- Estudiante 1 -->
                 <div class="student-card">
                     <div class="photo-container">
-                        <img src="/api/placeholder/400/320" alt="Estudiante 1" class="student-photo"
+                        <img src="../assets/images/escudo.png" alt="Estudiante 1" class="student-photo"
                             onclick="openModal(this.src)">
                     </div>
                     <div class="student-info">
@@ -759,6 +1134,21 @@
             </div>
         </section>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Anuario Escolar 2025</h3>
+            <p>Institución Educativa Héctor Abad Gómez - Media Técnica</p>
+            <button onclick="location.href='../index.html'" class="back-to-main">
+                <i class="fas fa-home"></i> Volver al Sitio Principal
+            </button>
+            <div class="copyright">
+                <p>&copy; 2025 - Todos los derechos reservados</p>
+                <p>Elaboración y Desarrollo - Docente Victor Cañola</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Modal para ampliar fotos -->
     <div id="imageModal" class="modal">
@@ -798,6 +1188,20 @@
             document.getElementById(gradeId).classList.add("active");
             document.querySelector(`[onclick="showGrade('${gradeId}')"]`).classList.add("active");
         }
+
+        // Cerrar modal al hacer clic fuera de la imagen
+        document.getElementById("imageModal").addEventListener("click", function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Cerrar modal con tecla Escape
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        });
 
     </script>
 </body>
