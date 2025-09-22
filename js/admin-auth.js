@@ -2,8 +2,9 @@
 class AdminAuth {
     constructor() {
         this.adminCredentials = {
-            username: 'admin',
-            password: 'admin123' // En producción, esto debería ser más seguro
+            // Credenciales solicitadas por el usuario
+            username: 'adminhag@gmail.com',
+            password: 'CAÑOLA2027*' // Nota: para producción mover a backend/variables de entorno
         };
         this.init();
     }
