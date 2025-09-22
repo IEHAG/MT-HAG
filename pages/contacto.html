@@ -5,31 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto -</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Estilo claro y legible solo para esta página */
+        header h1 {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 6px;
+            color: #2c3e50;
+        }
+        header h1::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 3px;
+            border-radius: 2px;
+            background: #3498db;
+        }
+        .contact-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            align-items: start;
+            position: relative;
+        }
+        .contact-form.content-card, .contact-info.content-card {
+            background: #ffffff;
+            color: #1a1a1a;
+            border: 1px solid #e6e6e6;
+            border-radius: 14px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-form.content-card::before, .contact-info.content-card::before { display: none; }
+        .contact-form.content-card::after, .contact-info.content-card::after { display: none; }
+        .contact-form h2, .contact-info h3 {
+            color: #2c3e50;
+        }
+        .contact-form input, .contact-form textarea {
+            background: #ffffff;
+            color: #2c3e50;
+            border: 2px solid #dddddd;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .contact-form input::placeholder, .contact-form textarea::placeholder { color: #8a97a3; }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52,152,219,0.15);
+        }
+        .contact-form .material-button.download {
+            background: #3498db;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            border: 1px solid #2d81b9;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+        }
+        .contact-form .material-button.download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+        }
+        .contact-info p { color: #2c3e50; }
+        .contact-info a { color: #1565c0; text-decoration: none; }
+        .contact-info a:hover { text-decoration: underline; }
+        .map-container { border: 1px solid #e0e0e0 !important; box-shadow: 0 8px 22px rgba(0,0,0,0.12); }
+        @media (max-width: 780px) {
+            .contact-form.content-card, .contact-info.content-card { border-radius: 12px; }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Contacto</h1>
-            <button onclick="location.href='index.html'" class="back-button">
+            <button onclick="location.href='../index.html'" class="back-button">
                 <i class="icon">⬅️</i> Volver
             </button>
         </header>
 
-        <div class="contact-section">
-            <form id="contact-form" class="contact-form">
-                <h2>Envíanos un mensaje</h2>
-                <input type="text" placeholder="Nombre completo" required>
-                <input type="email" placeholder="Correo electrónico" required>
-                <textarea placeholder="Tu mensaje" required></textarea>
-                <button type="button" onclick="window.location.href='mailto:victorcanola@iehectorabadgomez.edu.co'">Enviar Mensaje</button>
+        <div class="contact-section" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items:start;">
+            <form id="contact-form" class="contact-form content-card" style="background:#fff;">
+                <h2 style="margin-bottom: 12px;">Envíanos un mensaje</h2>
+                <input type="text" placeholder="Nombre completo" required style="padding:12px; border:2px solid #ddd; border-radius:8px; margin-bottom:10px; width:100%;">
+                <input type="email" placeholder="Correo electrónico" required style="padding:12px; border:2px solid #ddd; border-radius:8px; margin-bottom:10px; width:100%;">
+                <textarea placeholder="Tu mensaje" required style="padding:12px; border:2px solid #ddd; border-radius:8px; margin-bottom:12px; width:100%; min-height:120px;"></textarea>
+                <button type="button" class="material-button download" style="border:none;" onclick="window.location.href='mailto:victorcanola@iehectorabadgomez.edu.co'">
+                    <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje
+                </button>
             </form>
 
-            <div class="contact-info">
-                <h3>Información de Contacto</h3>
-                <p>📍 Calle 50 No 39 - 65 Barrio Boston</p>
+            <div class="contact-info content-card" style="background:#fff;">
+                <h3 style="margin-bottom:10px;">Información de Contacto</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Calle 50 No 39 - 65 Barrio Boston</p>
                 <p>Medellín - Colombia - Suramérica</p>
-                <p>📞 216 12 58</p>
-                <p><a href="https://www.google.com/maps/place/Instituci%C3%B3n+Educativa+H%C3%A9ctor+Abad+G%C3%B3mez/@6.245557,-75.56033,15z/data=!4m5!3m4!1s0x0:0x82ced4a19d499882!8m2!3d6.245557!4d-75.5603298?hl=es&shorturl=1" target="_blank">Cómo llegar</a></p>
+                <p><i class="fa-solid fa-phone"></i> 216 12 58</p>
+                <p>
+                    <a href="https://www.google.com/maps/place/Instituci%C3%B3n+Educativa+H%C3%A9ctor+Abad+G%C3%B3mez/@6.245557,-75.56033,15z/data=!4m5!3m4!1s0x0:0x82ced4a19d499882!8m2!3d6.245557!4d-75.5603298?hl=es&shorturl=1" target="_blank">
+                        <i class="fa-solid fa-map"></i> Cómo llegar</a>
+                </p>
+                <div class="map-container" style="margin-top:12px; border-radius:12px; overflow:hidden; border:2px solid #e0e0e0;">
+                    <iframe title="Ubicación I.E. Héctor Abad Gómez" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.815030797795!2d-75.562904!3d6.2455569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44284d5b3a8c21%3A0x82ced4a19d499882!2sInstituci%C3%B3n%20Educativa%20H%C3%A9ctor%20Abad%20G%C3%B3mez!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
     </div>
