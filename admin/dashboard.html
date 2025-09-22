@@ -22,6 +22,10 @@
                         <i class="fas fa-tachometer-alt"></i>
                         <span>Dashboard</span>
                     </li>
+                    <li class="nav-item" data-section="menu">
+                        <i class="fas fa-th-large"></i>
+                        <span>Menú principal</span>
+                    </li>
                     <li class="nav-item" data-section="estudiantes">
                         <i class="fas fa-users"></i>
                         <span>Estudiantes</span>
@@ -163,6 +167,18 @@
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <!-- Menú principal Section -->
+            <section id="menu-section" class="content-section">
+                <div class="section-header">
+                    <h2>Menú principal (botones de la página)</h2>
+                    <button class="btn-primary" onclick="window.dashboard && window.dashboard.prepareNewMenuItem()">
+                        <i class="fas fa-plus"></i>
+                        Agregar botón
+                    </button>
+                </div>
+                <div class="content-list" id="menuItemsList"></div>
             </section>
             
             <!-- Estudiantes Section -->
@@ -357,6 +373,42 @@
                     </div>
                     <div class="modal-actions">
                         <button type="button" class="btn-secondary" onclick="closeModal('addScheduleModal')">Cancelar</button>
+                        <button type="submit" class="btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal: Agregar/Editar Botón de Menú -->
+        <div id="menuItemModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="menuModalTitle">Nuevo botón</h3>
+                    <span class="close" onclick="closeModal('menuItemModal')">&times;</span>
+                </div>
+                <form id="menuItemForm">
+                    <input type="hidden" id="menuItemId" />
+                    <div class="form-group">
+                        <label for="menuTitle">Título</label>
+                        <input type="text" id="menuTitle" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="menuIcon">Ícono (emoji o clase FA: fa-solid fa-code)</label>
+                        <input type="text" id="menuIcon" placeholder="💻 o fa-solid fa-code" />
+                    </div>
+                    <div class="form-group">
+                        <label for="menuHref">Enlace</label>
+                        <input type="text" id="menuHref" placeholder="pages/programacion.html o https://..." required />
+                    </div>
+                    <div class="form-group">
+                        <label for="menuTarget">Destino</label>
+                        <select id="menuTarget">
+                            <option value="_self">Misma pestaña</option>
+                            <option value="_blank">Nueva pestaña</option>
+                        </select>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-secondary" onclick="closeModal('menuItemModal')">Cancelar</button>
                         <button type="submit" class="btn-primary">Guardar</button>
                     </div>
                 </form>

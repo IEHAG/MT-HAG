@@ -6,6 +6,7 @@ class AdminDashboard {
         this.students = this.loadStudents();
         this.materials = this.loadMaterials();
         this.schedules = this.loadSchedules();
+        this.menuItems = this.loadMenuItems();
         this.init();
     }
 
@@ -73,6 +74,12 @@ class AdminDashboard {
         if (addScheduleForm) {
             addScheduleForm.addEventListener('submit', (e) => this.handleAddPublicSchedule(e));
         }
+
+        // Formulario de botón de menú
+        const menuItemForm = document.getElementById('menuItemForm');
+        if (menuItemForm) {
+            menuItemForm.addEventListener('submit', (e) => this.handleSaveMenuItem(e));
+        }
     }
 
     showSection(sectionName) {
@@ -127,6 +134,9 @@ class AdminDashboard {
             case 'estudiantes':
                 this.loadStudentsGrid();
                 break;
+            case 'menu':
+                this.loadMenuItemsList();
+                break;
             case 'contenido':
                 this.loadContentTabs();
                 break;
@@ -137,6 +147,97 @@ class AdminDashboard {
                 this.loadMaterialsGrid();
                 break;
         }
+    }
+
+    // ---- Menú principal (Index) ----
+    loadMenuItems() {
+        const saved = localStorage.getItem('siteMenuItems');
+        return saved ? JSON.parse(saved) : [];
+    }
+
+    saveMenuItems() {
+        localStorage.setItem('siteMenuItems', JSON.stringify(this.menuItems));
+    }
+
+    loadMenuItemsList() {
+        const listEl = document.getElementById('menuItemsList');
+        if (!listEl) return;
+        if (!this.menuItems.length) {
+            listEl.innerHTML = '<div class="content-item"><div class="content-info">No hay botones aún. Usa "Agregar botón".</div></div>';
+            return;
+        }
+        listEl.innerHTML = this.menuItems.map(item => `
+            <div class="content-item">
+                <div class="content-icon"><i class="fas fa-link"></i></div>
+                <div class="content-info">
+                    <div class="content-title">${item.title}</div>
+                    <div class="content-description">${item.href} (${item.target || '_self'})</div>
+                </div>
+                <div class="content-actions">
+                    <button class="btn-primary" onclick="window.dashboard.editMenuItem('${item.id}')"><i class="fas fa-edit"></i> Editar</button>
+                    <button class="btn-secondary" onclick="window.dashboard.deleteMenuItem('${item.id}')"><i class="fas fa-trash"></i> Eliminar</button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    handleSaveMenuItem(e) {
+        e.preventDefault();
+        const id = (document.getElementById('menuItemId') || {}).value;
+        const title = (document.getElementById('menuTitle') || {}).value || '';
+        const icon = (document.getElementById('menuIcon') || {}).value || '';
+        const href = (document.getElementById('menuHref') || {}).value || '';
+        const target = (document.getElementById('menuTarget') || {}).value || '_self';
+
+        if (!title || !href) {
+            this.showNotification('Título y enlace son obligatorios', 'warning');
+            return;
+        }
+
+        if (id) {
+            // update
+            this.menuItems = this.menuItems.map(x => x.id === id ? { ...x, title, icon, href, target } : x);
+        } else {
+            // create
+            this.menuItems.push({ id: Date.now().toString(), title, icon, href, target });
+        }
+
+        this.saveMenuItems();
+        this.closeModal('menuItemModal');
+        this.loadMenuItemsList();
+        this.showNotification('Botón guardado', 'success');
+    }
+
+    editMenuItem(id) {
+        const item = this.menuItems.find(x => x.id === id);
+        if (!item) return;
+        const titleEl = document.getElementById('menuModalTitle');
+        if (titleEl) titleEl.textContent = 'Editar botón';
+        (document.getElementById('menuItemId') || {}).value = item.id;
+        (document.getElementById('menuTitle') || {}).value = item.title;
+        (document.getElementById('menuIcon') || {}).value = item.icon || '';
+        (document.getElementById('menuHref') || {}).value = item.href;
+        (document.getElementById('menuTarget') || {}).value = item.target || '_self';
+        this.openModal('menuItemModal');
+    }
+
+    deleteMenuItem(id) {
+        if (!confirm('¿Eliminar este botón?')) return;
+        this.menuItems = this.menuItems.filter(x => x.id !== id);
+        this.saveMenuItems();
+        this.loadMenuItemsList();
+        this.showNotification('Botón eliminado', 'success');
+    }
+
+    prepareNewMenuItem() {
+        const titleEl = document.getElementById('menuModalTitle');
+        if (titleEl) titleEl.textContent = 'Nuevo botón';
+        (document.getElementById('menuItemId') || {}).value = '';
+        (document.getElementById('menuTitle') || {}).value = '';
+        (document.getElementById('menuIcon') || {}).value = '';
+        (document.getElementById('menuHref') || {}).value = '';
+        (document.getElementById('menuTarget') || {}).value = '_self';
+        this.openModal('menuItemModal');
     }
 
     loadDashboardData() {
