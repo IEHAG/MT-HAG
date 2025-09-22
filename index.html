@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Técnica - I.E. Héctor Abad Gómez</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
@@ -16,7 +16,7 @@
             <span class="close">&times;</span>
 
             <!-- Logo de la institución -->
-            <img src="img/escudo.png" alt="Logo IE Héctor Abad Gómez" class="logo">
+            <img src="assets/images/escudo.png" alt="Logo IE Héctor Abad Gómez" class="logo">
 
             <!-- Mensaje de bienvenida -->
             <h2 class="titulo">¡BIENVENIDO A LA PÁGINA DE MEDIA TÉCNICA!</h2>
@@ -33,24 +33,34 @@
 
     <div id="main-content">
         <header>
-            <button onclick="location.href='https://www.iehectorabadgomez.edu.co/'" class="nav-button">
-                <i class="fas fa-home"></i> Volver a la Página Principal
-            </button>
+            <!-- Botón de volver a la página principal -->
+            <div class="back-to-main">
+                <a href="https://www.iehectorabadgomez.edu.co/" target="_blank" class="back-btn" title="Volver a la Página Principal">
+                    <i class="fas fa-home"></i>
+                    <span>Volver</span>
+                </a>
+            </div>
             <div class="logo-container">
-                <img src="img/LOGO.png" alt="Logo" class="logo">
+                <img src="assets/images/LOGO.png" alt="Logo" class="logo">
                 <div class="header-text">
                     <h1>Media Técnica</h1>
                     <p class="subtitle">I.E. Héctor Abad Gómez</p>
                     <p class="teacher">Docente: Victor Cañola</p>
                 </div>
             </div>
+            <!-- Botón de acceso al panel de administración -->
+            <div class="admin-access">
+                <a href="admin/login.html" class="admin-btn" title="Acceso Administrador">
+                    <i class="fas fa-cog"></i>
+                </a>
+            </div>
         </header>
         <nav class="navigation">
-            <button onclick="location.href='programacion.html'" class="nav-button">
+            <button onclick="location.href='pages/programacion.html'" class="nav-button">
                 <i class="icon">💻</i>
                 Programación de Software
             </button>
-            <button onclick="location.href='preprensa.html'" class="nav-button">
+            <button onclick="location.href='pages/preprensa.html'" class="nav-button">
                 <i class="icon">🎨</i>
                 Preprensa Digital
             </button>
@@ -59,24 +69,24 @@
             </button>
             <!-- Menú desplegable oculto -->
             <div id="submenu" class="submenu hidden">
-                <button onclick="location.href='mallapreprogramacion.html'" class="submenu-btn">💻 Programación</button>
-                <button onclick="location.href='mallapreprensa.html'" class="submenu-btn">📖 Preprensa
+                <button onclick="location.href='pages/mallapreprogramacion.html'" class="submenu-btn">💻 Programación</button>
+                <button onclick="location.href='pages/mallapreprensa.html'" class="submenu-btn">📖 Preprensa
                     Digital</button>
 
             </div>
-            <button onclick="location.href='material.html'" class="nav-button">
+            <button onclick="location.href='pages/material.html'" class="nav-button">
                 <i class="icon">📥</i>
                 Material
             </button>
-            <button onclick="location.href='horario.html'" class="nav-button">
+            <button onclick="location.href='pages/horario.html'" class="nav-button">
                 <i class="icon">📅</i>
                 Horario
             </button>
-            <button onclick="location.href='planes.html'" class="nav-button">
+            <button onclick="location.href='pages/planes.html'" class="nav-button">
                 <i class="icon">📝</i>
                 Planes de Mejoramiento
             </button>
-            <button onclick="location.href='proyecto.html'" class="nav-button">
+            <button onclick="location.href='pages/proyecto.html'" class="nav-button">
                 <i class="icon">🚀</i>
                 Proyecto Propio
             </button>
@@ -86,7 +96,7 @@
                 <i class="icon">📊</i>
                 Indicadores
             </button>
-            <button onclick="location.href='formatos.html'"
+            <button onclick="location.href='pages/formatos.html'"
                 class="nav-button">
                 <i class="icon">📚</i>
                 Formatos
@@ -96,12 +106,12 @@
                 <i class="icon">✍️</i>
                 Pruebas de Periodo
             </button>
-            <button onclick="location.href='enlace.html'" class="nav-button">
+            <button onclick="location.href='pages/enlace.html'" class="nav-button">
                 <i class="icon">🔗</i>
                 MEGA AI para Estudiantes
             </button>
 
-            <button onclick="location.href='catalogo.html'" class="nav-button">
+            <button onclick="location.href='pages/catalogo.html'" class="nav-button">
                 <i class="icon">📖</i>
                 Revista Intectiva
             </button>
@@ -129,7 +139,7 @@
                 <i class="icon">🏫</i>
                 Máster 2000
             </button>
-            <button onclick="location.href='contacto.html'" class="nav-button">
+            <button onclick="location.href='pages/contacto.html'" class="nav-button">
                 <i class="icon">📞</i>
                 Contactanos
             </button>
@@ -147,8 +157,8 @@
             </div>
 
             <!-- Enlace a los archivos CSS y JS del chatbot -->
-            <link rel="stylesheet" href="chatbot.css">
-            <script src="chatbot.js"></script>
+            <link rel="stylesheet" href="css/chatbot.css">
+            <script src="js/chatbot.js"></script>
 
         </nav>
 
@@ -160,26 +170,28 @@
         </div>
     </section>
     </div>
-    <script src="main.js"></script>
-    <!-- Agrega esto en el <head> si no tienes Font Awesome -->
-
+    <script src="js/main.js"></script>
 
     <footer>
-        <p>Síguenos en nuestras redes sociales</p>
-        <ul class="social-icons">
-            <li><a href="https://www.facebook.com/AbadistaHAG/?locale=es_LA" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-facebook"></i> Facebook</a></li>
-            <li><a href="https://iehag.github.io/HAGONOTICIAS/" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-newspaper"></i> Periódico</a></li>
-            <li><a href="https://www.instagram.com/i.e.hectorabadgomez/?hl=en" target="_blank"
-                    rel="noopener noreferrer">
-                    <i class="fab fa-instagram"></i> Instagram</a></li>
-            <li><a href="https://www.youtube.com/channel/UC1k1n-IAG9auH6aJr6Lm_kw" target="_blank"
-                    rel="noopener noreferrer">
-                    <i class="fab fa-youtube"></i> YouTube</a></li>
-        </ul>
-        <p>&copy; 2025 - Todos los derechos reservados</p>
-        <p>&copy; Elaboración y Desarrollo- Docente Victor Cañola</p>
+        <div class="footer-content">
+            <p>Síguenos en nuestras redes sociales</p>
+            <ul class="social-icons">
+                <li><a href="https://www.facebook.com/AbadistaHAG/?locale=es_LA" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook"></i> Facebook</a></li>
+                <li><a href="https://iehag.github.io/HAGONOTICIAS/" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-newspaper"></i> Periódico</a></li>
+                <li><a href="https://www.instagram.com/i.e.hectorabadgomez/?hl=en" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="https://www.youtube.com/channel/UC1k1n-IAG9auH6aJr6Lm_kw" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-youtube"></i> YouTube</a></li>
+            </ul>
+            <div class="footer-info">
+                <p>&copy; 2025 - Todos los derechos reservados</p>
+                <p>&copy; Elaboración y Desarrollo - Docente Victor Cañola</p>
+            </div>
+        </div>
     </footer>
 </body>
 
