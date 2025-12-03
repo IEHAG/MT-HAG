@@ -534,7 +534,10 @@
             </div>
         </section>
 
-        <!-- TARJETAS - Formatos para Descargar (2.1 Compromiso y 2.3 Tratamiento) -->
+        <!-- TARJETAS - Formatos para Descargar -->
+        <section class="info-banner" style="margin-top:40px;">
+            <h2>📋 Formatos para Descargar</h2>
+        </section>
         <div class="formats-grid" id="formatsGrid"></div>
     </div>
 
@@ -562,7 +565,7 @@
     </div>
 
     <script>
-        /* ARCHIVOS - Solo Compromiso y Tratamiento de Datos */
+        /* ARCHIVOS - Formatos para Descargar */
         const docs = {
             "2.1": {
                 title: "2.1 Compromiso del Aprendiz",
@@ -575,6 +578,12 @@
                 desc: "Menores: firma aprendiz + acudiente. Dejar vacío Nº ficha.",
                 url: "https://docs.google.com/document/d/10Jbz-Pq-f-z7PyFqnoVMYKkhiksdmqWX/edit?usp=sharing&ouid=109562780157438229951&rtpof=true&sd=true",
                 type: "word"
+            },
+            "EPS": {
+                title: "Certificado EPS o Sisbén",
+                desc: "Consulta y descarga tu certificado de afiliación al Sistema de Salud. Estado ACTIVO – vigencia 2026.",
+                url: "https://www.adres.gov.co/consulte-su-eps",
+                type: "pdf"
             }
         };
 
@@ -583,14 +592,26 @@
         Object.entries(docs).forEach(([k, d]) => {
             const card = document.createElement('div');
             card.className = 'format-card';
-            const ico = {pdf: '📄', word: '📝', excel: '📊', video: '🎥'}[d.type];
-            const icn = {pdf: 'pdf-icon', word: 'word-icon', excel: 'excel-icon', video: 'video-icon'}[d.type];
+            
+            // Icono especial para EPS
+            let ico, icn;
+            if (k === "EPS") {
+                ico = '🏥';
+                icn = 'pdf-icon'; // Usar estilo de PDF para EPS
+            } else {
+                ico = {pdf: '📄', word: '📝', excel: '📊', video: '🎥'}[d.type];
+                icn = {pdf: 'pdf-icon', word: 'word-icon', excel: 'excel-icon', video: 'video-icon'}[d.type];
+            }
+            
+            // Texto del botón según el tipo
+            const buttonText = k === "EPS" ? "🔗 Consultar y Descargar" : "⬇️ Descargar";
+            
             card.innerHTML = `
                 <div class="format-icon ${icn}">${ico}</div>
                 <h3 class="format-title">${d.title}</h3>
                 <p class="format-description">${d.desc}</p>
                 <div class="format-actions">
-                    <a class="btn btn-primary" href="${d.url}" target="_blank">⬇️ Descargar</a>
+                    <a class="btn btn-primary" href="${d.url}" target="_blank">${buttonText}</a>
                 </div>
             `;
             grid.appendChild(card);
