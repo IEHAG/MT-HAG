@@ -54,17 +54,39 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
     let planEstudioBtn = document.getElementById("planEstudioBtn");
     let submenu = document.getElementById("submenu");
+    let nav = document.getElementById("mainNav");
 
-    // Al hacer clic en el botón, mostrar/ocultar el menú
-    planEstudioBtn.addEventListener("click", function(event) {
-        event.stopPropagation(); // Evita que el clic cierre el menú
-        submenu.classList.toggle("hidden");
-    });
-
-    // Cerrar el menú si se hace clic fuera de él
-    document.addEventListener("click", function(event) {
-        if (!submenu.contains(event.target) && event.target !== planEstudioBtn) {
-            submenu.classList.add("hidden");
+    if (planEstudioBtn && submenu) {
+        // Asegurar que el contenedor nav sea el contexto de posicionamiento
+        if (nav) {
+            nav.style.position = nav.style.position || "relative";
         }
-    });
+
+        // Al hacer clic en el botón, mostrar/ocultar el menú
+        planEstudioBtn.addEventListener("click", function(event) {
+            event.stopPropagation(); // Evita que el clic cierre el menú
+
+            // Si se va a abrir, calcular posición justo debajo del botón
+            if (submenu.classList.contains("hidden")) {
+                const btnRect = planEstudioBtn.getBoundingClientRect();
+                const navRect = nav ? nav.getBoundingClientRect() : { top: 0, left: 0 };
+
+                const top = btnRect.bottom - navRect.top + 8; // 8px de separación
+                const left = btnRect.left - navRect.left;
+
+                submenu.style.top = `${top}px`;
+                submenu.style.left = `${left}px`;
+                submenu.classList.remove("hidden");
+            } else {
+                submenu.classList.add("hidden");
+            }
+        });
+
+        // Cerrar el menú si se hace clic fuera de él
+        document.addEventListener("click", function(event) {
+            if (!submenu.contains(event.target) && event.target !== planEstudioBtn) {
+                submenu.classList.add("hidden");
+            }
+        });
+    }
 });
