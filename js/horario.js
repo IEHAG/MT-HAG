@@ -1,26 +1,30 @@
 const schedule = {
-    "11.2": [
-        { day: "Lunes", time: "1:00 PM - 6:00 PM", subject: "Preprensa Digital para Medios Impresos-Instructor SENA" },
-        { day: "Jueves", time: "1:00 PM - 6:00 PM", subject: "Preprensa Digital para Medios Impresos-Docente HAG" },
-        { day: "Descansos", time: "3:14 PM - 3:45 PM", subject: "Días  Miércoles y Viernes" }
+"11.2": [
+        { day: "Lunes", time: "1:00 PM - 6:00 PM", subject: "Preprensa Digital para Medios Impresos - Instructor SENA" },
+        { day: "Lunes", time: "1:00 PM - 6:00 PM", subject: "Trabajo Conjunto SENA - Docente IEHAG" },
+        { day: "Jueves", time: "1:00 PM - 6:00 PM", subject: "Preprensa Digital para Medios Impresos - Docente IEHAG" },
+        { day: "Descanso", time: "3:14 PM - 3:45 PM", subject: "Aplica dentro de la jornada" }
     ],
+
     "10.1": [
-        { day: "Martes", time: "1:00 PM - 6:00 PM", subject: "Programación de Software-Instructor SENA" },
-        { day: "Martes", time: "2:00 PM - 3:00 PM", subject: "Revisión Proyectos Y Trabajo Conjunto- Instructor SENA y Docente HAG" },
-        { day: "Miércoles", time: "1:00 PM - 6:00 PM", subject: "Programación de Software-Docente HAG" },
-        { day: "Descansos", time: "3:14 PM - 3:45 PM", subject: "Días Martes y Miércoles" }
+        { day: "Martes", time: "1:00 PM - 6:00 PM", subject: "Programación de Software - Docente IEHAG" },
+        { day: "Miércoles", time: "1:00 PM - 6:00 PM", subject: "Programación de Software - Instructor SENA" },
+        { day: "Descanso", time: "3:14 PM - 3:45 PM", subject: "Aplica dentro de la jornada" }
     ],
+
     "10.2": [
-        { day: "Lunes", time: "1:00 PM - 6:00 PM", subject: "Preprensa Digital para Medios Impresos-Docente HAG" },
-        { day: "Martes", time: "1:00 PM - 6:00 PM", subject: "Preprensa Digital para Medios Impresos-Instructor SENA" },
-        { day: "Martes", time: "4:00 PM - 5:00 PM", subject: "Revisión Proyectos Y Trabajo Conjunto- Instructor SENA y Docente HAG" },
-        { day: "Descansos", time: "3:14 PM - 3:45 PM", subject: "Días Lunes y Martes" }
+        { day: "Lunes", time: "1:00 PM - 6:00 PM", subject: "Preprensa Digital para Medios Impresos - Instructor SENA" },
+        { day: "Lunes", time: "1:00 PM - 6:00 PM", subject: "Trabajo Conjunto SENA - Docente IEHAG" },
+        { day: "Miércoles", time: "1:00 PM - 6:00 PM", subject: "Preprensa Digital para Medios Impresos - Docente IEHAG" },
+        { day: "Descanso", time: "3:14 PM - 3:45 PM", subject: "Aplica dentro de la jornada" }
     ],
+
     "11.1": [
-        { day: "Miércoles", time: "1:00 PM - 6:00 PM", subject: "Programación de Software-Instructor SENA" },
-        { day: "Viernes", time: "1:00 PM - 6:00 PM", subject: "Programación de Software-Docente HAG" },
-        { day: "Descansos", time: "3:14 PM - 3:45 PM", subject: "Días  Miércoles y Viernes" }
+        { day: "Martes", time: "1:00 PM - 6:00 PM", subject: "Programación de Software - Instructor SENA" },
+        { day: "Viernes", time: "1:00 PM - 6:00 PM", subject: "Programación de Software - Docente IEHAG" },
+        { day: "Descanso", time: "3:14 PM - 3:45 PM", subject: "Aplica dentro de la jornada" }
     ]
+
 };
 
 // Fusionar con horarios públicos guardados desde el dashboard
