@@ -1,578 +1,811 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestor de Formatos – Matrícula SENA 2026 + Media Técnica</title>
     <style>
         /* ===== ESTILOS ORIGINALES DEL GESTOR ===== */
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{
-            font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-            background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-            min-height:100vh;padding:20px;color:#fff;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
         }
-        .container{max-width:1200px;margin:0 auto}
-        .header{text-align:center;margin-bottom:40px}
-        .header h1{font-size:3rem;margin-bottom:10px;text-shadow:0 4px 8px rgba(0,0,0,.3)}
-        .header p{font-size:1.2rem;opacity:.9}
-        .formats-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:30px;margin-bottom:40px
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #fff;
         }
-        .format-card{
-            background:rgba(255,255,255,.95);
-            border-radius:20px;padding:30px;
-            box-shadow:0 20px 40px rgba(0,0,0,.1);
-            transition:all .3s ease;position:relative;overflow:hidden;
-            color:#333
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto
         }
-        .format-card:hover{transform:translateY(-10px);box-shadow:0 30px 60px rgba(0,0,0,.2)}
-        .format-icon{
-            width:80px;height:80px;margin:0 auto 20px;
-            display:flex;align-items:center;justify-content:center;
-            border-radius:50%;font-size:2.5rem;color:#fff;
-            text-shadow:0 2px 4px rgba(0,0,0,.3);
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px
         }
-        .video-icon{background:linear-gradient(135deg,#ff6b6b,#ee5a24)}
-        .pdf-icon{background:linear-gradient(135deg,#e74c3c,#c0392b)}
-        .excel-icon{background:linear-gradient(135deg,#27ae60,#2ecc71)}
-        .word-icon{background:linear-gradient(135deg,#3498db,#2980b9)}
-        .format-title{font-size:1.8rem;font-weight:700;text-align:center;margin-bottom:15px}
-        .format-description{text-align:center;color:#666;margin-bottom:25px;line-height:1.6}
-        .format-actions{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
-        .btn{
-            padding:12px 25px;border:none;border-radius:50px;font-weight:600;
-            cursor:pointer;transition:all .3s ease;text-decoration:none;
-            display:inline-flex;align-items:center;gap:8px;font-size:.9rem;
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, .3)
         }
-        .btn-primary{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff}
-        .btn-secondary{background:linear-gradient(135deg,#f093fb,#f5576c);color:#fff}
-        .btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(0,0,0,.2)}
-        .modal{
-            display:none;position:fixed;z-index:1000;left:0;top:0;
-            width:100%;height:100%;background:rgba(0,0,0,.8);backdrop-filter:blur(5px)
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: .9
         }
-        .modal-content{
-            background:#fff;margin:5% auto;padding:30px;border-radius:20px;
-            width:90%;max-width:800px;max-height:80vh;overflow-y:auto;position:relative;
-            animation:modalSlideIn .3s ease-out;color:#333
+
+        .formats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px
         }
-        .close{position:absolute;right:20px;top:20px;font-size:2rem;font-weight:bold;cursor:pointer;color:#999}
-        .close:hover{color:#333}
-        .file-viewer{width:100%;min-height:400px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#f9f9f9}
-        @keyframes modalSlideIn{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
-        
+
+        .format-card {
+            background: rgba(255, 255, 255, .95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .1);
+            transition: all .3s ease;
+            position: relative;
+            overflow: hidden;
+            color: #333
+        }
+
+        .format-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, .2)
+        }
+
+        .format-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 2.5rem;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+        }
+
+        .video-icon {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24)
+        }
+
+        .pdf-icon {
+            background: linear-gradient(135deg, #e74c3c, #c0392b)
+        }
+
+        .excel-icon {
+            background: linear-gradient(135deg, #27ae60, #2ecc71)
+        }
+
+        .word-icon {
+            background: linear-gradient(135deg, #3498db, #2980b9)
+        }
+
+        .format-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 15px
+        }
+
+        .format-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6
+        }
+
+        .format-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: .9rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: #fff
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .2)
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .8);
+            backdrop-filter: blur(5px)
+        }
+
+        .modal-content {
+            background: #fff;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn .3s ease-out;
+            color: #333
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #999
+        }
+
+        .close:hover {
+            color: #333
+        }
+
+        .file-viewer {
+            width: 100%;
+            min-height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f9f9f9
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(.8)
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1)
+            }
+        }
+
         /* ===== MEDIA QUERIES RESPONSIVE ===== */
-        @media(max-width:768px){
-            body{padding:10px}
-            .container{max-width:100%}
-            
+        @media(max-width:768px) {
+            body {
+                padding: 10px
+            }
+
+            .container {
+                max-width: 100%
+            }
+
             /* Header */
-            .header{margin-bottom:30px}
-            .header h1{font-size:1.8rem;line-height:1.2}
-            .header p{font-size:1rem;padding:0 10px}
-            
+            .header {
+                margin-bottom: 30px
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+                line-height: 1.2
+            }
+
+            .header p {
+                font-size: 1rem;
+                padding: 0 10px
+            }
+
             /* Info Banner */
-            .info-banner{
-                padding:20px 15px 10px;
-                margin:0 auto 30px;
+            .info-banner {
+                padding: 20px 15px 10px;
+                margin: 0 auto 30px;
             }
-            .info-banner h2{
-                font-size:1.4rem;
-                padding:0 10px;
+
+            .info-banner h2 {
+                font-size: 1.4rem;
+                padding: 0 10px;
             }
-            
+
             /* Banner del Programa */
-            .info-banner[style*="background:linear-gradient"] h2{
-                font-size:1.5rem !important;
-                letter-spacing:1px !important;
-                padding:0 10px;
+            .info-banner[style*="background:linear-gradient"] h2 {
+                font-size: 1.5rem !important;
+                letter-spacing: 1px !important;
+                padding: 0 10px;
             }
-            .info-banner[style*="background:linear-gradient"] p{
-                font-size:1.1rem !important;
-                padding:0 10px;
+
+            .info-banner[style*="background:linear-gradient"] p {
+                font-size: 1.1rem !important;
+                padding: 0 10px;
             }
-            .info-banner[style*="background:linear-gradient"] > div{
-                padding:20px 15px !important;
+
+            .info-banner[style*="background:linear-gradient"]>div {
+                padding: 20px 15px !important;
             }
-            .info-banner[style*="background:linear-gradient"] > div > div[style*="display:grid"]{
-                grid-template-columns:1fr !important;
-                gap:12px !important;
+
+            .info-banner[style*="background:linear-gradient"]>div>div[style*="display:grid"] {
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
             }
-            .info-banner[style*="background:linear-gradient"] > div > div[style*="display:grid"] > div{
-                padding:12px !important;
+
+            .info-banner[style*="background:linear-gradient"]>div>div[style*="display:grid"]>div {
+                padding: 12px !important;
             }
-            
+
             /* Formatos Grid */
-            .formats-grid{
-                grid-template-columns:1fr;
-                gap:20px;
-                margin-bottom:30px;
+            .formats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-bottom: 30px;
             }
-            .format-card{
-                padding:20px;
+
+            .format-card {
+                padding: 20px;
             }
-            .format-title{
-                font-size:1.4rem;
+
+            .format-title {
+                font-size: 1.4rem;
             }
-            .format-description{
-                font-size:0.95rem;
+
+            .format-description {
+                font-size: 0.95rem;
             }
-            .format-actions{
-                flex-direction:column;
-                gap:10px;
+
+            .format-actions {
+                flex-direction: column;
+                gap: 10px;
             }
-            .format-actions .btn{
-                width:100%;
-                justify-content:center;
+
+            .format-actions .btn {
+                width: 100%;
+                justify-content: center;
             }
-            
+
             /* Sección de Subida */
-            .upload-section{
-                padding:25px 20px;
-                margin:30px auto;
+            .upload-section {
+                padding: 25px 20px;
+                margin: 30px auto;
             }
-            .upload-section h2{
-                font-size:1.5rem;
-                padding:0 10px;
+
+            .upload-section h2 {
+                font-size: 1.5rem;
+                padding: 0 10px;
             }
-            .upload-btn{
-                padding:15px 25px;
-                font-size:1.1rem;
-                width:100%;
-                justify-content:center;
-                text-align:center;
+
+            .upload-btn {
+                padding: 15px 25px;
+                font-size: 1.1rem;
+                width: 100%;
+                justify-content: center;
+                text-align: center;
             }
-            .upload-steps{
-                padding:20px 15px;
+
+            .upload-steps {
+                padding: 20px 15px;
             }
-            .upload-steps h3{
-                font-size:1.2rem;
+
+            .upload-steps h3 {
+                font-size: 1.2rem;
             }
-            .step-item{
-                flex-direction:column;
-                padding:15px;
+
+            .step-item {
+                flex-direction: column;
+                padding: 15px;
             }
-            .step-number{
-                width:35px;
-                height:35px;
-                font-size:1rem;
-                margin-right:0;
-                margin-bottom:10px;
+
+            .step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+                margin-right: 0;
+                margin-bottom: 10px;
             }
-            .step-content{
-                font-size:1rem;
+
+            .step-content {
+                font-size: 1rem;
             }
-            .step-content ol{
-                margin-left:15px;
+
+            .step-content ol {
+                margin-left: 15px;
             }
-            .step-content code{
-                font-size:0.85rem;
-                word-break:break-all;
+
+            .step-content code {
+                font-size: 0.85rem;
+                word-break: break-all;
             }
-            
+
             /* Modal de Contraseña */
-            .password-modal-content{
-                margin:20% auto;
-                padding:25px 20px;
-                width:95%;
+            .password-modal-content {
+                margin: 20% auto;
+                padding: 25px 20px;
+                width: 95%;
             }
-            .password-modal-content h3{
-                font-size:1.4rem;
+
+            .password-modal-content h3 {
+                font-size: 1.4rem;
             }
-            .password-input{
-                padding:12px;
-                font-size:1rem;
+
+            .password-input {
+                padding: 12px;
+                font-size: 1rem;
             }
-            .password-btn{
-                padding:10px 20px;
-                font-size:0.9rem;
-                width:100%;
-                margin:5px 0;
+
+            .password-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+                margin: 5px 0;
             }
-            
+
             /* Acordeón */
-            .accordion-title{
-                padding:15px;
-                font-size:1rem;
+            .accordion-title {
+                padding: 15px;
+                font-size: 1rem;
             }
-            .accordion-content{
-                padding:12px 15px !important;
+
+            .accordion-content {
+                padding: 12px 15px !important;
             }
-            .accordion-content ul{
-                margin-left:15px;
+
+            .accordion-content ul {
+                margin-left: 15px;
             }
-            
+
             /* Modal */
-            .modal-content{
-                width:95%;
-                padding:20px;
-                margin:10% auto;
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+                margin: 10% auto;
             }
-            .file-viewer{
-                min-height:300px;
+
+            .file-viewer {
+                min-height: 300px;
             }
-            
+
             /* Botones generales */
-            .btn{
-                padding:10px 20px;
-                font-size:0.85rem;
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
             }
         }
-        
-        @media(max-width:480px){
-            body{padding:5px}
-            
+
+        @media(max-width:480px) {
+            body {
+                padding: 5px
+            }
+
             /* Header */
-            .header h1{font-size:1.5rem}
-            .header p{font-size:0.9rem}
-            
+            .header h1 {
+                font-size: 1.5rem
+            }
+
+            .header p {
+                font-size: 0.9rem
+            }
+
             /* Banner Infografía */
-            .infografia-banner{
-                margin:0 auto 30px;
-                border-radius:15px;
+            .infografia-banner {
+                margin: 0 auto 30px;
+                border-radius: 15px;
             }
-            
+
             /* Info Banner */
-            .info-banner{
-                padding:15px 10px 5px;
+            .info-banner {
+                padding: 15px 10px 5px;
             }
-            .info-banner h2{
-                font-size:1.2rem;
+
+            .info-banner h2 {
+                font-size: 1.2rem;
             }
-            
+
             /* Banner del Programa */
-            .info-banner[style*="background:linear-gradient"] h2{
-                font-size:1.2rem !important;
+            .info-banner[style*="background:linear-gradient"] h2 {
+                font-size: 1.2rem !important;
             }
-            .info-banner[style*="background:linear-gradient"] p{
-                font-size:1rem !important;
+
+            .info-banner[style*="background:linear-gradient"] p {
+                font-size: 1rem !important;
             }
-            .info-banner[style*="background:linear-gradient"] > div{
-                padding:15px 10px !important;
+
+            .info-banner[style*="background:linear-gradient"]>div {
+                padding: 15px 10px !important;
             }
-            .info-banner[style*="background:linear-gradient"] > div h3{
-                font-size:1.2rem !important;
+
+            .info-banner[style*="background:linear-gradient"]>div h3 {
+                font-size: 1.2rem !important;
             }
-            
+
             /* Formatos */
-            .format-card{
-                padding:15px;
+            .format-card {
+                padding: 15px;
             }
-            .format-title{
-                font-size:1.2rem;
+
+            .format-title {
+                font-size: 1.2rem;
             }
-            .format-icon{
-                width:60px;
-                height:60px;
-                font-size:2rem;
+
+            .format-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
             }
-            
+
             /* Subida */
-            .upload-section h2{
-                font-size:1.3rem;
+            .upload-section h2 {
+                font-size: 1.3rem;
             }
-            .upload-btn{
-                padding:12px 20px;
-                font-size:1rem;
+
+            .upload-btn {
+                padding: 12px 20px;
+                font-size: 1rem;
             }
-            .step-content{
-                font-size:0.95rem;
+
+            .step-content {
+                font-size: 0.95rem;
             }
-            
+
             /* Modal Contraseña */
-            .password-modal-content{
-                padding:20px 15px;
+            .password-modal-content {
+                padding: 20px 15px;
             }
-            .password-modal-content h3{
-                font-size:1.2rem;
+
+            .password-modal-content h3 {
+                font-size: 1.2rem;
             }
         }
 
         /* ===== ESTILOS DEL ACORDEÓN LLAMATIVO ===== */
-        .info-banner{
-            background:rgba(255,255,255,.08);
-            border-radius:20px;
-            padding:25px 30px 10px;
-            margin:0 auto 40px;
-            max-width:1000px;
-            backdrop-filter:blur(4px);
-            box-shadow:0 10px 25px rgba(0,0,0,.15);
+        .info-banner {
+            background: rgba(255, 255, 255, .08);
+            border-radius: 20px;
+            padding: 25px 30px 10px;
+            margin: 0 auto 40px;
+            max-width: 1000px;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
         }
-        .info-banner h2{
-            text-align:center;
-            margin-bottom:25px;
-            font-size:1.7rem;
-            text-shadow:0 2px 4px rgba(0,0,0,.25);
+
+        .info-banner h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.7rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, .25);
         }
-        .accordion{
-            display:flex;
-            flex-direction:column;
-            gap:12px;
+
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
-        .accordion-item{
-            background:rgba(255,255,255,.95);
-            border-radius:12px;
-            overflow:hidden;
-            box-shadow:0 4px 10px rgba(0,0,0,.1);
+
+        .accordion-item {
+            background: rgba(255, 255, 255, .95);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
         }
-        .accordion-item input{
-            display:none;
+
+        .accordion-item input {
+            display: none;
         }
-        .accordion-title{
-            display:flex;
-            align-items:center;
-            padding:18px 20px;
-            font-weight:600;
-            font-size:1.15rem;
-            cursor:pointer;
-            transition:background .3s;
-            user-select:none;
-            color:#222 !important;
+
+        .accordion-title {
+            display: flex;
+            align-items: center;
+            padding: 18px 20px;
+            font-weight: 600;
+            font-size: 1.15rem;
+            cursor: pointer;
+            transition: background .3s;
+            user-select: none;
+            color: #222 !important;
         }
-        .accordion-title:hover{
-            background:#f3f3f3;
+
+        .accordion-title:hover {
+            background: #f3f3f3;
         }
-        .acc-icon{
-            margin-right:12px;
-            font-size:1.5rem;
+
+        .acc-icon {
+            margin-right: 12px;
+            font-size: 1.5rem;
         }
-        .accordion-content{
-            max-height:0;
-            overflow:hidden;
-            transition:max-height .4s ease, padding .4s ease;
-            padding:0 20px;
-            background:#fafafa;
-            color:#444;
-            line-height:1.6;
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s ease, padding .4s ease;
+            padding: 0 20px;
+            background: #fafafa;
+            color: #444;
+            line-height: 1.6;
         }
-        .accordion-content ul{
-            margin:0 0 15px 20px;
+
+        .accordion-content ul {
+            margin: 0 0 15px 20px;
         }
-        .accordion-content .btn{
-            margin-bottom:20px;
+
+        .accordion-content .btn {
+            margin-bottom: 20px;
         }
-        .accordion-item input:checked ~ .accordion-content{
-            max-height:500px;
-            padding:15px 20px 20px;
+
+        .accordion-item input:checked~.accordion-content {
+            max-height: 500px;
+            padding: 15px 20px 20px;
         }
 
         /* ===== VIDEO DE INVITACIÓN DESTACADO ===== */
-        .invite-banner{
-            background:linear-gradient(135deg,#ff6b6b,#ee5a24);
-            border-radius:20px;
-            padding:30px;
-            margin:40px auto;
-            max-width:900px;
-            text-align:center;
-            box-shadow:0 15px 35px rgba(0,0,0,.2);
+        .invite-banner {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
         }
-        .invite-banner h2{
-            font-size:2rem;
-            margin-bottom:20px;
-            text-shadow:0 2px 4px rgba(0,0,0,.3);
+
+        .invite-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, .3);
         }
-        .invite-banner iframe{
-            width:100%;
-            height:315px;
-            border-radius:15px;
-            border:none;
+
+        .invite-banner iframe {
+            width: 100%;
+            height: 315px;
+            border-radius: 15px;
+            border: none;
         }
 
         /* ===== SECCIÓN SUBIR DOCUMENTOS ===== */
-        .upload-section{
-            background:linear-gradient(135deg,#667eea,#764ba2);
-            border-radius:20px;
-            padding:40px;
-            margin:40px auto;
-            max-width:900px;
-            text-align:center;
-            box-shadow:0 15px 35px rgba(0,0,0,.2);
+        .upload-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 900px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
         }
-        .upload-section h2{
-            font-size:2rem;
-            margin-bottom:30px;
-            text-shadow:0 2px 4px rgba(0,0,0,.3);
+
+        .upload-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, .3);
         }
-        .upload-btn{
-            background:linear-gradient(135deg,#ff6b6b,#ee5a24);
-            color:#fff;
-            padding:20px 40px;
-            border:none;
-            border-radius:50px;
-            font-size:1.3rem;
-            font-weight:700;
-            cursor:pointer;
-            transition:all .3s ease;
-            text-decoration:none;
-            display:inline-flex;
-            align-items:center;
-            gap:12px;
-            box-shadow:0 10px 25px rgba(0,0,0,.3);
-            margin-bottom:30px;
+
+        .upload-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: #fff;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
+            margin-bottom: 30px;
         }
-        .upload-btn:hover{
-            transform:translateY(-5px);
-            box-shadow:0 15px 35px rgba(0,0,0,.4);
+
+        .upload-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .4);
         }
-        .upload-steps{
-            background:rgba(255,255,255,.95);
-            border-radius:15px;
-            padding:30px;
-            margin-top:30px;
-            text-align:left;
+
+        .upload-steps {
+            background: rgba(255, 255, 255, .95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            text-align: left;
         }
-        .upload-steps h3{
-            color:#222;
-            font-size:1.5rem;
-            margin-bottom:20px;
-            text-align:center;
+
+        .upload-steps h3 {
+            color: #222;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
         }
-        .step-item{
-            display:flex;
-            align-items:flex-start;
-            margin-bottom:20px;
-            padding:15px;
-            background:#f8f9fa;
-            border-radius:10px;
-            border-left:5px solid #667eea;
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
         }
-        .step-number{
-            background:linear-gradient(135deg,#667eea,#764ba2);
-            color:#fff;
-            width:40px;
-            height:40px;
-            border-radius:50%;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            font-weight:700;
-            font-size:1.2rem;
-            margin-right:15px;
-            flex-shrink:0;
+
+        .step-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
         }
-        .step-content{
-            flex:1;
-            color:#333;
-            font-size:1.1rem;
-            line-height:1.6;
+
+        .step-content {
+            flex: 1;
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
 
         /* ===== MODAL DE CONTRASEÑA ===== */
-        .password-modal{
-            display:none;
-            position:fixed;
-            z-index:2000;
-            left:0;
-            top:0;
-            width:100%;
-            height:100%;
-            background:rgba(0,0,0,.8);
-            backdrop-filter:blur(5px);
+        .password-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .8);
+            backdrop-filter: blur(5px);
         }
-        .password-modal-content{
-            background:#fff;
-            margin:15% auto;
-            padding:40px;
-            border-radius:20px;
-            width:90%;
-            max-width:500px;
-            text-align:center;
-            animation:modalSlideIn .3s ease-out;
-            box-shadow:0 20px 60px rgba(0,0,0,.3);
+
+        .password-modal-content {
+            background: #fff;
+            margin: 15% auto;
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            animation: modalSlideIn .3s ease-out;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
         }
-        .password-modal-content h3{
-            color:#333;
-            font-size:1.8rem;
-            margin-bottom:20px;
+
+        .password-modal-content h3 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
         }
-        .password-input{
-            width:100%;
-            padding:15px;
-            margin:20px 0;
-            border:2px solid #ddd;
-            border-radius:10px;
-            font-size:1.1rem;
-            text-align:center;
-            letter-spacing:2px;
-            transition:border-color .3s;
+
+        .password-input {
+            width: 100%;
+            padding: 15px;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            text-align: center;
+            letter-spacing: 2px;
+            transition: border-color .3s;
         }
-        .password-input:focus{
-            outline:none;
-            border-color:#667eea;
+
+        .password-input:focus {
+            outline: none;
+            border-color: #667eea;
         }
-        .password-error{
-            color:#e74c3c;
-            margin-top:10px;
-            font-size:0.9rem;
-            display:none;
+
+        .password-error {
+            color: #e74c3c;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            display: none;
         }
-        .password-btn{
-            padding:12px 30px;
-            margin:10px 5px;
-            border:none;
-            border-radius:50px;
-            font-weight:600;
-            cursor:pointer;
-            transition:all .3s ease;
-            font-size:1rem;
+
+        .password-btn {
+            padding: 12px 30px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .3s ease;
+            font-size: 1rem;
         }
-        .password-btn-submit{
-            background:linear-gradient(135deg,#667eea,#764ba2);
-            color:#fff;
+
+        .password-btn-submit {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
         }
-        .password-btn-submit:hover{
-            transform:translateY(-2px);
-            box-shadow:0 10px 20px rgba(0,0,0,.2);
+
+        .password-btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
         }
-        .password-btn-cancel{
-            background:#e0e0e0;
-            color:#333;
+
+        .password-btn-cancel {
+            background: #e0e0e0;
+            color: #333;
         }
-        .password-btn-cancel:hover{
-            background:#d0d0d0;
+
+        .password-btn-cancel:hover {
+            background: #d0d0d0;
         }
 
         /* ===== BANNER DE INFOGRAFÍA ===== */
-        .infografia-banner{
-            width:100%;
-            max-width:1200px;
-            margin:0 auto 40px;
-            border-radius:20px;
-            overflow:hidden;
-            box-shadow:0 15px 35px rgba(0,0,0,.2);
+        .infografia-banner {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
         }
-        .infografia-banner img{
-            width:100%;
-            height:auto;
-            display:block;
-            object-fit:cover;
+
+        .infografia-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
         }
-        
+
         /* ===== CLASES AUXILIARES PARA RESPONSIVE ===== */
-        .requisitos-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
-            gap:15px;
+        .requisitos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
         }
-        .requisito-card{
-            padding:15px;
-            border-radius:10px;
+
+        .requisito-card {
+            padding: 15px;
+            border-radius: 10px;
         }
-        
-        @media(max-width:768px){
-            .requisitos-grid{
-                grid-template-columns:1fr !important;
-                gap:12px !important;
+
+        @media(max-width:768px) {
+            .requisitos-grid {
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
             }
-            .requisito-card{
-                padding:12px !important;
+
+            .requisito-card {
+                padding: 12px !important;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <!-- HEADER -->
@@ -580,7 +813,8 @@
             <h1>📁 Gestor de Formatos – Matrícula SENA 2026</h1>
             <p>Programa Articulación con la Educación Media - I.E Héctor Abad Gómez</p>
             <p style="font-size:1rem;margin-top:10px;">Documentos 2.1 al 2.7 listos para visualizar y descargar</p>
-            <a href="https://iehag.github.io/MT-HAG/index.html" class="btn btn-primary" style="margin-top:20px;">← Volver al Inicio</a>
+            <a href="https://iehag.github.io/MT-HAG/index.html" class="btn btn-primary" style="margin-top:20px;">←
+                Volver al Inicio</a>
         </div>
 
         <!-- BANNER DE INFOGRAFÍA -->
@@ -589,50 +823,13 @@
         </div>
 
         <!-- BANNER DEL PROGRAMA ARTICULACIÓN -->
-        <section class="info-banner" style="background:linear-gradient(135deg, rgba(34,139,34,0.9), rgba(255,140,0,0.9)); border: 3px solid rgba(255,255,255,0.3);">
-            <h2 style="font-size:2rem; text-transform:uppercase; letter-spacing:2px;">🎓 Programa Articulación con la Educación Media</h2>
-            <p style="text-align:center; font-size:1.3rem; margin-bottom:25px; font-weight:600;">Institución Educativa Héctor Abad Gómez</p>
-            <div style="background:rgba(255,255,255,0.95); border-radius:15px; padding:25px; margin-top:20px;">
-                <h3 style="color:#222; margin-bottom:20px; font-size:1.4rem; text-align:center;">✅ Requisitos para Matrícula</h3>
-                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:15px;">
-                    <div style="background:#e8f5e9; padding:15px; border-radius:10px; border-left:4px solid #4caf50;">
-                        <strong style="color:#2e7d32;">📚 Requisito Institucional</strong>
-                        <p style="color:#444; margin-top:8px; font-size:0.95rem;">Pertenecer a la Institución Educativa I.E Héctor Abad Gómez</p>
-                    </div>
-                    <div style="background:#e3f2fd; padding:15px; border-radius:10px; border-left:4px solid #2196f3;">
-                        <strong style="color:#1565c0;">🎓 Grado Requerido</strong>
-                        <p style="color:#444; margin-top:8px; font-size:0.95rem;">Grado 9º aprobado</p>
-                    </div>
-                    <div style="background:#fff3e0; padding:15px; border-radius:10px; border-left:4px solid #ff9800;">
-                        <strong style="color:#e65100;">🎂 Edad Mínima</strong>
-                        <p style="color:#444; margin-top:8px; font-size:0.95rem;">14 años cumplidos a la fecha de matrícula</p>
-                    </div>
-                    <div style="background:#f3e5f5; padding:15px; border-radius:10px; border-left:4px solid #9c27b0;">
-                        <strong style="color:#6a1b9a;">💻 Registro Sofia Plus</strong>
-                        <p style="color:#444; margin-top:8px; font-size:0.95rem;">Registrarse en <a href="https://betowa.sena.edu.co/registrarse" target="_blank" style="color:#9c27b0; font-weight:600;">Sena Sofia Plus</a></p>
-                    </div>
-                    <div style="background:#e0f2f1; padding:15px; border-radius:10px; border-left:4px solid #009688;">
-                        <strong style="color:#00695c;">🆔 Documentos de Identidad</strong>
-                        <p style="color:#444; margin-top:8px; font-size:0.95rem;">Documento de Identidad del estudiante y acudiente, legible y vigente</p>
-                    </div>
-                    <div style="background:#fce4ec; padding:15px; border-radius:10px; border-left:4px solid #e91e63;">
-                        <strong style="color:#880e4f;">📝 Formato Compromiso</strong>
-                        <p style="color:#444; margin-top:8px; font-size:0.95rem;">Formato compromiso del aprendiz (diligenciado, firmado por aprendiz y acudiente)</p>
-                    </div>
-                    <div style="background:#e8eaf6; padding:15px; border-radius:10px; border-left:4px solid #3f51b5;">
-                        <strong style="color:#1a237e;">🔐 Tratamiento de Datos</strong>
-                        <p style="color:#444; margin-top:8px; font-size:0.95rem;">Formato tratamiento de datos (aplica para menores de edad), diligenciado y firmado por aprendiz y acudiente</p>
-                    </div>
-                    <div style="background:#ffebee; padding:15px; border-radius:10px; border-left:4px solid #f44336;">
-                        <strong style="color:#b71c1c;">🏥 Certificado EPS</strong>
-                        <p style="color:#444; margin-top:8px; font-size:0.95rem;">Certificado de EPS (Estado Activo)</p>
-                    </div>
-                </div>
-                <div style="text-align:center; margin-top:25px; padding-top:20px; border-top:2px dashed rgba(255,255,255,0.3);">
-                    <p style="font-size:1.1rem; font-weight:600; margin-bottom:15px;">📥 Documentos SENA</p>
-                    <p style="font-size:0.95rem; opacity:0.9;">Todos los formatos y documentos necesarios están disponibles en las secciones siguientes</p>
-                </div>
-            </div>
+        <section class="info-banner"
+            style="background:linear-gradient(135deg, rgba(34,139,34,0.9), rgba(255,140,0,0.9)); border: 3px solid rgba(255,255,255,0.3);">
+            <h2 style="font-size:2rem; text-transform:uppercase; letter-spacing:2px;">🎓 Programa Articulación con la
+                Educación Media</h2>
+            <p style="text-align:center; font-size:1.3rem; margin-bottom:25px; font-weight:600;">Institución Educativa
+                Héctor Abad Gómez</p>
+
         </section>
 
         <!-- BANNER LLAMATIVO E INFORMATIVO -->
@@ -649,10 +846,13 @@
                         <ul>
                             <li>✅ Fecha fija: <b>febrero de 2026</b></li>
                             <li>✅ <b>Tinta negra</b> y sin tachones ni enmendaduras</li>
-                            <li>✅ Menor de edad: firma también del <b>acudiente que figure en el registro civil</b> (o con declaración juramentada)</li>
+                            <li>✅ Menor de edad: firma también del <b>acudiente que figure en el registro civil</b> (o
+                                con declaración juramentada)</li>
                         </ul>
                         <div style="margin-top:20px; text-align:center;">
-                            <a href="https://drive.google.com/file/d/1TcWuP770iurbSWDTgQYmhVsy8sSyVVt9/view?usp=sharing" target="_blank" class="btn btn-primary" style="margin-top:10px;">📄 Ver Formato para Descargar</a>
+                            <a href="https://drive.google.com/file/d/1TcWuP770iurbSWDTgQYmhVsy8sSyVVt9/view?usp=sharing"
+                                target="_blank" class="btn btn-primary" style="margin-top:10px;">📄 Ver Formato para
+                                Descargar</a>
                         </div>
                     </div>
                 </div>
@@ -686,7 +886,9 @@
                             <li>✅ Dejar <b>vacío el Nº de ficha</b> (se diligencia después)</li>
                         </ul>
                         <div style="margin-top:20px; text-align:center;">
-                            <a href="https://drive.google.com/file/d/1KGPXavpcVhbZyydMFcNMzHRWfodww7CW/view?usp=sharing" target="_blank" class="btn btn-primary" style="margin-top:10px;">📄 Ver Formato para Descargar</a>
+                            <a href="https://drive.google.com/file/d/1KGPXavpcVhbZyydMFcNMzHRWfodww7CW/view?usp=sharing"
+                                target="_blank" class="btn btn-primary" style="margin-top:10px;">📄 Ver Formato para
+                                Descargar</a>
                         </div>
                     </div>
                 </div>
@@ -700,7 +902,8 @@
                     <div class="accordion-content">
                         <ul>
                             <li>✅ Copia del <b>Registro Civil de Nacimiento</b> (obligatorio si es menor)</li>
-                            <li>✅ Si el acudiente <b>no es padre/madre</b>: incluir <b>declaración extra-juicio</b> ante notaria</li>
+                            <li>✅ Si el acudiente <b>no es padre/madre</b>: incluir <b>declaración extra-juicio</b> ante
+                                notaria</li>
                         </ul>
                     </div>
                 </div>
@@ -717,7 +920,8 @@
                             <li>✅ Vigencia: <b>2026</b> (generado enero-febrero 2026)</li>
                         </ul>
                         <div style="margin-top:20px; text-align:center;">
-                            <a href="https://www.adres.gov.co/consulte-su-eps" target="_blank" class="btn btn-primary" style="margin-top:10px;">🔗 Consultar y Descargar Certificado</a>
+                            <a href="https://www.adres.gov.co/consulte-su-eps" target="_blank" class="btn btn-primary"
+                                style="margin-top:10px;">🔗 Consultar y Descargar Certificado</a>
                         </div>
                     </div>
                 </div>
@@ -743,15 +947,21 @@
                         <span class="acc-icon">💻</span>2.7 Registro en Sofia Plus
                     </label>
                     <div class="accordion-content">
-                        <p><strong>🔗 Enlace de registro:</strong> <a href="https://betowa.sena.edu.co/registrarse" target="_blank" style="color:#667eea; font-weight:600;">https://betowa.sena.edu.co/registrarse</a></p>
+                        <p><strong>🔗 Enlace de registro:</strong> <a href="https://betowa.sena.edu.co/registrarse"
+                                target="_blank"
+                                style="color:#667eea; font-weight:600;">https://betowa.sena.edu.co/registrarse</a></p>
                         <ul>
                             <li>✅ Realizarlo <b>antes de enviar la documentación</b></li>
                             <li>✅ Hacerlo con el <b>docente de tecnología</b> y <b>instructor SENA</b></li>
                             <li>✅ Tener el <b>documento de identidad en PDF</b> a la mano (estudiante y acudiente)</li>
-                            <li>✅ Clave sugerida: <b>Primera letra del nombre en MAYÚSCULA + primera letra del primer apellido en minúscula + cédula sin espacios</b><br>Ej.: <code>Pc2345678</code></li>
+                            <li>✅ Clave sugerida: <b>Primera letra del nombre en MAYÚSCULA + primera letra del primer
+                                    apellido en minúscula + cédula sin espacios</b><br>Ej.: <code>Pc2345678</code></li>
                         </ul>
-                        <a href="https://betowa.sena.edu.co/registrarse" target="_blank" class="btn btn-primary" style="margin-top:10px;">🔗 Ir a Registro Sofia Plus</a>
-                        <a href="https://portal.senasofiaplus.edu.co/images/documentos/Registro.mp4" target="_blank" class="btn btn-secondary" style="margin-top:10px; margin-left:10px;">🎥 Ver video oficial</a>
+                        <a href="https://betowa.sena.edu.co/registrarse" target="_blank" class="btn btn-primary"
+                            style="margin-top:10px;">🔗 Ir a Registro Sofia Plus</a>
+                        <a href="https://portal.senasofiaplus.edu.co/images/documentos/Registro.mp4" target="_blank"
+                            class="btn btn-secondary" style="margin-top:10px; margin-left:10px;">🎥 Ver video
+                            oficial</a>
                     </div>
                 </div>
             </div>
@@ -769,14 +979,16 @@
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <strong>Ingresa al Drive</strong><br>
-                        Haz clic en el botón de arriba para abrir la carpeta de documentos en Google Drive
+                        Haz clic en el botón de arriba para abrir la carpeta de documentos en Google Drive e
+                        ingresa la contraseña (solicítala al docente de Media Técnica)
                     </div>
                 </div>
-                <div class="step-item">
+                <!-- <div class="step-item">
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <strong>Busca el grado donde estabas</strong><br>
-                        Navega hasta encontrar la carpeta correspondiente a tu grado (ej: 9-1, 9-2, 9-3, pensar 201, pensar 202, pensar 203, pensar 204)
+                        Navega hasta encontrar la carpeta correspondiente a tu grado (ej: 9-1, 9-2, 9-3, pensar 201,
+                        pensar 202, pensar 203, pensar 204)
                     </div>
                 </div>
                 <div class="step-item">
@@ -785,12 +997,13 @@
                         <strong>Busca la carpeta con tu nombre</strong><br>
                         Dentro de la carpeta del grado, localiza la carpeta que lleva tu nombre completo
                     </div>
-                </div>
+                </div> -->
                 <div class="step-item">
-                    <div class="step-number">4</div>
+                    <div class="step-number">2</div>
                     <div class="step-content">
                         <strong>Sube el archivo que contiene todos los documentos</strong><br>
-                        Arrastra o selecciona el archivo PDF que contiene todos tus documentos de matrícula en el siguiente orden:
+                        Arrastra o selecciona el archivo PDF que contiene todos tus documentos de matrícula en el
+                        siguiente orden:
                         <ol style="margin-top:10px; margin-left:20px; line-height:1.8;">
                             <li>Copia documento identidad o PPT al 150%</li>
                             <li>Copia registro civil</li>
@@ -799,8 +1012,11 @@
                             <li>Copia documento DEL acudiente que firma tratamiento datos del menor</li>
                             <li>Copia del sisbén o EPS</li>
                         </ol>
-                        <p style="margin-top:15px; padding:12px; background:#fff3cd; border-left:4px solid #ffc107; border-radius:5px;">
-                            <strong>⚠️ Nombre del archivo:</strong> El archivo debe ir nombrado con el tipo de documento seguido del número (ejemplo: <code>PPT-56655666</code>, <code>CC-2553556656</code>, <code>TI-156566656</code>)
+                        <p
+                            style="margin-top:15px; padding:12px; background:#fff3cd; border-left:4px solid #ffc107; border-radius:5px;">
+                            <strong>⚠️ Nombre del archivo:</strong> El archivo debe ir nombrado con el tipo de documento
+                            seguido del número (ejemplo: <code>PPT-56655666</code>, <code>CC-2553556656</code>,
+                            <code>TI-156566656</code>)
                         </p>
                     </div>
                 </div>
@@ -819,7 +1035,8 @@
         <div class="password-modal-content">
             <h3>🔐 Acceso Protegido</h3>
             <p style="color:#666; margin-bottom:20px;">Ingresa la contraseña para acceder a la carpeta de documentos</p>
-            <input type="password" id="passwordInput" class="password-input" placeholder="Ingresa la contraseña" onkeypress="handlePasswordEnter(event)">
+            <input type="password" id="passwordInput" class="password-input" placeholder="Ingresa la contraseña"
+                onkeypress="handlePasswordEnter(event)">
             <div id="passwordError" class="password-error">❌ Contraseña incorrecta. Intenta nuevamente.</div>
             <div>
                 <button onclick="checkPassword()" class="password-btn password-btn-submit">Ingresar</button>
@@ -871,7 +1088,7 @@
         Object.entries(docs).forEach(([k, d]) => {
             const card = document.createElement('div');
             card.className = 'format-card';
-            
+
             // Icono especial para EPS y Sofia Plus
             let ico, icn;
             if (k === "EPS") {
@@ -881,10 +1098,10 @@
                 ico = '💻';
                 icn = 'word-icon'; // Usar estilo de Word para Sofia Plus
             } else {
-                ico = {pdf: '📄', word: '📝', excel: '📊', video: '🎥'}[d.type];
-                icn = {pdf: 'pdf-icon', word: 'word-icon', excel: 'excel-icon', video: 'video-icon'}[d.type];
+                ico = { pdf: '📄', word: '📝', excel: '📊', video: '🎥' }[d.type];
+                icn = { pdf: 'pdf-icon', word: 'word-icon', excel: 'excel-icon', video: 'video-icon' }[d.type];
             }
-            
+
             // Texto del botón según el tipo
             let buttonText;
             if (k === "EPS") {
@@ -894,7 +1111,7 @@
             } else {
                 buttonText = "⬇️ Descargar";
             }
-            
+
             card.innerHTML = `
                 <div class="format-icon ${icn}">${ico}</div>
                 <h3 class="format-title">${d.title}</h3>
@@ -932,7 +1149,7 @@
             } else {
                 viewer.innerHTML = `
                     <div style="text-align:center;padding:40px">
-                        <div style="font-size:4rem;margin-bottom:20px">${ {word:'📝',excel:'📊'}[d.type] }</div>
+                        <div style="font-size:4rem;margin-bottom:20px">${{ word: '📝', excel: '📊' }[d.type]}</div>
                         <h3>Archivo ${d.title}</h3>
                         <p style="color:#666;margin-top:10px">Presiona el botón <strong>Descargar</strong> para abrirlo en tu aplicación favorita.</p>
                     </div>`;
@@ -969,11 +1186,11 @@
         function checkPassword() {
             const input = document.getElementById('passwordInput').value;
             const errorDiv = document.getElementById('passwordError');
-            
+
             if (input === DRIVE_PASSWORD) {
                 // Contraseña correcta, redirigir al Drive
                 closePasswordModal();
-                window.open('https://drive.google.com/drive/folders/1p6fHOtgLIbEOLlNjkvW3KKJAtrMGwvOm?usp=sharing', '_blank');
+                window.open('https://drive.google.com/drive/folders/1eKJ5Exk7esWyZU3alz86bFqo2Q2G8hcX?usp=drive_link', '_blank');
             } else {
                 // Contraseña incorrecta
                 errorDiv.style.display = 'block';
@@ -989,4 +1206,5 @@
         }
     </script>
 </body>
+
 </html>
