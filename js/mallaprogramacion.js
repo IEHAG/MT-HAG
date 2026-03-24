@@ -135,7 +135,7 @@ const curriculumData = [
     {
         week: 14,
         grade: "10",
-        period: 1,
+        period: 2,
         role: "docente",
         topic: "Análisis y Diagramación UML",
         subtopics: "Proceso para definición de requisitos del sistema (INFORME)",
@@ -266,7 +266,7 @@ const curriculumData = [
     {
         week: 27,
         grade: "10",
-        period: 2,
+        period: 3,
         role: "docente",
         topic: "Estructura CSS",
         subtopics: "*Incrustación de código css en html\n*Enlazando Css con HTML\n*Comentarios en css",
@@ -276,7 +276,7 @@ const curriculumData = [
     {
         week: 28,
         grade: "10",
-        period: 2,
+        period: 3,
         role: "docente",
         topic: "Trabajando con CSS",
         subtopics: "*Colores\n*Creación de reglas propias ID\n*Creación de Reglas comunes CLASS",
@@ -540,7 +540,7 @@ const curriculumData = [
     {
         "week": 14,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "docente",
         "topic": "Creación de página WEB",
         "subtopics": "Estructura JavaScript",
@@ -672,7 +672,7 @@ const curriculumData = [
     {
         "week": 27,
         "grade": "11",
-        "period": 2,
+        "period": 3,
         "role": "docente",
         "topic": "Metodologías Tradicionales",
         "subtopics": "Metodología RAD - Diseño rápido de aplicaciones",
@@ -682,7 +682,7 @@ const curriculumData = [
     {
         "week": 28,
         "grade": "11",
-        "period": 2,
+        "period": 3,
         "role": "docente",
         "topic": "Metodologías Ágiles",
         "subtopics": "Definición",
@@ -887,7 +887,7 @@ const curriculumData = [
     {
         week: 14,
         grade: "10",
-        period: 1,
+        period: 2,
         role: "instructor",
         topic: "Instrucciones de control algorítmicas",
         subtopics: "Instrucción estructural (JavaScript)",
@@ -1020,7 +1020,7 @@ const curriculumData = [
     {
         "week": 27,
         "grade": "10",
-        "period": 2,
+        "period": 3,
         "role": "instructor",
         "topic": "Alter table",
         "subtopics": "* Agregar y Quitar Primary Keys\n*Agregar y Quitar Foreing Keys\n*Cambiar nombre de una columna\n*Cambiar Tipo de datos",
@@ -1030,7 +1030,7 @@ const curriculumData = [
     {
         "week": 28,
         "grade": "10",
-        "period": 2,
+        "period": 3,
         "role": "instructor",
         "topic": "DDL - Lenguaje de definición de datos",
         "subtopics": "* Definición\n*Sentencias de creación(Tablas, Vistas, procedimientos almacenados, disparadores) \n*Sentencias de Modificación(Tablas, Vistas, procedimientos almacenados, disparadores) \n*Sentencias de Borrado Drop and Truncate(Tablas, Vistas, procedimientos almacenados, disparadores)",
@@ -1295,7 +1295,7 @@ const curriculumData = [
     {
         "week": 14,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "POO",
         "subtopics": "Generalidades de la POO",
@@ -1427,7 +1427,7 @@ const curriculumData = [
     {
         "week": 27,
         "grade": "11",
-        "period": 2,
+        "period": 3,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "Modificación de datos UPDATE",
@@ -1437,7 +1437,7 @@ const curriculumData = [
     {
         "week": 28,
         "grade": "11",
-        "period": 2,
+        "period": 3,
         "role": "instructor",
         "topic": "Bases de Datos",
         "subtopics": "Eliminación de datos DELETE",

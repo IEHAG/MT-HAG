@@ -135,7 +135,7 @@ const curriculumData = [
     {
         week: 14,
         grade: "10",
-        period: 1,
+        period: 2,
         role: "docente",
         topic: "Evaluación y Repaso",
         subtopics: "Integración de conceptos del primer período",
@@ -266,7 +266,7 @@ const curriculumData = [
     {
         week: 27,
         grade: "10",
-        period: 2,
+        period: 3,
         role: "docente",
         topic: "Proyecto Intermedio",
         subtopics: "Aplicación de conceptos en un proyecto práctico",
@@ -276,7 +276,7 @@ const curriculumData = [
     {
         week: 28,
         grade: "10",
-        period: 2,
+        period: 3,
         role: "docente",
         topic: "Evaluación y Repaso",
         subtopics: "Integración de conceptos del segundo período",
@@ -540,7 +540,7 @@ const curriculumData = [
     {
         "week": 14,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "docente",
         "topic": "Proyecto",
         "subtopics": "Perfil del cliente",
@@ -672,7 +672,7 @@ const curriculumData = [
     {
         "week": 27,
         "grade": "11",
-        "period": 2,
+        "period": 3,
         "role": "docente",
         "topic": "Proyecto",
         "subtopics": "Hosting",
@@ -682,7 +682,7 @@ const curriculumData = [
     {
         "week": 28,
         "grade": "11",
-        "period": 2,
+        "period": 3,
         "role": "docente",
         "topic": "Proyecto",
         "subtopics": "Dominio",
@@ -949,7 +949,7 @@ const curriculumData = [
     {
         week: 14,
         grade: "10",
-        period: 1,
+        period: 2,
         role: "instructor",
         topic: "Illustrator",
         subtopics: "Herramienta de textos y tipografías: Tracking, interlineado, caja de texto y texto libre y texto en curvas.",
@@ -1082,7 +1082,7 @@ const curriculumData = [
     {
         "week": 27,
         "grade": "10",
-        "period": 2,
+        "period": 3,
         "role": "instructor",
         "topic": "Illustrator",
         "subtopics": "Elaboración de pruebas de color según requerimiento del cliente.",
@@ -1092,7 +1092,7 @@ const curriculumData = [
     {
         "week": 28,
         "grade": "10",
-        "period": 2,
+        "period": 3,
         "role": "instructor",
         "topic": "Illustrator",
         "subtopics": "Elaboración de pruebas de color según requerimiento del cliente.",
@@ -1356,7 +1356,7 @@ const curriculumData = [
     {
         "week": 14,
         "grade": "11",
-        "period": 1,
+        "period": 2,
         "role": "instructor",
         "topic": "Premiere Pro",
         "subtopics": "Corrección de Color: Ajustes de luz y colorimetría.",
@@ -1488,7 +1488,7 @@ const curriculumData = [
     {
         "week": 27,
         "grade": "11",
-        "period": 2,
+        "period": 3,
         "role": "instructor",
         "topic": "Proyecto",
         "subtopics": "Desarrollo del guion y storyboard.",
@@ -1498,7 +1498,7 @@ const curriculumData = [
     {
         "week": 28,
         "grade": "11",
-        "period": 2,
+        "period": 3,
         "role": "instructor",
         "topic": "Proyecto",
         "subtopics": "Producción de contenido visual y audiovisual.",
