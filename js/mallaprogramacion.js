@@ -1574,22 +1574,33 @@ const periodInfo = [
     {
         period: 1,
         name: "PRIMER PERÍODO",
-        dates: "20 de enero - 25 de abril",
-        weeks: "Semanas 1 - 14"
+        dates: "26 de enero - 1 de mayo",
+        weeks: "Semanas 1 - 13"
     },
     {
         period: 2,
         name: "SEGUNDO PERÍODO",
-        dates: "28 de abril - 15 de agosto",
-        weeks: "Semanas 15 - 28"
+        dates: "04 de mayo - 21 de agosto",
+        weeks: "Semanas 14 - 26"
     },
     {
         period: 3,
         name: "TERCER PERÍODO",
-        dates: "18 de agosto - 28 de noviembre",
-        weeks: "Semanas 29 - 40"
+        dates: "24 de agosto - 04 de diciembre",
+        weeks: "Semanas 27 - 40"
     }
 ];
+
+const weekDates = {
+    1: "26 al 30 de enero", 2: "02 al 06 de febrero", 3: "09 al 13 de febrero", 4: "16 al 20 de febrero", 5: "23 al 27 de febrero",
+    6: "02 al 06 de marzo", 7: "09 al 13 de marzo", 8: "16 al 20 de marzo", 9: "23 al 27 de marzo", 10: "06 al 10 de abril",
+    11: "13 al 17 de abril", 12: "20 al 24 de abril", 13: "27 de abril al 01 de mayo", 14: "04 al 08 de mayo", 15: "11 al 15 de mayo",
+    16: "18 al 22 de mayo", 17: "25 al 29 de mayo", 18: "01 al 05 de junio", 19: "08 al 12 de junio", 20: "15 al 19 de junio",
+    21: "13 al 17 de julio", 22: "20 al 24 de julio", 23: "27 al 31 de julio", 24: "03 al 07 de agosto", 25: "10 al 14 de agosto",
+    26: "17 al 21 de agosto", 27: "24 al 28 de agosto", 28: "31 de agosto al 04 de sep", 29: "07 al 11 de septiembre", 30: "14 al 18 de septiembre",
+    31: "21 al 25 de septiembre", 32: "28 de sep al 02 de octubre", 33: "12 al 16 de octubre", 34: "19 al 23 de octubre", 35: "26 al 30 de octubre",
+    36: "02 al 06 de noviembre", 37: "09 al 13 de noviembre", 38: "16 al 20 de noviembre", 39: "23 al 27 de noviembre", 40: "30 de nov al 04 de dic"
+};
 
 // Función para generar la vista de cuadrícula
 function generateGridView() {
@@ -1746,7 +1757,7 @@ function showCourseDetails(course) {
     const modalSubtopics = document.getElementById('modalSubtopics');
 
     modalTitle.textContent = course.topic;
-    modalWeek.textContent = `Semana ${course.week}`;
+    modalWeek.textContent = `Semana ${course.week} (${weekDates[course.week] || ''})`;
     modalGrade.textContent = `${course.grade}°`;
 
     const periodData = getPeriodInfo(course.period);
@@ -1918,7 +1929,7 @@ function exportarMallaPDF() {
     const columnas = ["Semana", "Periodo", "Grado", "Docente/Instructor", "Tema", "Subtema"];
 
     const filas = curriculumData.map(item => [
-        item.week, item.period, item.grade, item.role, item.topic, item.subtopics
+        item.week + " (" + (weekDates[item.week] || "") + ")", item.period, item.grade, item.role, item.topic, item.subtopics
     ]);
 
     doc.autoTable({
