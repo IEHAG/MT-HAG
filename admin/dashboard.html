@@ -9,10 +9,10 @@
 </head>
 <body>
     <div class="admin-layout">
-        <div id="appInitError" style="display:none; background:#fdecea; color:#c0392b; padding:12px; margin:10px 10px 0; border:1px solid #f5c6cb; border-radius:6px;"></div>
+        <div id="appInitError" style="display:none; background:#fdecea; color:#c0392b; padding:12px; margin:10px 10px 0; border:1px solid #f5c6cb; border-radius:6px;" role="alert"></div>
 
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside class="sidebar" aria-label="Panel de navegación">
             <div class="sidebar-header">
                 <img src="../assets/images/escudo.png" alt="Logo" class="sidebar-logo">
                 <h3>Admin Panel</h3>
@@ -20,31 +20,31 @@
 
             <nav class="sidebar-nav">
                 <ul>
-                    <li class="nav-item active" data-section="dashboard">
+                    <li class="nav-item active" data-section="dashboard" tabindex="0" role="button">
                         <i class="fas fa-tachometer-alt"></i>
                         <span>Dashboard</span>
                     </li>
-                    <li class="nav-item" data-section="menu">
+                    <li class="nav-item" data-section="menu" tabindex="0" role="button">
                         <i class="fas fa-th-large"></i>
                         <span>Menú principal</span>
                     </li>
-                    <li class="nav-item" data-section="estudiantes">
+                    <li class="nav-item" data-section="estudiantes" tabindex="0" role="button">
                         <i class="fas fa-users"></i>
                         <span>Estudiantes</span>
                     </li>
-                    <li class="nav-item" data-section="contenido">
+                    <li class="nav-item" data-section="contenido" tabindex="0" role="button">
                         <i class="fas fa-file-alt"></i>
                         <span>Gestionar Contenido</span>
                     </li>
-                    <li class="nav-item" data-section="horarios">
+                    <li class="nav-item" data-section="horarios" tabindex="0" role="button">
                         <i class="fas fa-calendar-alt"></i>
                         <span>Horarios</span>
                     </li>
-                    <li class="nav-item" data-section="materiales">
+                    <li class="nav-item" data-section="materiales" tabindex="0" role="button">
                         <i class="fas fa-book"></i>
                         <span>Materiales</span>
                     </li>
-                    <li class="nav-item" data-section="configuracion">
+                    <li class="nav-item" data-section="configuracion" tabindex="0" role="button">
                         <i class="fas fa-cog"></i>
                         <span>Configuración</span>
                     </li>
@@ -52,7 +52,7 @@
             </nav>
 
             <div class="sidebar-footer">
-                <button id="logoutBtn" class="logout-btn">
+                <button id="logoutBtn" class="logout-btn" aria-label="Cerrar sesión">
                     <i class="fas fa-sign-out-alt"></i>
                     Cerrar Sesión
                 </button>
@@ -65,15 +65,15 @@
                 <h1 id="pageTitle">Dashboard</h1>
                 <div class="header-actions">
                     <span class="welcome-text">Bienvenido, <strong id="adminName">Administrador</strong></span>
-                    <button id="notificationsBtn" class="notification-btn">
+                    <button id="notificationsBtn" class="notification-btn" aria-label="Notificaciones">
                         <i class="fas fa-bell"></i>
-                        <span class="notification-badge">3</span>
+                        <span class="notification-badge" aria-label="3 notificaciones">3</span>
                     </button>
                 </div>
             </header>
 
             <!-- Dashboard Section -->
-            <section id="dashboard-section" class="content-section active">
+            <section id="dashboard-section" class="content-section active" aria-label="Dashboard">
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-icon"><i class="fas fa-users"></i></div>
@@ -122,7 +122,7 @@
                 <div class="dashboard-content">
                     <div class="recent-activity">
                         <h3>Actividad Reciente</h3>
-                        <div class="activity-list" id="activityList"></div>
+                        <div class="activity-list" id="activityList" role="feed"></div>
                     </div>
                     <div class="quick-actions">
                         <h3>Visitas por mes (2025)</h3>
@@ -132,10 +132,10 @@
             </section>
 
             <!-- Menú principal Section -->
-            <section id="menu-section" class="content-section">
+            <section id="menu-section" class="content-section" aria-label="Menú principal">
                 <div class="section-header">
                     <h2>Menú principal (botones de la página)</h2>
-                    <button class="btn-primary" onclick="window.dashboard && window.dashboard.prepareNewMenuItem()">
+                    <button class="btn-primary" onclick="window.dashboard && window.dashboard.modules.menu.prepareNew()">
                         <i class="fas fa-plus"></i>
                         Agregar botón
                     </button>
@@ -144,7 +144,7 @@
             </section>
 
             <!-- Estudiantes Section -->
-            <section id="estudiantes-section" class="content-section">
+            <section id="estudiantes-section" class="content-section" aria-label="Estudiantes">
                 <div class="section-header">
                     <h2>Gestión de Estudiantes</h2>
                     <button class="btn-primary" onclick="openModal('addStudentModal')">
@@ -156,7 +156,7 @@
             </section>
 
             <!-- Contenido Section -->
-            <section id="contenido-section" class="content-section">
+            <section id="contenido-section" class="content-section" aria-label="Contenido">
                 <div class="section-header">
                     <h2>Gestión de Contenido</h2>
                     <button class="btn-primary" onclick="window.dashboard && window.dashboard.prepareNewPage()">
@@ -165,25 +165,25 @@
                     </button>
                 </div>
                 <div class="content-tabs">
-                    <button class="tab-btn active" data-tab="pages">Páginas</button>
-                    <button class="tab-btn" data-tab="materials">Materiales</button>
-                    <button class="tab-btn" data-tab="schedules">Horarios</button>
+                    <button class="tab-btn active" data-tab="pages" role="tab" aria-selected="true">Páginas</button>
+                    <button class="tab-btn" data-tab="materials" role="tab" aria-selected="false">Materiales</button>
+                    <button class="tab-btn" data-tab="schedules" role="tab" aria-selected="false">Horarios</button>
                 </div>
                 <div class="tab-content">
-                    <div id="pages-tab" class="tab-pane active">
+                    <div id="pages-tab" class="tab-pane active" role="tabpanel">
                         <div class="content-list" id="pagesList"></div>
                     </div>
-                    <div id="materials-tab" class="tab-pane">
+                    <div id="materials-tab" class="tab-pane" role="tabpanel">
                         <div class="content-list" id="materialsList"></div>
                     </div>
-                    <div id="schedules-tab" class="tab-pane">
+                    <div id="schedules-tab" class="tab-pane" role="tabpanel">
                         <div class="content-list" id="schedulesList"></div>
                     </div>
                 </div>
             </section>
 
             <!-- Horarios Section -->
-            <section id="horarios-section" class="content-section">
+            <section id="horarios-section" class="content-section" aria-label="Horarios">
                 <div class="section-header">
                     <h2>Gestión de Horarios</h2>
                     <button class="btn-primary" onclick="createSchedule()">
@@ -196,10 +196,10 @@
             </section>
 
             <!-- Materiales Section -->
-            <section id="materiales-section" class="content-section">
+            <section id="materiales-section" class="content-section" aria-label="Materiales">
                 <div class="section-header">
                     <h2>Gestión de Materiales</h2>
-                    <button class="btn-primary" onclick="window.dashboard && window.dashboard.prepareNewMaterial()">
+                    <button class="btn-primary" onclick="window.dashboard && window.dashboard.modules.materials.prepareNew()">
                         <i class="fas fa-plus"></i>
                         Agregar Material
                     </button>
@@ -208,7 +208,7 @@
             </section>
 
             <!-- Configuración Section -->
-            <section id="configuracion-section" class="content-section">
+            <section id="configuracion-section" class="content-section" aria-label="Configuración">
                 <div class="section-header">
                     <h2>Configuración del Sistema</h2>
                 </div>
@@ -232,15 +232,15 @@
                         <form id="securityConfigForm">
                             <div class="form-group">
                                 <label for="currentPassword">Contraseña Actual</label>
-                                <input type="password" id="currentPassword">
+                                <input type="password" id="currentPassword" autocomplete="current-password">
                             </div>
                             <div class="form-group">
                                 <label for="newPassword">Nueva Contraseña</label>
-                                <input type="password" id="newPassword">
+                                <input type="password" id="newPassword" autocomplete="new-password">
                             </div>
                             <div class="form-group">
                                 <label for="confirmPassword">Confirmar Contraseña</label>
-                                <input type="password" id="confirmPassword">
+                                <input type="password" id="confirmPassword" autocomplete="new-password">
                             </div>
                             <button type="submit" class="btn-primary">Cambiar Contraseña</button>
                         </form>
@@ -251,11 +251,11 @@
     </div>
 
     <!-- Modales -->
-    <div id="addStudentModal" class="modal">
+    <div id="addStudentModal" class="modal" role="dialog" aria-modal="true" aria-label="Agregar Estudiante">
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Agregar Estudiante</h3>
-                <span class="close" onclick="closeModal('addStudentModal')">&times;</span>
+                <span class="close" onclick="closeModal('addStudentModal')" aria-label="Cerrar">&times;</span>
             </div>
             <form id="addStudentForm">
                 <div class="form-group">
@@ -281,12 +281,11 @@
         </div>
     </div>
 
-    <!-- Modal: Agregar/Editar Horario -->
-    <div id="addScheduleModal" class="modal">
+    <div id="addScheduleModal" class="modal" role="dialog" aria-modal="true" aria-label="Nuevo Horario">
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Nuevo Horario</h3>
-                <span class="close" onclick="closeModal('addScheduleModal')">&times;</span>
+                <span class="close" onclick="closeModal('addScheduleModal')" aria-label="Cerrar">&times;</span>
             </div>
             <form id="addScheduleForm">
                 <div class="form-group">
@@ -310,11 +309,11 @@
                 </div>
                 <div class="form-group">
                     <label for="scheduleTime">Hora</label>
-                    <input type="text" id="scheduleTime" placeholder="1:00 PM - 6:00 PM" required />
+                    <input type="text" id="scheduleTime" placeholder="1:00 PM - 6:00 PM" required>
                 </div>
                 <div class="form-group">
                     <label for="scheduleSubject">Materia / Descripción</label>
-                    <input type="text" id="scheduleSubject" placeholder="Programación de Software - Docente HAG" required />
+                    <input type="text" id="scheduleSubject" placeholder="Programación de Software - Docente HAG" required>
                 </div>
                 <div class="modal-actions">
                     <button type="button" class="btn-secondary" onclick="closeModal('addScheduleModal')">Cancelar</button>
@@ -324,26 +323,25 @@
         </div>
     </div>
 
-    <!-- Modal: Agregar/Editar Botón de Menú -->
-    <div id="menuItemModal" class="modal">
+    <div id="menuItemModal" class="modal" role="dialog" aria-modal="true" aria-label="Editar Botón">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="menuModalTitle">Nuevo botón</h3>
-                <span class="close" onclick="closeModal('menuItemModal')">&times;</span>
+                <span class="close" onclick="closeModal('menuItemModal')" aria-label="Cerrar">&times;</span>
             </div>
             <form id="menuItemForm">
-                <input type="hidden" id="menuItemId" />
+                <input type="hidden" id="menuItemId">
                 <div class="form-group">
                     <label for="menuTitle">Título</label>
-                    <input type="text" id="menuTitle" required />
+                    <input type="text" id="menuTitle" required>
                 </div>
                 <div class="form-group">
                     <label for="menuIcon">Ícono (emoji o clase FA: fa-solid fa-code)</label>
-                    <input type="text" id="menuIcon" placeholder="💻 o fa-solid fa-code" />
+                    <input type="text" id="menuIcon" placeholder="💻 o fa-solid fa-code">
                 </div>
                 <div class="form-group">
                     <label for="menuHref">Enlace</label>
-                    <input type="text" id="menuHref" placeholder="pages/programacion.html o https://..." required />
+                    <input type="text" id="menuHref" placeholder="pages/programacion.html o https://..." required>
                 </div>
                 <div class="form-group">
                     <label for="menuTarget">Destino</label>
@@ -360,22 +358,21 @@
         </div>
     </div>
 
-    <!-- Modal: Agregar/Editar Material -->
-    <div id="materialModal" class="modal">
+    <div id="materialModal" class="modal" role="dialog" aria-modal="true" aria-label="Editar Material">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="materialModalTitle">Nuevo Material</h3>
-                <span class="close" onclick="closeModal('materialModal')">&times;</span>
+                <span class="close" onclick="closeModal('materialModal')" aria-label="Cerrar">&times;</span>
             </div>
             <form id="materialForm">
-                <input type="hidden" id="materialId" />
+                <input type="hidden" id="materialId">
                 <div class="form-group">
                     <label for="materialTitle">Título</label>
-                    <input type="text" id="materialTitle" required />
+                    <input type="text" id="materialTitle" required>
                 </div>
                 <div class="form-group">
                     <label for="materialDescription">Descripción</label>
-                    <input type="text" id="materialDescription" />
+                    <input type="text" id="materialDescription">
                 </div>
                 <div class="form-group">
                     <label for="materialType">Tipo</label>
@@ -394,22 +391,21 @@
         </div>
     </div>
 
-    <!-- Modal: Agregar/Editar Página -->
-    <div id="pageModal" class="modal">
+    <div id="pageModal" class="modal" role="dialog" aria-modal="true" aria-label="Editar Página">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="pageModalTitle">Nueva Página</h3>
-                <span class="close" onclick="closeModal('pageModal')">&times;</span>
+                <span class="close" onclick="closeModal('pageModal')" aria-label="Cerrar">&times;</span>
             </div>
             <form id="pageForm">
-                <input type="hidden" id="pageId" />
+                <input type="hidden" id="pageId">
                 <div class="form-group">
                     <label for="pageTitle">Título</label>
-                    <input type="text" id="pageTitle" required />
+                    <input type="text" id="pageTitle" required>
                 </div>
                 <div class="form-group">
                     <label for="pageDescription">Descripción</label>
-                    <input type="text" id="pageDescription" />
+                    <input type="text" id="pageDescription">
                 </div>
                 <div class="form-group">
                     <label for="pageStatus">Estado</label>
@@ -426,9 +422,6 @@
         </div>
     </div>
 
-    <script src="../js/admin-auth.js"></script>
-    <script src="../js/admin-dashboard.js"></script>
+    <script type="module" src="../src/js/admin/dashboard.js"></script>
 </body>
 </html>
-
-

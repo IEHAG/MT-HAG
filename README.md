@@ -22,35 +22,59 @@ MT-HAG/
 │   ├── images/             # Imágenes (logos, fotos de estudiantes)
 │   ├── videos/             # Videos del proyecto
 │   └── documents/          # Documentos y archivos
-├── css/                    # Hojas de estilo
+├── src/                     # Código fuente organizado en módulos
+│   ├── js/
+│   │   ├── admin/
+│   │   │   ├── auth.js          # Autenticación (cred.s desde .env)
+│   │   │   ├── dashboard.js     # Orquestador del Dashboard
+│   │   │   ├── login.js         # Entry point login
+│   │   │   └── modules/
+│   │   │       ├── students.js  # CRUD estudiantes
+│   │   │       ├── materials.js # CRUD materiales
+│   │   │       ├── schedules.js # CRUD horarios
+│   │   │       ├── menu.js      # CRUD menú principal
+│   │   │       └── settings.js  # Configuración
+│   │   ├── utils/
+│   │   │   ├── toast.js         # Sistema de notificaciones
+│   │   │   ├── storage.js       # localStorage wrapper
+│   │   │   └── dom.js           # Helpers DOM
+│   │   ├── main.js              # Home (modal, submenu)
+│   │   ├── chatbot.js           # Chatbot con OpenAI
+│   │   └── site-menu.js         # Menú dinámico desde admin
+│   └── css/
+│       ├── malla.css            # CSS unificado de mallas
+│       └── ...                  # (los demás CSS se mantienen en css/)
+├── css/                    # Hojas de estilo (legacy)
 │   ├── style.css          # Estilos principales
 │   ├── admin.css          # Estilos del panel de administración
 │   ├── chatbot.css        # Estilos del chatbot
 │   └── ...                # Otros archivos CSS
-├── js/                     # Scripts JavaScript
-│   ├── main.js            # Script principal
-│   ├── admin-auth.js      # Autenticación de administrador
-│   ├── admin-dashboard.js # Funcionalidades del dashboard
-│   └── ...                # Otros scripts
+├── js/                     # Scripts (legacy, para páginas no migradas)
 ├── pages/                  # Páginas del sitio web
 │   ├── programacion.html  # Página de programación
 │   ├── preprensa.html     # Página de preprensa
 │   ├── material.html      # Página de materiales
 │   └── ...                # Otras páginas
+├── public/                 # Archivos públicos estáticos
 ├── libs/                   # Librerías externas
-└── index.html             # Página principal
+├── index.html             # Página principal
+├── vite.config.js         # Configuración de Vite
+└── .env.example           # Variables de entorno (template)
 ```
 
 ## 🔐 Acceso al Panel de Administración
 
-### Credenciales por defecto:
-- **Usuario**: `admin`
-- **Contraseña**: `admin123`
+### Credenciales:
+Las credenciales se configuran vía variables de entorno en el archivo `.env`:
+```env
+VITE_ADMIN_USER=adminhag@gmail.com
+VITE_ADMIN_PASS=CAÑOLA2027*
+```
 
 ### Acceso:
 1. Visita la página principal
 2. Haz clic en el botón de configuración (⚙️) en la esquina superior derecha
-3. Ingresa las credenciales de administrador
+3. Ingresa las credenciales configuradas en `.env`
 4. Accede al dashboard completo
 
 ## 🛠️ Funcionalidades del Panel de Administración
@@ -98,20 +122,27 @@ El sitio web está optimizado para:
 ## 🚀 Instalación y Uso
 
 1. **Clonar o descargar** el proyecto
-2. **Abrir** `index.html` en un navegador web
-3. **Navegar** por las diferentes secciones
-4. **Acceder al panel de administración** usando las credenciales
+2. **Instalar dependencias**: `npm install`
+3. **Copiar `.env.example` a `.env`** y configurar credenciales:
+   ```bash
+   cp .env.example .env
+   ```
+4. **Desarrollo**: `npm run dev` (servidor con hot-reload)
+5. **Producción**: `npm run build` (genera `dist/`)
+6. **Abrir** `index.html` o `dist/index.html` en un navegador
 
 ## 🔧 Personalización
 
 ### Cambiar Credenciales de Administrador
-Edita el archivo `js/admin-auth.js` y modifica:
-```javascript
-this.adminCredentials = {
-    username: 'tu_usuario',
-    password: 'tu_contraseña_segura'
-};
+Edita el archivo `.env` y modifica:
+```env
+VITE_ADMIN_USER=tu_usuario
+VITE_ADMIN_PASS=tu_contraseña_segura
 ```
+
+> **Nota de seguridad**: Las credenciales se cargan desde variables de entorno. 
+> NUNCA subas el archivo `.env` al repositorio (ya está en `.gitignore`).
+> Para producción real, implementa un backend con autenticación server-side.
 
 ### Agregar Nuevas Secciones
 1. Crea el archivo HTML en la carpeta `pages/`
