@@ -44,6 +44,18 @@
                         <i class="fas fa-book"></i>
                         <span>Materiales</span>
                     </li>
+                    <li class="nav-item" data-section="noticias" tabindex="0" role="button">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Noticias</span>
+                    </li>
+                    <li class="nav-item" data-section="galeria" tabindex="0" role="button">
+                        <i class="fas fa-images"></i>
+                        <span>Galería</span>
+                    </li>
+                    <li class="nav-item" data-section="datos" tabindex="0" role="button">
+                        <i class="fas fa-database"></i>
+                        <span>Importar / Exportar</span>
+                    </li>
                     <li class="nav-item" data-section="configuracion" tabindex="0" role="button">
                         <i class="fas fa-cog"></i>
                         <span>Configuración</span>
@@ -97,10 +109,17 @@
                         </div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="stat-icon"><i class="fas fa-newspaper"></i></div>
                         <div class="stat-content">
-                            <h3>Actividad</h3>
-                            <p class="stat-number">98%</p>
+                            <h3>Noticias</h3>
+                            <p class="stat-number" id="totalNews">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-images"></i></div>
+                        <div class="stat-content">
+                            <h3>Galería</h3>
+                            <p class="stat-number" id="totalGallery">0</p>
                         </div>
                     </div>
                     <div class="stat-card">
@@ -205,6 +224,36 @@
                     </button>
                 </div>
                 <div class="materials-grid" id="materialsGrid"></div>
+            </section>
+
+            <!-- Noticias Section -->
+            <section id="noticias-section" class="content-section" aria-label="Noticias">
+                <div class="section-header">
+                    <h2>Noticias y Anuncios</h2>
+                    <button class="btn-primary" onclick="window.dashboard && window.dashboard.modules.news.prepareNew()">
+                        <i class="fas fa-plus"></i> Nueva Noticia
+                    </button>
+                </div>
+                <div class="content-list" id="newsGrid"></div>
+            </section>
+
+            <!-- Galería Section -->
+            <section id="galeria-section" class="content-section" aria-label="Galería">
+                <div class="section-header">
+                    <h2>Galería de Fotos</h2>
+                    <button class="btn-primary" onclick="window.dashboard && window.dashboard.modules.gallery.prepareNew()">
+                        <i class="fas fa-plus"></i> Agregar Foto
+                    </button>
+                </div>
+                <div class="content-list" id="galleryGrid"></div>
+            </section>
+
+            <!-- Datos Section -->
+            <section id="datos-section" class="content-section" aria-label="Importar/Exportar">
+                <div class="section-header">
+                    <h2>Importar / Exportar Datos</h2>
+                </div>
+                <div class="config-sections" id="dataSection"></div>
             </section>
 
             <!-- Configuración Section -->
@@ -401,7 +450,7 @@
                 <input type="hidden" id="pageId">
                 <div class="form-group">
                     <label for="pageTitle">Título</label>
-                    <input type="text" id="pageTitle" required>
+                    <input type="text" id="pageTitleInput" required>
                 </div>
                 <div class="form-group">
                     <label for="pageDescription">Descripción</label>
@@ -416,6 +465,65 @@
                 </div>
                 <div class="modal-actions">
                     <button type="button" class="btn-secondary" onclick="closeModal('pageModal')">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Noticias -->
+    <div id="newsModal" class="modal" role="dialog" aria-modal="true" aria-label="Nueva Noticia">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="newsModalTitle">Nueva Noticia</h3>
+                <span class="close" onclick="window.dashboard && window.dashboard.closeModal('newsModal')" aria-label="Cerrar">&times;</span>
+            </div>
+            <form id="newsForm">
+                <input type="hidden" id="newsId">
+                <div class="form-group">
+                    <label for="newsTitle">Título</label>
+                    <input type="text" id="newsTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="newsContent">Contenido</label>
+                    <textarea id="newsContent" rows="4" style="width:100%;padding:12px 16px;background:rgba(0,0,0,0.02);border:1px solid rgba(0,0,0,0.1);border-radius:var(--radius-sm);font-family:var(--font);font-size:0.9rem;resize:vertical;" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="newsImage">Imagen (opcional)</label>
+                    <input type="file" id="newsImage" accept="image/*">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="window.dashboard && window.dashboard.closeModal('newsModal')">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Galería -->
+    <div id="galleryModal" class="modal" role="dialog" aria-modal="true" aria-label="Nueva Foto">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="galleryModalTitle">Nueva Foto</h3>
+                <span class="close" onclick="window.dashboard && window.dashboard.closeModal('galleryModal')" aria-label="Cerrar">&times;</span>
+            </div>
+            <form id="galleryForm">
+                <input type="hidden" id="galleryId">
+                <div class="form-group">
+                    <label for="galleryTitle">Título</label>
+                    <input type="text" id="galleryTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="galleryDescription">Descripción (opcional)</label>
+                    <input type="text" id="galleryDescription">
+                </div>
+                <div class="form-group">
+                    <label for="galleryImageFile">Imagen</label>
+                    <input type="file" id="galleryImageFile" accept="image/*">
+                    <img id="galleryPreview" style="display:none;max-width:120px;margin-top:8px;border-radius:8px;">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="window.dashboard && window.dashboard.closeModal('galleryModal')">Cancelar</button>
                     <button type="submit" class="btn-primary">Guardar</button>
                 </div>
             </form>

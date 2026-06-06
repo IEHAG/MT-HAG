@@ -30,3 +30,7 @@ export function html(el, content) {
   if (typeof el === 'string') el = $(el)
   if (el) el.innerHTML = content
 }
+
+export function escJs(str) {
+  return String(str).replace(/'/g, "\\'").replace(/"/g, '&quot;')
+}

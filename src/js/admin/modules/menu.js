@@ -1,6 +1,6 @@
 import { getItem, setItem } from '@/js/utils/storage.js'
 import { showToast } from '@/js/utils/toast.js'
-import { html, val, setVal, $ } from '@/js/utils/dom.js'
+import { html, val, setVal, $, escJs } from '@/js/utils/dom.js'
 
 const STORAGE_KEY = 'siteMenuItems'
 
@@ -32,8 +32,8 @@ export class MenuModule {
           <div class="content-description">${item.href} (${item.target || '_self'})</div>
         </div>
         <div class="content-actions">
-          <button class="btn-primary" onclick="window.dashboard.modules.menu.edit('${item.id}')"><i class="fas fa-edit"></i> Editar</button>
-          <button class="btn-secondary" onclick="window.dashboard.modules.menu.delete('${item.id}')"><i class="fas fa-trash"></i> Eliminar</button>
+          <button class="btn-primary" onclick="window.dashboard.modules.menu.edit('${escJs(item.id)}')"><i class="fas fa-edit"></i> Editar</button>
+          <button class="btn-secondary" onclick="window.dashboard.modules.menu.delete('${escJs(item.id)}')"><i class="fas fa-trash"></i> Eliminar</button>
         </div>
       </div>
     `).join(''))

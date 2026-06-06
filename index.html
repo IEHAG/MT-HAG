@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    <canvas id="galaxy-canvas" aria-hidden="true"></canvas>
     <div id="main-content">
         <header>
             <div class="back-to-main">
@@ -50,12 +51,26 @@
                 <i class="icon">🎨</i>
                 Preprensa Digital
             </button>
-            <button id="planEstudioBtn" class="nav-button" aria-haspopup="true" aria-expanded="false">
+            <button id="planEstudioBtn" class="nav-button" aria-haspopup="true" aria-expanded="false" onclick="togglePlanSubmenu(event)">
                 <i class="icon">📋</i> Plan de Estudio
             </button>
             <div id="submenu" class="submenu hidden" role="menu">
-                <button onclick="location.href='pages/mallapreprogramacion.html'" class="submenu-btn" role="menuitem">💻 Programación</button>
-                <button onclick="location.href='pages/mallapreprensa.html'" class="submenu-btn" role="menuitem">📖 Preprensa Digital</button>
+                <button onclick="location.href='pages/mallapreprogramacion.html'" class="submenu-btn" role="menuitem">
+                    <div class="sub-icon prog">💻</div>
+                    <div class="sub-label">
+                        <span>Programación</span>
+                        <span>Malla curricular · Grado 10-11</span>
+                    </div>
+                    <div class="sub-arrow"><i class="fas fa-chevron-right"></i></div>
+                </button>
+                <button onclick="location.href='pages/mallapreprensa.html'" class="submenu-btn" role="menuitem">
+                    <div class="sub-icon prep">🎨</div>
+                    <div class="sub-label">
+                        <span>Preprensa Digital</span>
+                        <span>Malla curricular · Grado 10-11</span>
+                    </div>
+                    <div class="sub-arrow"><i class="fas fa-chevron-right"></i></div>
+                </button>
             </div>
             <button onclick="location.href='pages/material.html'" class="nav-button">
                 <i class="icon">📥</i> Material
@@ -96,7 +111,7 @@
             <button onclick="location.href='https://www.iehectorabadgomez.edu.co/index2.php?id=92307'" class="nav-button">
                 <i class="icon">📜</i> Manual para la convivencia escolar
             </button>
-            <button onclick="location.href='https://modulo.master2000.net/recursos/uploads/98/MANUAL_DE_CONVIVENCIA/MANUALDECONVIVENCIA.pdf'" class="nav-button">
+            <button onclick="window.open('https://www.master2000.net/recursos/uploads/98/SIE_TRABAJADO_ULTIMA_VERSION_26_MAYO_2019_8ok.pdf', '_blank')" class="nav-button">
                 <i class="icon">✓</i> Sistema de Evaluación
             </button>
             <button onclick="location.href='https://login.master2000.net/ingreso/?A=105001000256&&'" class="nav-button">
@@ -122,28 +137,59 @@
         <section class="featured">
             <div class="featured-books" id="featured-books"></div>
         </section>
+
+        <section class="news-section" id="homeNews">
+            <h2 class="news-section-title">
+                <i class="fas fa-hashtag"></i> Síguenos
+                <div class="social-inline">
+                    <a href="https://www.facebook.com/AbadistaHAG/?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/i.e.hectorabadgomez/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UC1k1n-IAG9auH6aJr6Lm_kw" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://iehag.github.io/HAGONOTICIAS/" target="_blank" rel="noopener noreferrer" aria-label="Periódico"><i class="fas fa-newspaper"></i></a>
+                </div>
+            </h2>
+            <div class="news-grid" id="homeNewsGrid"></div>
+        </section>
     </div>
 
     <footer>
         <div class="footer-content">
-            <p>Síguenos en nuestras redes sociales</p>
-            <ul class="social-icons">
-                <li><a href="https://www.facebook.com/AbadistaHAG/?locale=es_LA" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i> Facebook</a></li>
-                <li><a href="https://iehag.github.io/HAGONOTICIAS/" target="_blank" rel="noopener noreferrer" aria-label="Periódico"><i class="fas fa-newspaper"></i> Periódico</a></li>
-                <li><a href="https://www.instagram.com/i.e.hectorabadgomez/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
-                <li><a href="https://www.youtube.com/channel/UC1k1n-IAG9auH6aJr6Lm_kw" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i> YouTube</a></li>
-            </ul>
-            <div class="footer-info">
-                <p>&copy; 2025 - Todos los derechos reservados</p>
-                <p>Elaboración y Desarrollo - Docente Victor Cañola</p>
-                <p id="visitsCounter">Visitas: ...</p>
-            </div>
+            <span>&copy; 2025 I.E. Héctor Abad Gómez</span>
+            <span class="footer-sep">|</span>
+            <span>Desarrollado por Docente Victor Cañola</span>
         </div>
     </footer>
 
     <script type="module" src="src/js/main.js"></script>
+    <script>
+    function togglePlanSubmenu(event) {
+      event.stopPropagation()
+      event.preventDefault()
+      var btn = document.getElementById('planEstudioBtn')
+      var submenu = document.getElementById('submenu')
+      if (!btn || !submenu) return
+      var isOpen = !submenu.classList.contains('hidden')
+      document.querySelectorAll('.submenu:not(.hidden)').forEach(function(s) { s.classList.add('hidden') })
+      if (isOpen) return
+      var rect = btn.getBoundingClientRect()
+      submenu.style.position = 'fixed'
+      submenu.style.top = (rect.bottom + 6) + 'px'
+      submenu.style.left = Math.max(8, rect.left) + 'px'
+      submenu.style.minWidth = Math.max(rect.width, 260) + 'px'
+      submenu.classList.remove('hidden')
+    }
+    document.addEventListener('click', function(event) {
+      var submenu = document.getElementById('submenu')
+      if (!submenu) return
+      if (!submenu.contains(event.target) && event.target.id !== 'planEstudioBtn' && !event.target.closest('#planEstudioBtn')) {
+        submenu.classList.add('hidden')
+      }
+    })
+    </script>
     <script type="module" src="src/js/site-menu.js"></script>
     <script type="module" src="src/js/chatbot.js"></script>
+    <script type="module" src="src/js/parallax.js"></script>
+    <script type="module" src="src/js/galaxy.js"></script>
     <script src="js/visits.js"></script>
 </body>
 

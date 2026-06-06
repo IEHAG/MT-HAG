@@ -1,6 +1,6 @@
 import { getItem, setItem } from '@/js/utils/storage.js'
 import { showToast } from '@/js/utils/toast.js'
-import { html, val, setVal, $ } from '@/js/utils/dom.js'
+import { html, val, setVal, $, escJs } from '@/js/utils/dom.js'
 
 const PUBLIC_KEY = 'publicSchedules'
 
@@ -65,8 +65,8 @@ export class SchedulesModule {
           <div class="content-description">${item.time} · ${item.subject}</div>
         </div>
         <div class="content-actions">
-          <button class="btn-primary" onclick="window.dashboard.modules.schedules.editPublic('${item.id}')"><i class="fas fa-edit"></i> Editar</button>
-          <button class="btn-secondary" onclick="window.dashboard.modules.schedules.deletePublic('${item.id}')"><i class="fas fa-trash"></i> Eliminar</button>
+          <button class="btn-primary" onclick="window.dashboard.modules.schedules.editPublic('${escJs(item.id)}')"><i class="fas fa-edit"></i> Editar</button>
+          <button class="btn-secondary" onclick="window.dashboard.modules.schedules.deletePublic('${escJs(item.id)}')"><i class="fas fa-trash"></i> Eliminar</button>
         </div>
       </div>
     `).join(''))

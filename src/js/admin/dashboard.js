@@ -4,8 +4,11 @@ import { MaterialsModule } from './modules/materials.js'
 import { SchedulesModule } from './modules/schedules.js'
 import { MenuModule } from './modules/menu.js'
 import { SettingsModule } from './modules/settings.js'
+import { NewsModule } from './modules/news.js'
+import { GalleryModule } from './modules/gallery.js'
+import { DataModule } from './modules/data.js'
 import { showToast } from '@/js/utils/toast.js'
-import { html, $ } from '@/js/utils/dom.js'
+import { html, $, escJs } from '@/js/utils/dom.js'
 
 class AdminDashboard {
   constructor() {
@@ -18,6 +21,9 @@ class AdminDashboard {
       schedules: new SchedulesModule(),
       menu: new MenuModule(),
       settings: new SettingsModule(),
+      news: new NewsModule(),
+      gallery: new GalleryModule(),
+      data: new DataModule(),
     }
 
     if (!this.auth.isAuthenticated()) {
@@ -34,6 +40,7 @@ class AdminDashboard {
     this.loadDashboard()
     this.updateUserInfo()
     this.modules.settings.init()
+    this.modules.data.renderSection()
 
     const logoutBtn = document.getElementById('logoutBtn')
     if (logoutBtn) logoutBtn.addEventListener('click', () => this.auth.logout())
@@ -69,6 +76,12 @@ class AdminDashboard {
 
     const pageForm = document.getElementById('pageForm')
     if (pageForm) pageForm.addEventListener('submit', (e) => this.handleSavePage(e))
+
+    const newsForm = document.getElementById('newsForm')
+    if (newsForm) newsForm.addEventListener('submit', (e) => this.modules.news.handleSave(e))
+
+    const galleryForm = document.getElementById('galleryForm')
+    if (galleryForm) galleryForm.addEventListener('submit', (e) => this.modules.gallery.handleSave(e))
   }
 
   showSection(name) {
@@ -92,6 +105,7 @@ class AdminDashboard {
     const map = {
       dashboard: 'Dashboard', estudiantes: 'Gestión de Estudiantes', contenido: 'Gestión de Contenido',
       horarios: 'Gestión de Horarios', materiales: 'Gestión de Materiales', configuracion: 'Configuración',
+      noticias: 'Noticias y Anuncios', galeria: 'Galería de Fotos', datos: 'Importar / Exportar',
     }
     return map[name] || 'Dashboard'
   }
@@ -103,6 +117,8 @@ class AdminDashboard {
       case 'contenido': this.loadContentTabs(); break
       case 'horarios': this.modules.schedules.renderCalendar(); break
       case 'materiales': this.modules.materials.renderGrid(); break
+      case 'noticias': this.modules.news.renderGrid(); break
+      case 'galeria': this.modules.gallery.renderGrid(); break
     }
   }
 
@@ -113,9 +129,20 @@ class AdminDashboard {
   }
 
   updateStats() {
-    $('#totalStudents').textContent = this.modules.students.count
-    $('#totalMaterials').textContent = this.modules.materials.count
-    $('#totalSchedules').textContent = this.modules.schedules.count
+    const studentsEl = document.getElementById('totalStudents')
+    if (studentsEl) studentsEl.textContent = this.modules.students.count
+
+    const materialsEl = document.getElementById('totalMaterials')
+    if (materialsEl) materialsEl.textContent = this.modules.materials.count
+
+    const schedulesEl = document.getElementById('totalSchedules')
+    if (schedulesEl) schedulesEl.textContent = this.modules.schedules.count
+
+    const newsEl = document.getElementById('totalNews')
+    if (newsEl) newsEl.textContent = this.modules.news.count
+
+    const galleryEl = document.getElementById('totalGallery')
+    if (galleryEl) galleryEl.textContent = this.modules.gallery.count
   }
 
   updateVisits() {
@@ -166,7 +193,7 @@ class AdminDashboard {
             <div class="content-description">${p.description} - ${p.status}</div>
           </div>
           <div class="content-actions">
-            <button class="btn-primary" onclick="window.dashboard.editPage('${p.title}')"><i class="fas fa-edit"></i> Editar</button>
+            <button class="btn-primary" onclick="window.dashboard.editPage('${escJs(p.title)}')"><i class="fas fa-edit"></i> Editar</button>
           </div>
         </div>
       `).join(''))
@@ -188,7 +215,7 @@ class AdminDashboard {
   handleSavePage(e) {
     e.preventDefault()
     const id = $('#pageId').value
-    const title = $('#pageTitle').value || ''
+    const title = $('#pageTitleInput').value || ''
     const description = $('#pageDescription').value || ''
     const status = $('#pageStatus').value || 'Activa'
     const saved = JSON.parse(localStorage.getItem('adminPages') || '[]')
@@ -207,7 +234,7 @@ class AdminDashboard {
 
   prepareNewPage() {
     $('#pageId').value = ''
-    $('#pageTitle').value = ''
+    $('#pageTitleInput').value = ''
     $('#pageDescription').value = ''
     $('#pageStatus').value = 'Activa'
     $('#pageModalTitle').textContent = 'Nueva Página'
@@ -216,7 +243,7 @@ class AdminDashboard {
 
   editPage(title) {
     $('#pageId').value = title
-    $('#pageTitle').value = title
+    $('#pageTitleInput').value = title
     $('#pageDescription').value = 'Descripción editable'
     $('#pageStatus').value = 'Activa'
     $('#pageModalTitle').textContent = 'Editar Página'

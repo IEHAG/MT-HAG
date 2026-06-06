@@ -3,65 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reproductor de Video Escolar</title>
+  <title>Preprensa Digital - Media Técnica HAG</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
-    * {
-      box-sizing: border-box;
+    body { padding: 140px 40px 100px; background: transparent; }
+
+    .page-header {
+      text-align: center; margin-bottom: 32px; position: relative; z-index: 2;
     }
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+    .page-header h1 {
+      font-size: 2rem; font-weight: 800; color: var(--primary);
+      letter-spacing: -0.5px; margin-bottom: 6px;
     }
-    .video-container {
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      width: 80%;
-      max-width: 800px;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .page-header .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 14px; border-radius: 50px;
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.5px; margin-top: 8px;
     }
-    iframe {
-      width: 100%;
-      height: 450px;
+    .page-header .badge.prep { background: rgba(106,0,244,0.1); color: #6a00f4; }
+
+    .content-wrap {
+      max-width: 900px; margin: 0 auto; position: relative; z-index: 2;
+    }
+
+    .video-card {
+      background: var(--white); border-radius: var(--radius);
+      box-shadow: var(--shadow-sm); overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: var(--transition);
+    }
+    .video-card:hover { box-shadow: var(--shadow-lg); }
+
+    .video-card .video-wrapper {
+      position: relative; width: 100%; padding-top: 56.25%;
+      background: #000;
+    }
+    .video-card .video-wrapper iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%;
       border: none;
     }
-    /* Botón para volver */
-    .back-button {
-      background-color: #28a745;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s;
-      margin-top: 10px;
+
+    .video-card-body {
+      padding: 20px 28px 24px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
     }
-    .back-button:hover {
-      background-color: #218838;
+    .video-card-body .video-info { display: flex; align-items: center; gap: 14px; }
+    .video-card-body .video-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: linear-gradient(135deg, #6a00f4, #b5179e);
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    }
+    .video-card-body h3 { font-size: 1rem; font-weight: 700; color: var(--primary); }
+    .video-card-body p { font-size: 0.82rem; color: var(--text-light); margin-top: 2px; }
+
+    .video-card-body .action-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px; background: var(--accent); color: #fff;
+      border-radius: var(--radius-sm); font-weight: 600; font-size: 0.85rem;
+      text-decoration: none; transition: var(--transition);
+      border: none; cursor: pointer; font-family: var(--font);
+    }
+    .video-card-body .action-btn:hover {
+      transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,170,68,0.3);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .video-card { background: rgba(255,255,255,0.04); }
+      .video-card:hover { border-color: rgba(0,102,204,0.2); }
+    }
+
+    @media (max-width: 780px) {
+      body { padding: 120px 16px 80px; }
+      .page-header h1 { font-size: 1.4rem; }
+      .video-card-body { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 110px 12px 80px; }
+      .page-header h1 { font-size: 1.2rem; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
+  <canvas id="galaxy-canvas" aria-hidden="true"></canvas>
 
-  <div class="video-container">
-    <!-- Iframe de Google Drive -->
-    <iframe src="https://drive.google.com/file/d/1l4dLmDlmiMw7LZ5XBuZ_kdNOVKIS9_6c/preview" allow="autoplay" allowfullscreen></iframe>
+  <div class="back-to-main">
+    <a href="../index.html"><i class="fas fa-arrow-left"></i> Volver</a>
   </div>
-  
-  <!-- Botón para volver a la página anterior -->
-  <button onclick="window.history.back()" class="back-button">Volver a la Página Anterior</button>
 
+  <div class="page-header">
+    <h1><i class="fas fa-palette" style="color:#6a00f4;margin-right:10px;"></i>Preprensa Digital</h1>
+    <div class="badge prep"><i class="fas fa-graduation-cap"></i> Grado 10-11</div>
+  </div>
+
+  <div class="content-wrap">
+    <div class="video-card" style="animation:fadeUp 0.4s ease both;">
+      <div class="video-wrapper">
+        <iframe src="https://drive.google.com/file/d/1l4dLmDlmiMw7LZ5XBuZ_kdNOVKIS9_6c/preview" allow="autoplay" allowfullscreen></iframe>
+      </div>
+      <div class="video-card-body">
+        <div class="video-info">
+          <div class="video-icon"><i class="fas fa-play" style="color:#fff;"></i></div>
+          <div>
+            <h3>Video de la Clase</h3>
+            <p>Contenido educativo de Preprensa Digital</p>
+          </div>
+        </div>
+        <a href="https://drive.google.com/file/d/1l4dLmDlmiMw7LZ5XBuZ_kdNOVKIS9_6c/view" target="_blank" class="action-btn">
+          <i class="fas fa-external-link-alt"></i> Abrir en Drive
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <span>&copy; 2025 I.E. Héctor Abad Gómez</span>
+      <span class="footer-sep">|</span>
+      <span>Desarrollado por Docente Victor Cañola</span>
+    </div>
+  </footer>
+
+  <script type="module" src="../src/js/galaxy.js"></script>
 </body>
 </html>

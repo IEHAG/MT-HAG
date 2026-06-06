@@ -11,25 +11,33 @@ async function sendMessage() {
 
     const chatbox = document.getElementById("chatbot-messages");
 
-    // Agregar el mensaje del usuario
     const userMessage = document.createElement("div");
     userMessage.textContent = "Tú: " + message;
     chatbox.appendChild(userMessage);
     inputField.value = "";
 
-    // Llamar a la API de OpenAI para obtener respuesta
-    const botResponse = await fetchOpenAIResponse(message);
+    try {
+        const botResponse = await fetchOpenAIResponse(message);
+        const botMessage = document.createElement("div");
+        botMessage.textContent = "Chatbot: " + (botResponse || "No hubo respuesta");
+        chatbox.appendChild(botMessage);
+    } catch {
+        const errorMsg = document.createElement("div");
+        errorMsg.textContent = "Chatbot: Lo siento, hubo un error. Intenta de nuevo.";
+        chatbox.appendChild(errorMsg);
+    }
 
-    // Agregar la respuesta del chatbot
-    const botMessage = document.createElement("div");
-    botMessage.textContent = "Chatbot: " + botResponse;
-    chatbox.appendChild(botMessage);
-    chatbox.scrollTop = chatbox.scrollHeight; // Desplazar hacia abajo
+    chatbox.scrollTop = chatbox.scrollHeight;
 }
 
-// Función para conectarse con OpenAI
 async function fetchOpenAIResponse(userInput) {
-    const apiKey = "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"; // Reemplázala con tu clave API
+    // Para usar el chatbot, configura tu API Key en una variable de entorno
+    // o reemplázala directamente aquí (no recomendado para producción)
+    const apiKey = ""; // Coloca tu API Key aquí o usa VITE_OPENAI_API_KEY con Vite
+
+    if (!apiKey) {
+        return "El chatbot no está configurado. Contacta al administrador.";
+    }
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
@@ -42,6 +50,8 @@ async function fetchOpenAIResponse(userInput) {
             messages: [{ role: "user", content: userInput }]
         })
     });
+
+    if (!response.ok) throw new Error(`API error: ${response.status}`);
 
     const data = await response.json();
     return data.choices[0].message.content;

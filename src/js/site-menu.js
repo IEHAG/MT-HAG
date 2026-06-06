@@ -9,7 +9,7 @@ function renderSiteMenu() {
     if (!nav) return
 
     const extras = Array.from(nav.children).filter(
-      c => c.id && (c.id === 'chatbot-toggle' || c.id === 'chatbot-container')
+      c => c.id && ['chatbot-toggle', 'chatbot-container', 'planEstudioBtn', 'submenu'].includes(c.id)
     )
 
     nav.innerHTML = ''

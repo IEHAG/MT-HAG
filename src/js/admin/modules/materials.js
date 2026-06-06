@@ -1,6 +1,6 @@
 import { getItem, setItem } from '@/js/utils/storage.js'
 import { showToast } from '@/js/utils/toast.js'
-import { html, val, setVal, $ } from '@/js/utils/dom.js'
+import { html, val, setVal, $, escJs } from '@/js/utils/dom.js'
 
 const STORAGE_KEY = 'adminMaterials'
 
@@ -31,8 +31,8 @@ export class MaterialsModule {
           <div class="content-description">${m.description}</div>
         </div>
         <div class="content-actions">
-          <button class="btn-primary" onclick="window.dashboard.modules.materials.edit('${m.id}')"><i class="fas fa-edit"></i> Editar</button>
-          <button class="btn-secondary" onclick="window.dashboard.modules.materials.delete('${m.id}')"><i class="fas fa-trash"></i> Eliminar</button>
+          <button class="btn-primary" onclick="window.dashboard.modules.materials.edit('${escJs(m.id)}')"><i class="fas fa-edit"></i> Editar</button>
+          <button class="btn-secondary" onclick="window.dashboard.modules.materials.delete('${escJs(m.id)}')"><i class="fas fa-trash"></i> Eliminar</button>
         </div>
       </div>
     `).join(''))
@@ -49,8 +49,8 @@ export class MaterialsModule {
         <div class="student-name">${m.title}</div>
         <div class="student-program">${m.type}</div>
         <div class="student-actions">
-          <button class="edit-btn" onclick="window.dashboard.modules.materials.edit('${m.id}')"><i class="fas fa-edit"></i> Editar</button>
-          <button class="delete-btn" onclick="window.dashboard.modules.materials.delete('${m.id}')"><i class="fas fa-trash"></i> Eliminar</button>
+          <button class="edit-btn" onclick="window.dashboard.modules.materials.edit('${escJs(m.id)}')"><i class="fas fa-edit"></i> Editar</button>
+          <button class="delete-btn" onclick="window.dashboard.modules.materials.delete('${escJs(m.id)}')"><i class="fas fa-trash"></i> Eliminar</button>
         </div>
       </div>
     `).join(''))

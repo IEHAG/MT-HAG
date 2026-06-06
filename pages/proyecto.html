@@ -1,24 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Propio - Media Técnica</title>
+    <title>Proyecto Propio - Media Técnica HAG</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        body { padding: 140px 40px 100px; background: transparent; }
+
+        .page-header {
+            text-align: center; margin-bottom: 36px; position: relative; z-index: 2;
+        }
+
+        .page-header h1 {
+            font-size: 2rem; font-weight: 800; color: var(--primary);
+            letter-spacing: -0.5px; margin-bottom: 6px;
+        }
+
+        .page-header p { color: var(--text-light); font-size: 0.95rem; }
+
+        .proyectos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 28px;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative; z-index: 2;
+        }
+
+        .proyecto-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: var(--transition);
+        }
+
+        .proyecto-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .proyecto-card-top {
+            height: 8px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent), var(--accent-red));
+        }
+
+        .proyecto-card-body { padding: 28px 28px 24px; }
+
+        .proyecto-icon {
+            width: 56px; height: 56px; border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; margin-bottom: 16px;
+        }
+
+        .proyecto-icon.dev { background: linear-gradient(135deg, #003366, #004d99); }
+        .proyecto-icon.design { background: linear-gradient(135deg, #6a00f4, #b5179e); }
+
+        .proyecto-card-body h3 {
+            font-size: 1.15rem; font-weight: 700; color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .proyecto-desc {
+            font-size: 0.9rem; color: var(--text-light); line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .req-title {
+            font-size: 0.75rem; font-weight: 600; color: var(--text-light);
+            text-transform: uppercase; letter-spacing: 0.5px;
+            margin-bottom: 10px; display: flex; align-items: center; gap: 6px;
+        }
+
+        .req-item {
+            display: flex; align-items: center; gap: 10px;
+            padding: 8px 12px; margin-bottom: 6px;
+            background: rgba(0,0,0,0.02);
+            border-radius: 8px; font-size: 0.85rem; color: var(--text);
+            transition: var(--transition);
+        }
+
+        .req-item:last-child { margin-bottom: 0; }
+        .req-item:hover { background: rgba(0,102,204,0.04); }
+        .req-item i { color: var(--accent); font-size: 0.75rem; }
+
+        .proyecto-card-footer {
+            padding: 0 28px 28px;
+        }
+
+        .proyecto-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--secondary), #0052a3);
+            color: #fff; text-decoration: none;
+            border-radius: var(--radius-sm);
+            font-weight: 600; font-size: 0.88rem;
+            transition: var(--transition); border: none; cursor: pointer;
+            font-family: var(--font);
+        }
+
+        .proyecto-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,102,204,0.35);
+        }
+
+        .proyecto-btn i { transition: transform 0.3s ease; }
+        .proyecto-btn:hover i { transform: translateX(5px); }
+
+        @media (max-width: 780px) {
+            body { padding: 120px 16px 80px; }
+            .page-header h1 { font-size: 1.4rem; }
+            .proyectos-grid { grid-template-columns: 1fr; }
+            .proyecto-card-body { padding: 20px 20px 16px; }
+            .proyecto-card-footer { padding: 0 20px 20px; }
+        }
+
+        @media (max-width: 480px) {
+            body { padding: 110px 12px 80px; }
+            .page-header h1 { font-size: 1.2rem; }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .proyecto-card { background: rgba(255,255,255,0.04); }
+            .proyecto-card:hover { border-color: rgba(0,102,204,0.2); }
+            .proyecto-card-body h3 { color: var(--text); }
+            .req-item { background: rgba(255,255,255,0.03); color: var(--text); }
+            .req-item:hover { background: rgba(255,255,255,0.06); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Proyecto Propio</h1>
-            <button onclick="location.href='index.html'" class="back-button">
-                <i class="icon">⬅️</i> Volver
-            </button>
-        </header>
+    <canvas id="galaxy-canvas" aria-hidden="true"></canvas>
 
-        <div class="content-grid" id="proyectos">
-            <!-- Content will be added by JavaScript -->
-        </div>
+    <div class="back-to-main">
+        <a href="../index.html"><i class="fas fa-arrow-left"></i> Volver</a>
     </div>
+
+    <div class="page-header">
+        <h1><i class="fas fa-rocket" style="color:var(--accent-red);margin-right:10px;"></i>Proyecto Propio</h1>
+        <p>Proyectos transversales de la Media Técnica</p>
+    </div>
+
+    <div class="proyectos-grid" id="proyectos">
+        <p style="color:var(--text-light);grid-column:1/-1;text-align:center;padding:40px;">Cargando...</p>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <span>&copy; 2025 I.E. Héctor Abad Gómez</span>
+            <span class="footer-sep">|</span>
+            <span>Desarrollado por Docente Victor Cañola</span>
+        </div>
+    </footer>
+
     <script src="../js/proyecto.js"></script>
+    <script type="module" src="../src/js/galaxy.js"></script>
 </body>
 </html>
